@@ -1,0 +1,57 @@
+# use glob syntax
+syntax: glob
+
+# Build Folders
+[Bb]in
+[Dd]ebug*/
+obj/
+[Rr]elease*/
+
+#OS junk files
+[Tt]humbs.db
+*.DS_Store
+
+#mstest test results
+TestResults
+
+#Visual Studio files
+*.[Oo]bj
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*.vssscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.[Cc]ache
+*.ilk
+*.log
+*.lib
+*.sbr
+*.scc
+[Bb]uild[Ll]og.*
+*.[Pp]ublish.xml
+
+#Project files
+[Bb]uild/
+
+#Tooling
+_ReSharper*/
+*.resharper
+[Tt]est[Rr]esult*
+
+# Office Temp Files
+~$*
+
+#NuGet
+packages/
+
+#ncrunch
+*ncrunch*
+*crunch*.local.xml
