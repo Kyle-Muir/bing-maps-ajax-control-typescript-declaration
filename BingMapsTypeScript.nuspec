@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>BingMapsTypeScript</id>
+        <version>1.0.1</version>
+        <title>Bing Maps TypeScript Declarations</title>
+        <authors>Roy Donaldson</authors>
+        <owners>Roy Donaldson</owners>
+        <licenseUrl>http://bingmapsts.codeplex.com/license</licenseUrl>
+        <projectUrl>http://bingmapsts.codeplex.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Provides TypeScript declaration files for the Bing Maps v7.0 AJAX Control.</description>
+        <summary>TypeScript declaration files for the Bing Maps v7.0 AJAX Control</summary>
+        <copyright>2012 Roy Donaldson</copyright>
+        <tags>bingmaps bing maps typescript intellisense javascript ajax</tags>
+    </metadata>
+    <files>
+        <file src="BingTS.Solution\BingTS\Bing\Microsoft.Maps.AdvancedShapes.d.ts" target="content\TypeScript\Bing\Microsoft.Maps.AdvancedShapes.d.ts" />
+        <file src="BingTS.Solution\BingTS\Bing\Microsoft.Maps.All.d.ts" target="content\TypeScript\Bing\Microsoft.Maps.All.d.ts" />
+        <file src="BingTS.Solution\BingTS\Bing\Microsoft.Maps.d.ts" target="content\TypeScript\Bing\Microsoft.Maps.d.ts" />
+        <file src="BingTS.Solution\BingTS\Bing\Microsoft.Maps.Overlay.Style.d.ts" target="content\TypeScript\Bing\Microsoft.Maps.Overlay.Style.d.ts" />
+        <file src="BingTS.Solution\BingTS\Bing\Microsoft.Maps.Search.d.ts" target="content\TypeScript\Bing\Microsoft.Maps.Search.d.ts" />
+        <file src="BingTS.Solution\BingTS\Bing\Microsoft.Maps.Themes.BingTheme.d.ts" target="content\TypeScript\Bing\Microsoft.Maps.Themes.BingTheme.d.ts" />
+        <file src="BingTS.Solution\BingTS\Bing\Microsoft.Maps.Traffic.d.ts" target="content\TypeScript\Bing\Microsoft.Maps.Traffic.d.ts" />
+        <file src="BingTS.Solution\BingTS\Bing\Microsoft.Maps.VenueMaps.d.ts" target="content\TypeScript\Bing\Microsoft.Maps.VenueMaps.d.ts" />
+    </files>
+</package>
