@@ -45,3 +45,11 @@ var test_location_precision = () => {
     Microsoft.Maps.Search.LocationPrecision.interpolated = '123';
     Microsoft.Maps.Search.LocationPrecision.rooftop = '123';
 }
+
+var test_match_code = () => {
+    Microsoft.Maps.Search.MatchCode.ambiguous = '123';
+    Microsoft.Maps.Search.MatchCode.good = '123';
+    Microsoft.Maps.Search.MatchCode.modified = '123';
+    Microsoft.Maps.Search.MatchCode.none = '123';
+    Microsoft.Maps.Search.MatchCode.upHeirarchy = '123';
+}

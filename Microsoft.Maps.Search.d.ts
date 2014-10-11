@@ -261,11 +261,33 @@ declare module Microsoft.Maps.Search {
         static unknown: string;
     }
 
+    /**
+     *  Defines the geocoding level of the location match found by the geocoder.
+     **/
     export class MatchCode {
+        /**
+         *  No match was found. 
+         **/
         static none: string;
+
+        /**
+         *  The match was good. 
+         **/
         static good: string;
+        
+        /**
+         *  The match was ambiguous. Multiple results were returned. 
+         **/
         static ambiguous: string;
+
+        /**
+         *  The match was found by a broader search.
+         **/
         static upHeirarchy: string;
+
+        /**
+         *  The match was found, but possibly using a modified query.
+         **/
         static modified: string;
     }
 
