@@ -6,57 +6,55 @@
 declare module Microsoft.Maps.Search {
 
     export class SearchManager {
-        constructor (map: Map);
+        constructor(map: Map);
 
         geocode(request: GeocodeRequestOptions): void;
         reverseGeocode(request: ReverseGeocodeRequestOptions): void;
         search(request: SearchRequestOptions): void;
     }
 
-    /*
-        Represents an address.
-    */
+    /**
+    *   Represents an address.
+    **/
     export class Address {
-        /*
-            The street line of an address. The addressLine property is the most precise, official line for an address relative
-            to the postal agency servicing the area specified by the locality or postalCode properties.
-        */
+        /**
+         *  The street line of an address. The addressLine property is the most precise, official line for an address relative to the postal agency servicing the area specified by the locality or postalCode properties. 
+         **/
         addressLine: string;
 
-        /*
-            The subdivision name within the country or region for an address. This element is also commonly treated as the first
-            order administrative subdivision. An example is a US state, such as “Oregon”.
-        */
+        /**
+         *  The subdivision name within the country or region for an address. This element is also commonly treated as the first order administrative subdivision. An example is a US state, such as “Oregon”.
+         **/
         adminDistrict: string;
 
-        /*
-            The country or region name of the address.
-        */
+        /**
+         *  The country or region name of the address.
+         **/
         countryRegion: string;
 
-        /*
-            The second, third, or fourth order subdivision within a country, dependency, or region.
-        */
+        /**
+         *  The second, third, or fourth order subdivision within a country, dependency, or region.
+         **/
         district: string;
 
-        /*
-            The complete, unparsed address.
-        */
+        /**
+         *  The complete, unparsed address.
+         **/
         formattedAddress: string;
 
-        /*
-            The locality, such as the primary city, that corresponds to an address. An example is “Seattle”.
-        */
+        /**
+         *  The locality, such as the primary city, that corresponds to an address. An example is “Seattle”.
+         **/
         locality: string;
 
-        /*
-            The post code, postal code, or ZIP code of an address. An example is a US ZIP code, such as “98152”.
-        */
+        /**
+         *  The post code, postal code, or ZIP code of an address. An example is a US ZIP code, such as “98152”.
+         **/
         postalCode: string;
 
-        /*
-            The city or neighborhood that corresponds to the postalCode.
-        */
+        /**
+         *  The city or neighborhood that corresponds to the postalCode.
+         **/
         postalTown: string;
     }
 
