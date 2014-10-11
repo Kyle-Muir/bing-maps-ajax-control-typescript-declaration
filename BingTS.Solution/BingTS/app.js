@@ -14,3 +14,4 @@ function getPosition(map) {
     var loc = new Microsoft.Maps.GeoLocationProvider(map);
     loc.getCurrentPosition(positionOptions);
 }
+
