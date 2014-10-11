@@ -114,32 +114,109 @@ declare module Microsoft.Maps.AdvancedShapes {
 		entityRemoved: (object: { collection: EntityCollection; entity: Entity; }) => any;
 	}
 
+	/**
+	*	Represents a complex polygon on the map. When the Microsoft.Maps.AdvancedShapes module is loaded, this class replaces the basic Polygon Class.
+	**/
 	export class Polygon implements Entity {
-		/*
-			Initializes a new instance of a complex Polygon. The locationsArrays array represents the polygon rings,
-			where each element of the array is an array of Location objects that defines a ring. This constructor can
-			be used to create a normal polygon, a multi-polygon, a polygon with holes, or a combination of polygons.
-		*/
+		
+		/**
+		*	Initializes a new instance of a complex Polygon. The locationsArrays array represents the polygon rings, where each element of the array is an array of Location objects that defines a ring. This constructor can be used to create a normal polygon, a multi-polygon, a polygon with holes, or a combination of polygons.
+		**/
 		constructor (locationsArrays: Location[][], options?: PolygonOptions);
 
+		/**
+		*	Returns the color of the inside of the polygon.
+		**/
 		getFillColor(): Color;
+
+		/**
+		*	Returns the color of the inside of the polygon.
+		**/
 		getLocations(): Location[];
-		getRings(): Location[][];
+		
+		/**
+		*	Returns an array of location arrays, where each location array defines a ring of the polygon.
+		**/
+        getRings(): Location[][];
+
+		/**
+		*	Returns the color of the outline of the polygon.
+		**/
 		getStrokeColor(): Color;
+
+		/**
+		*	Returns the string that represents the stroke/gap sequence used to draw the outline of the polygon.
+		**/
 		getStrokeDashArray(): string;
+		
+		/**
+		*	Returns the thickness of the outline of the polygon.
+		**/
 		getStrokeThickness(): number;
+		
+		/**
+		*	Returns whether the polygon is visible. A value of false indicates that the polygon is hidden, although it is still an entity on the map.
+		**/
 		getVisible(): boolean;
+		
+		/**
+		*	Sets the locations that define a basic polygon.
+		**/
 		setLocations(locations: Location[]): void;
+		
+		/**
+		*	Sets options for the polygon.
+		**/
 		setOptions(options: PolylineOptions): void;
+		
+		/**
+		*	Sets an array of location arrays, where each location array defines a ring of the polygon.
+		**/		
+        setRings(locationsArrays: Location[][]): void;
+
+		/**
+		*	Converts the Polygon object to a string.
+		**/
 		toString(): string;
 
+		/**
+		*	Occurs when the mouse is used to click the polygon.
+		**/
 		click: (eventArgs: MouseEventArgs) => any;
-		dbclick: (eventArgs: MouseEventArgs) => any;
+
+		/**
+		*	Occurs when the mouse is used to double click the polygon.
+		**/
+		dblclick: (eventArgs: MouseEventArgs) => any;
+		
+		/**
+		*	Occurs when the location of the polygon or any of the polygon’s options change.
+		**/
 		entitychanged: (entity: Entity) => any;
+
+		/**
+		*	Occurs when the left mouse button is pressed when the mouse is over the polygon.
+		**/
 		mousedown: (eventArgs: MouseEventArgs) => any;
+
+		/**
+		*	Occurs when the mouse cursor moves out of the area covered by the polygon.
+		**/
 		mouseout: (eventArgs: MouseEventArgs) => any;
+		
+		/**
+		*	Occurs when the mouse is over the polygon.
+		**/
 		mouseover: (eventArgs: MouseEventArgs) => any;
+
+		/**
+		*	Occurs when the left mouse button is lifted up when the mouse is over the polygon.
+		**/
 		mouseup: (eventArgs: MouseEventArgs) => any;
+		
+		/**
+		*	Occurs when the right mouse button is used to click the polygon.
+		**/
 		rightclick: (eventArgs: MouseEventArgs) => any;
 	}
 }

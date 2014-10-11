@@ -29,3 +29,35 @@ var test_entity_collection = () => {
     entityCollection.entityChanged(object);
     entityCollection.entityRemoved(object);
 }
+
+var test_polygon = () => {
+    var locationArrays: Array<Array<Microsoft.Maps.Location>> = [[new Microsoft.Maps.Location(1, 1)]];
+    var polygon = new Microsoft.Maps.AdvancedShapes.Polygon(locationArrays);
+    var options: Microsoft.Maps.PolygonOptions = {
+        fillColor: new Microsoft.Maps.Color(255, 255, 255, 255)
+    };
+    var polygonWithOptions = new Microsoft.Maps.AdvancedShapes.Polygon(locationArrays, options);
+
+    polygon.getFillColor();
+    polygon.getLocations();
+    polygon.getRings();
+    polygon.getStrokeColor();
+    polygon.getStrokeDashArray();
+    polygon.getStrokeThickness();
+    polygon.getVisible();
+    var locations = [new Microsoft.Maps.Location(1,1)]
+    polygon.setLocations(locations);
+    polygon.setOptions(options);
+    polygon.setRings(locationArrays);
+    polygon.toString();
+
+    polygon.click(new Microsoft.Maps.MouseEventArgs());
+    polygon.dblclick(new Microsoft.Maps.MouseEventArgs());
+    var entity: Microsoft.Maps.Entity = {};
+    polygon.entitychanged(entity);
+    polygon.mousedown(new Microsoft.Maps.MouseEventArgs());
+    polygon.mouseout(new Microsoft.Maps.MouseEventArgs());
+    polygon.mouseover(new Microsoft.Maps.MouseEventArgs());
+    polygon.mouseup(new Microsoft.Maps.MouseEventArgs());
+    polygon.rightclick(new Microsoft.Maps.MouseEventArgs());
+}
