@@ -269,15 +269,18 @@ declare module Microsoft.Maps.Search {
         static modified: string;
     }
 
+    /**
+     *  Defines the match precision of a geocoded result.
+     **/
     export class LocationPrecision {
-        /*
-            The geocoding service matched the location to a point on the road using interpolation of multiple geocoded sources.
-        */
+        /**
+         *  The geocoding service matched the location to a point on the road using interpolation of multiple geocoded sources.
+         **/
         static interpolated: string;
 
-        /*
-            The geocoding service matched the location to the rooftop of a building.
-        */
+        /**
+         *  The geocoding service matched the location to the rooftop of a building.
+         **/
         static rooftop: string;
     }
 

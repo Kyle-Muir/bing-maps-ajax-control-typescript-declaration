@@ -40,3 +40,8 @@ var test_geocode_gesult = () => {
     geocodeResult.parsedSeparator = '12345';
     geocodeResult.results = [];
 }
+
+var test_location_precision = () => {
+    Microsoft.Maps.Search.LocationPrecision.interpolated = '123';
+    Microsoft.Maps.Search.LocationPrecision.rooftop = '123';
+}
