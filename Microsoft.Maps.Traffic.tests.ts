@@ -1,6 +1,6 @@
 /// <reference path="Microsoft.Maps.All.d.ts" />
 
-function test_traffic_layer() {
+var test_traffic_layer = () => {
 	var map = new Microsoft.Maps.Map(document.createElement('div'));
 	var trafficLayer = new Microsoft.Maps.Traffic.TrafficLayer(map);
 
@@ -8,7 +8,7 @@ function test_traffic_layer() {
 	trafficLayer.hide();
 	trafficLayer.show();
 }
-function test_traffic_manager() {
+var test_traffic_manager = () => {
 	var map = new Microsoft.Maps.Map(document.createElement('div'));
 	var trafficManager = new Microsoft.Maps.Traffic.TrafficManager(map);
 
