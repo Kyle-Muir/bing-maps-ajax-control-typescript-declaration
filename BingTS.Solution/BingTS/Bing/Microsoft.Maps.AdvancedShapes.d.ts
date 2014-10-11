@@ -1,7 +1,7 @@
 ﻿/*
     Before you can access the types found in the Microsoft.Maps.AdvancedShapes API, you must first load this module using the loadModule method.
 */
-module Microsoft.Maps.AdvancedShapes {
+declare module Microsoft.Maps.AdvancedShapes {
 
     /*
         The AdvancedShapes EntityCollection class differs from the base EntityCollection class in two ways:
@@ -33,7 +33,7 @@ module Microsoft.Maps.AdvancedShapes {
         clear(): void;
         get(index: number): Entity;
         getLength(): number;
-        getVisible(): bool;
+        getVisible(): boolean;
         getZIndex(): number;
         indexOf(entity: Entity): number;
         insert(entity: Entity, index: number): void;
@@ -64,7 +64,7 @@ module Microsoft.Maps.AdvancedShapes {
         getStrokeColor(): Color;
         getStrokeDashArray(): string;
         getStrokeThickness(): number;
-        getVisible(): bool;
+        getVisible(): boolean;
         setLocations(locations: Location[]): void;
         setOptions(options: PolylineOptions): void;
         toString(): string;

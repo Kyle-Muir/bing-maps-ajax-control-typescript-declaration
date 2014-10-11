@@ -21,5 +21,5 @@
     with a pushpin, info box styles for hover and click events, and info box color changes based on the current imagery. For info box options you
     can set, see InfoboxOptions.
 */
-module Microsoft.Maps.Themes.BingTheme {
+declare module Microsoft.Maps.Themes.BingTheme {
 }

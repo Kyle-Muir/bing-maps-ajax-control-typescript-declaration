@@ -1,4 +1,4 @@
-﻿module Microsoft.Maps {
+﻿declare module Microsoft.Maps {
 
     /*
         Global functions
@@ -113,10 +113,10 @@
 
     export class MouseEventArgs {
         eventName: string;
-        handled: bool;
-        isPrmary: bool;
-        isSecondary: bool;
-        isTouchEvent: bool;
+        handled: boolean;
+        isPrmary: boolean;
+        isSecondary: boolean;
+        isTouchEvent: boolean;
         originalEvent: any;
         pageX: number;
         pageY: number;
@@ -129,15 +129,15 @@
     }
 
     export class KeyEventArgs {
-        altKey: bool;
-        ctrlKey: bool;
+        altKey: boolean;
+        ctrlKey: boolean;
         eventName: string;
-        //A boolean indicating whether the event is handled. If this property is set to true, the default map control behavior for the event is cancelled.
-        handled: bool;
+        //A booleanean indicating whether the event is handled. If this property is set to true, the default map control behavior for the event is cancelled.
+        handled: boolean;
         //The ASCII character code that identifies the keyboard key that was pressed.
         keyCode: string;
         originalEvent: any;
-        shiftKey: bool;
+        shiftKey: boolean;
     }
 
     export class LocationRect {
@@ -154,14 +154,14 @@
         static fromString(str: string): LocationRect;
 
         clone(): LocationRect;
-        contains(location: Location): bool;
+        contains(location: Location): boolean;
         getEast(): number;
         getNorth(): number;
         getNorthwest(): Location;
         getSouth(): number;
         getSoutheast(): Location;
         getWest(): number;
-        insersects(rect: LocationRect): bool;
+        insersects(rect: LocationRect): boolean;
         toString(): string;
     }
 
@@ -173,7 +173,7 @@
         latitude: number;
         longitude: number;
 
-        static areEqual(location1: Location, location2: Location): bool;
+        static areEqual(location1: Location, location2: Location): boolean;
         static normalizeLongitude(longitude: number): number;
 
         clone(): Location;
@@ -196,12 +196,12 @@
         /*
             Determines if the specified reference is a supported AltitudeReference.
         */
-        static isValid(reference: AltitudeReference): bool;
+        static isValid(reference: AltitudeReference): boolean;
     }
 
     export class MapMode {
-        getDrawShapesInSingleLayer(): bool;
-        setDrawShapesInSingleLayer(drawInSingleLayer: bool): void;
+        getDrawShapesInSingleLayer(): boolean;
+        setDrawShapesInSingleLayer(drawInSingleLayer: boolean): void;
         setViewChangeEndDelay(delay: number): void;
     }
 
@@ -278,33 +278,33 @@
     export interface MapOptions {
         backgroundColor?: Color;
         credentials?: string;
-        customizeOverlays?: bool;
-        disableBirdseye?: bool;
-        disableKeyboardInput?: bool;
-        disableMouseInput?: bool;
-        disablePanning?: bool;
-        disableTouchInput?: bool;
-        disableUserInput?: bool;
-        disableZooming?: bool;
-        enableClickableLogo?: bool;
-        enableSearchLogo?: bool;
-        fixedMapPosition?: bool;
+        customizeOverlays?: boolean;
+        disableBirdseye?: boolean;
+        disableKeyboardInput?: boolean;
+        disableMouseInput?: boolean;
+        disablePanning?: boolean;
+        disableTouchInput?: boolean;
+        disableUserInput?: boolean;
+        disableZooming?: boolean;
+        enableClickableLogo?: boolean;
+        enableSearchLogo?: boolean;
+        fixedMapPosition?: boolean;
         height?: number;
         inertiaIntensity?: number;
-        showBreadcrumb?: bool;
-        showCopyright?: bool;
-        showDashboard?: bool;
-        showMapTypeSelector?: bool;
-        showScalebar?: bool;
+        showBreadcrumb?: boolean;
+        showCopyright?: boolean;
+        showDashboard?: boolean;
+        showMapTypeSelector?: boolean;
+        showScalebar?: boolean;
         theme?: any;
         tileBuffer?: number;
-        useInertia?: bool;
+        useInertia?: boolean;
         width?: number;
     }
 
     export interface ViewOptions {
         //Properties
-        animate?: bool;
+        animate?: boolean;
         bounds?: LocationRect;
         center?: Location;
         centerOffset?: Point;
@@ -323,7 +323,7 @@
         //The pixel is defined in viewport coordinates, relative to the center of the map, where the center of the map is (0, 0). This option is best used for positioning geo-aligned entities added to the user layer.
         static viewport: string;
 
-        static isValid(reference: PixelReference): bool;
+        static isValid(reference: PixelReference): boolean;
     }
 
     export class Point {
@@ -332,7 +332,7 @@
         x: number;
         y: number;
 
-        static areEqual(point1: Point, point2: Point): bool;
+        static areEqual(point1: Point, point2: Point): boolean;
         static clone(point: Point): Point;
 
         clone(): Point;
@@ -349,7 +349,7 @@
         getStrokeColor(): Color;
         getStrokeDashArray(): string;
         getStrokeThickness(): number;
-        getVisible(): bool;
+        getVisible(): boolean;
         setLocations(locations: Location[]): void;
         setOptions(options: PolylineOptions): void;
         toString(): string;
@@ -371,7 +371,7 @@
         getStrokeColor(): Color;
         getStrokeDashArray(): string;
         getStrokeThickness(): number;
-        getVisible(): bool;
+        getVisible(): boolean;
         setLocations(locations: Location[]): void;
         setOptions(options: PolylineOptions): void;
         toString(): string;
@@ -395,7 +395,7 @@
         getText(): string;
         getTextOffset(): Point;
         getTypeName(): string;
-        getVisible(): bool;
+        getVisible(): boolean;
         getWidth(): number;
         getZIndex(): number;
         setLocation(location: Location): void;
@@ -455,7 +455,7 @@
         //Map labels are shown on top of imagery.
         static visible: string;
 
-        static isValid(labelOverlay: LabelOverlay): bool;
+        static isValid(labelOverlay: LabelOverlay): boolean;
     }
 
     export class EntityState {
@@ -519,13 +519,13 @@
         downloadTimeout?: number;
         mercator?: TileSource;
         opacity?: number;
-        visible?: bool;
+        visible?: boolean;
         zIndex?: number;
     }
 
     export interface PushpinOptions {
         anchor?: Point;
-        draggable?: bool;
+        draggable?: boolean;
         height?: number;
         htmlContent?: string;
         icon?: string;
@@ -534,13 +534,13 @@
         text?: string;
         textOffset?: Point;
         typeName?: string;
-        visible?: bool;
+        visible?: boolean;
         width?: number;
         zIndex?: number;
     }
 
     export interface PositionOptions {
-        enableHighAccuracy?: bool;
+        enableHighAccuracy?: boolean;
         /*
         The function to call when an error occurs during the user location request. The callback function must accept one argument.
         The argument object contains two properties, internalError, a PositionError type, and errorCode, a number.
@@ -558,18 +558,18 @@
         */
         errorCallback?: (internalError: PositionError, errorCode: number) => void;
         maximumAge?: number;
-        showAccuracyCircle?: bool;
+        showAccuracyCircle?: boolean;
         successCallback?: (center: Location, position: Position) => void;
         timeout?: number;
-        updateMapView?: bool;
+        updateMapView?: boolean;
     }
 
     //TODO: Change options interfaces so a concrete class and an interface exists
     export interface PositionCircleOptions {
         //The polygon options for the geo location accuracy circle.
         polygonOptions?: PolygonOptions;
-        //A boolean indicating whether to display the geo location accuracy circle. The default value is true. If this property is set to false, a geo location accuracy circle is not drawn and any existing accuracy circles are removed.
-        showOnMap?: bool;
+        //A booleanean indicating whether to display the geo location accuracy circle. The default value is true. If this property is set to false, a geo location accuracy circle is not drawn and any existing accuracy circles are removed.
+        showOnMap?: boolean;
     }
 
     export interface PolylineOptions {
@@ -579,8 +579,8 @@
         strokeDashArray?: string;
         //The thickness of the outline of the polygon.
         strokeThickness?: number;
-        //A boolean indicating whether to show or hide the polygon. A value of false indicates that the polygon is hidden, although it is still an entity on the map.
-        visible?: bool;
+        //A booleanean indicating whether to show or hide the polygon. A value of false indicates that the polygon is hidden, although it is still an entity on the map.
+        visible?: boolean;
     }
 
     export interface PolygonOptions {
@@ -594,8 +594,8 @@
         strokeDashArray?: string;
         //The thickness of the outline of the polygon.
         strokeThickness?: number;
-        //A boolean indicating whether to show or hide the polygon. A value of false indicates that the polygon is hidden, although it is still an entity on the map.
-        visible?: bool;
+        //A booleanean indicating whether to show or hide the polygon. A value of false indicates that the polygon is hidden, although it is still an entity on the map.
+        visible?: boolean;
     }
 
     export interface InfoboxOptions {
@@ -607,14 +607,14 @@
         id?: string;
         location?: Location;
         offset?: Point;
-        showCloseButton?: bool;
-        showPointer?: bool;
+        showCloseButton?: boolean;
+        showPointer?: boolean;
         pushpin?: Pushpin;
         title?: string;
         titleAction?: { label?: string; eventHandler: () => void; };
         titleClickHandler?: string;
         typeName?: InfoboxType;
-        visible?: bool;
+        visible?: boolean;
         width?: number;
         height?: number;
     }
@@ -623,8 +623,8 @@
         Contains a collection of entities. An Entity can be any one of the following types: Infobox, Polygon, Polyline, Pushpin, TileLayer, or EntityCollection.
     */
     export interface EntityCollectionOptions {
-        bubble?: bool;
-        visible?: bool;
+        bubble?: boolean;
+        visible?: boolean;
         zIndex?: number;
     }
 
@@ -648,7 +648,7 @@
         clear(): void;
         get(index: number): Entity;
         getLength(): number;
-        getVisible(): bool;
+        getVisible(): boolean;
         getZIndex(): number;
         indexOf(entity: Entity): number;
         insert(entity: Entity, index: number): void;
@@ -705,9 +705,9 @@
         getWidth(): number;
         getZoom(): number;
         getZoomRange(): { min: number; max: number; };
-        isDownloadingTiles(): bool;
-        isMercator(): bool;
-        isRotationEnabled(): bool;
+        isDownloadingTiles(): boolean;
+        isMercator(): boolean;
+        isRotationEnabled(): boolean;
         setMapType(mapTypeId: string): void;
         setOptions(options: { height: number; width: number; }): void;
         setView(options: ViewOptions): void;

@@ -1,6 +1,6 @@
 ﻿/// <reference path="Microsoft.Maps.d.ts" />
 
-module Microsoft.Maps.VenueMaps {
+declare module Microsoft.Maps.VenueMaps {
     export class DirectoryGrouping {
         static byCategory: string;
         static none: string;
@@ -79,7 +79,7 @@ module Microsoft.Maps.VenueMaps {
         handleMouseClick(e: { eventArgs: MouseEventArgs; primitive: Primitive; }): void;
         handleMouseMouseOut(e: { eventArgs: MouseEventArgs; primitive: Primitive; }): void;
         handleMouseOver(e: { eventArgs: MouseEventArgs; primitive: Primitive; }): void;
-        isInDOM(): bool;
+        isInDOM(): boolean;
         removeFromDOM(): void;
         setHeight(h: number): void;
 

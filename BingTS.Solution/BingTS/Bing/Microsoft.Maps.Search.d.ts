@@ -3,7 +3,7 @@
     Contains types that allow you to return search and location results to display on your Bing Maps AJAX Control 7.0 map.
     Use the methods geocode, reverseGeocode, and search found on the SearchManager Class.
 */
-module Microsoft.Maps.Search {
+declare module Microsoft.Maps.Search {
 
     export class SearchManager {
         constructor (map: Map);
@@ -172,7 +172,7 @@ module Microsoft.Maps.Search {
 
     export class SearchResponse {
         alternateSearchRegions: SearchRegion[];
-        hasMore: bool;
+        hasMore: boolean;
         parseResults: SearchParseResult[];
         responseSummary: SearchResponseSummary;
         searchRegion: SearchRegion;

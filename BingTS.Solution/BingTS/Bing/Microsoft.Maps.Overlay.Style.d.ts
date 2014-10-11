@@ -3,5 +3,5 @@
     To load the new Bing Maps navigation bar, load the Microsoft.Maps.Overlays.Style module, then set  customizeOverlaysmap in
     the map options to true.
 */
-module Microsoft.Maps.Overlay.Style {
+declare module Microsoft.Maps.Overlay.Style {
 }
