@@ -1,4 +1,5 @@
-﻿/*
+﻿/// <reference path="Microsoft.Maps.all.d.ts" />
+/*
     Before you can access the types found in the Microsoft.Maps.AdvancedShapes API, you must first load this module using the loadModule method.
 */
 declare module Microsoft.Maps.AdvancedShapes {
