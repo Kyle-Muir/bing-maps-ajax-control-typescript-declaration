@@ -11,3 +11,10 @@ var test_address = () => {
     address.postalCode = '90210';
     address.postalTown = 'Beverly Hills';
 }
+
+var test_geocode_location = () => {
+    var geocodeLocation = new Microsoft.Maps.Search.GeocodeLocation();
+    geocodeLocation.location = new Microsoft.Maps.Location(123, 55);
+    geocodeLocation.name = 'Bahamas';
+    geocodeLocation.precision = 1;
+}

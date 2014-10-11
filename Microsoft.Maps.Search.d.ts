@@ -230,9 +230,24 @@ declare module Microsoft.Maps.Search {
         static rooftop: string;
     }
 
+    /**
+     *  Represents a geocode location.
+     **/
     export class GeocodeLocation {
+
+        /**
+         *  The map location of this geocode location match. 
+         **/
         location: Location;
+
+        /**
+         *  The name of this geocode location match. 
+         **/
         name: string;
+
+        /**
+         *  The precision of this geocode location match.
+         **/
         precision: LocationPrecision;
     }
 }
