@@ -10,8 +10,10 @@ Original Codeplex URL: https://bingmapsts.codeplex.com/
 Installation
 ============
 
-You can download the declaration files directly from the downloads page.
+You can download the declaration files directly from Github.
 
 A NuGet package is also available in the public NuGet repository.
 
 Install-Package BingMapsTypeScript
+
+NOTE: The nuget package is currently out of date.
