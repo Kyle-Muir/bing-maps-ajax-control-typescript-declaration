@@ -127,13 +127,46 @@ declare module Microsoft.Maps.Search {
         where?: string;
     }
 
+    /**
+     *  Contains the options for a geocode request.
+     **/
     export class GeocodeRequestOptions {
+
+        /**
+         *  A location rectangle that defines the boundaries of the area in which to search for location results. 
+         *  The default is the bounds of the map view associated with this instance of the SearchManager, which is usually the current map view.
+         **/
         bounds: LocationRect;
+
+        /**
+         *  The name of the function to call when a successful result is returned from the geocode request. 
+         *  The callback function must accept two parameters: result, which is a GeocodeResult type, and a userData object.
+         **/
         callback: (result: GeocodeResult, userData: any) => void;
+
+        /**
+         *  The maximum number of results to return. Required. The maximum number than can be returned is 20.
+         **/
         count: number;
+
+        /**
+         *  The name of the function to call when the request is returned with an error. The error callback function must accept a GeocodeRequestOptions object.
+         **/
         errorCallback: (requestOptions: GeocodeRequestOptions) => void;
+
+        /**
+         *  A number indicating how long to wait, in seconds, for the geocode request to return. The default value is 5 seconds.
+         **/
         timeout: number;
+
+        /**
+         *  An object containing any data that needs to be passed to the callback when the request is completed.
+         **/
         userData: any;
+
+        /**
+         *  A string containing the address or place to be matched to a location on the map. Required.
+         **/
         where: string;
     }
 
