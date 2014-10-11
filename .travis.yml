@@ -4,7 +4,7 @@ node_js:
 install:
   - "npm install -g typescript"
 script:
-  - "dir *.ts /b /s > ts-files.txt"
+  - "ls *.ts > ts-files.txt"
   - "tsc @ts-files.txt"
-  - "del ts-files.txt"
+  - "rm ts-files.txt"
   
