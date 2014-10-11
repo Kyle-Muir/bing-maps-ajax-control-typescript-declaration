@@ -53,3 +53,9 @@ var test_match_code = () => {
     Microsoft.Maps.Search.MatchCode.none = '123';
     Microsoft.Maps.Search.MatchCode.upHeirarchy = '123';
 }
+var test_match_confidence = () => {
+    Microsoft.Maps.Search.MatchConfidence.high = '123';
+    Microsoft.Maps.Search.MatchConfidence.low = '123';
+    Microsoft.Maps.Search.MatchConfidence.medium = '123';
+    Microsoft.Maps.Search.MatchConfidence.unknown = '123';
+}

@@ -254,10 +254,28 @@ declare module Microsoft.Maps.Search {
         name: string;
     }
 
+    /**
+     *  Defines the confidence of the location match found by the geocoding service.
+     **/
     export class MatchConfidence {
+        /**
+         *  The confidence of the match is high.
+         **/
         static high: string;
+
+        /**
+         *  The confidence of the match is medium.
+         **/
         static medium: string;
+
+        /**
+         *  The confidence of the match is low.
+         **/
         static low: string;
+
+        /**
+         *  The confidence of the match is unknown.
+         **/
         static unknown: string;
     }
 
