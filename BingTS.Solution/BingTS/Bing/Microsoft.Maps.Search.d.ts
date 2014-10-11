@@ -197,7 +197,8 @@ declare module Microsoft.Maps.Search {
 
     export class PlaceResult {
         bestview: LocationRect;
-        location: GeocodeLocation;
+        //KM 11/10/14 - PlaceResult.location actually returns a location, contrary to MSDN documentation.
+        location: Location;
         locations: GeocodeLocation[];
         matchCode: MatchCode;
         matchConfidence: MatchConfidence;

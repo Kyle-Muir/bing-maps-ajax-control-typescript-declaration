@@ -339,7 +339,30 @@
         toString(): string;
     }
 
-    export class Infobox implements Entity { }
+    export class Infobox implements Entity {
+        constructor(location: Location, options?: InfoboxOptions);
+        getActions(): Object;
+        getAnchor(): Point;
+        getDescription(): string;
+        getHeight(): number;
+        getHtmlContent(): string;
+        getId(): string;
+        getLocation(): Location;
+        getOffset(): Point;
+        getOptions(): InfoboxOptions;
+        getShowCloseButton(): boolean;
+        getShowPointer(): boolean;
+        getTitle(): string;
+        getTitleAction(): Object;
+        getTitleClickHandler(): Function;
+        getVisible(): boolean;
+        getWidth(): number;
+        getZIndex(): number;
+        setHtmlContent(content: string): void;
+        setLocation(location: Location): void;
+        setOptions(options: InfoboxOptions): void;
+        toString(): string;
+    }
 
     export class Polygon implements Entity {
         constructor (locations: Location[], options?: PolygonOptions);
