@@ -18,6 +18,7 @@ var test_geocode_location = () => {
     geocodeLocation.name = 'Bahamas';
     geocodeLocation.precision = 1;
 }
+
 var test_geocode_request_options = () => {
     var geocodeRequestOptions = new Microsoft.Maps.Search.GeocodeRequestOptions();
     var location = new Microsoft.Maps.Location(1,1);
@@ -30,4 +31,12 @@ var test_geocode_request_options = () => {
     geocodeRequestOptions.timeout = 3600;
     geocodeRequestOptions.userData = {};
     geocodeRequestOptions.where = '1 Microsoft Way';
+}
+
+var test_geocode_gesult = () => {
+    var geocodeResult = new Microsoft.Maps.Search.GeocodeResult();
+    geocodeResult.parsedAddress = new Microsoft.Maps.Search.Address();
+    geocodeResult.parsedKeyword = '123';
+    geocodeResult.parsedSeparator = '12345';
+    geocodeResult.results = [];
 }

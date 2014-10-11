@@ -170,10 +170,28 @@ declare module Microsoft.Maps.Search {
         where: string;
     }
 
+    /**
+     *  Represents a geocoded result.
+     **/
     export class GeocodeResult {
+        /**
+         *  The parsed address of the input query.
+         **/
         parsedAddress: Address;
+
+        /**
+         *  The parsed keyword string of the input query.
+         **/
         parsedKeyword: string;
+
+        /**
+         *  The parsed separator of the input query.
+         **/
         parsedSeparator: string;
+
+        /**
+         *  The geocoded results.
+         **/
         results: PlaceResult[];
     }
 
