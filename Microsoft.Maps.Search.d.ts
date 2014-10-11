@@ -1,4 +1,4 @@
-﻿
+﻿/// <reference path="Microsoft.Maps.all.d.ts" />
 /*
     Contains types that allow you to return search and location results to display on your Bing Maps AJAX Control 7.0 map.
     Use the methods geocode, reverseGeocode, and search found on the SearchManager Class.
