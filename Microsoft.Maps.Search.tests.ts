@@ -20,7 +20,9 @@ var test_geocode_location = () => {
 }
 
 var test_geocode_request_options = () => {
-    var geocodeRequestOptions = new Microsoft.Maps.Search.GeocodeRequestOptions();
+    var geocodeRequestOptions : Microsoft.Maps.Search.GeocodeRequestOptions = {
+        where: '1 Microsoft Way'
+    };
     var location = new Microsoft.Maps.Location(1,1);
     geocodeRequestOptions.bounds = new Microsoft.Maps.LocationRect(location, 100, 100);
     var geocodeCallback = (geocodeResult: Microsoft.Maps.Search.GeocodeResult, userData: any) => { };
@@ -30,7 +32,6 @@ var test_geocode_request_options = () => {
     geocodeRequestOptions.errorCallback = errorCallback;
     geocodeRequestOptions.timeout = 3600;
     geocodeRequestOptions.userData = {};
-    geocodeRequestOptions.where = '1 Microsoft Way';
 }
 
 var test_geocode_gesult = () => {
