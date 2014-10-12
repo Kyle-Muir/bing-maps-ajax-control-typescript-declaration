@@ -24,13 +24,13 @@ Install-Package BingMapsTypeScript
 
 Todo
 ====
-[X] Update declarations so they at least work with latest version
-[ ] Update declarations for latest version w\ full Visual Studio 2013 intellisense (In progress)
-	[ ] Microsoft.Maps
-	[ ] Microsoft.Maps.AdvancedShapes
-	[ ] Microsoft.Maps.Directions
-	[ ] Microsoft.Maps.Search (In progress)
-	[X] Microsoft.Maps.Traffic
-	[ ] Microsoft.Maps.VenueMaps (In progress)
-[ ] Create\Update nuget package
-[ ] Create\Update npm package
+- [X] Update declarations so they at least work with latest version
+- [ ] Update declarations for latest version w\ full Visual Studio 2013 intellisense (In progress)
+	- [ ] Microsoft.Maps
+	- [ ] Microsoft.Maps.AdvancedShapes
+	- [ ] Microsoft.Maps.Directions
+	- [ ] Microsoft.Maps.Search (In progress)
+	- [X] Microsoft.Maps.Traffic
+	- [ ] Microsoft.Maps.VenueMaps (In progress)
+- [ ] Create\Update nuget package
+- [ ] Create\Update npm package
