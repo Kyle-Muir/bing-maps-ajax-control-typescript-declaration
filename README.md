@@ -7,7 +7,7 @@ Bing Maps TypeScript Declarations
 
 This project contains unofficial TypeScript declarations for the Bing Maps v7 AJAX Control. It is meant to bridge the gap between the release of TypeScript and the release of the official Bing Maps declaration files.
 
-The project was started by Roy Donaldson and has been moved here to react to updates easier.
+The project was started by Roy Donaldson and has been moved here with permission to react to updates easier.
 
 Original Codeplex URL: https://bingmapsts.codeplex.com/
 
@@ -20,4 +20,17 @@ A NuGet package is also available in the public NuGet repository.
 
 Install-Package BingMapsTypeScript
 
-NOTE: The nuget package is currently out of date.
+###NOTE: The nuget package is currently out of date.
+
+Todo
+====
+[X] Update declarations so they at least work with latest version
+[ ] Update declarations for latest version w\ full Visual Studio 2013 intellisense (In progress)
+	[ ] Microsoft.Maps
+	[ ] Microsoft.Maps.AdvancedShapes
+	[ ] Microsoft.Maps.Directions
+	[ ] Microsoft.Maps.Search (In progress)
+	[X] Microsoft.Maps.Traffic
+	[ ] Microsoft.Maps.VenueMaps (In progress)
+[ ] Create\Update nuget package
+[ ] Create\Update npm package
