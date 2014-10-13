@@ -761,4 +761,35 @@
         viewchangeend: () => any;
         viewchangestart: () => any;
     }
+
+    /**
+     *  Provides event handling functionality for map and entity events.
+     **/
+    export class Events {
+        /**
+         *  Attaches the handler for the event that is thrown by the target. Use the return object to remove the handler using the removeHandler method.
+         *  Microsoft.Maps.Events.addHandler(map, 'viewchangeend’, function(e){ //Handle the event });
+         **/
+        static addHandler(target: Object, eventName: string, handler: Function): Object;
+
+        /**
+         *  Attaches the handler for the event that is thrown by the target, where the minimum interval between events (in milliseconds) is specified in the throttleInterval parameter. The last occurrence of the event is called after the specified throttleInterval.
+         **/
+        static addThrottledHandler(target: Object, eventName: string, handler: Function, throttleInterval: number): Object;
+
+        /**
+         *  Checks if the target has any attached event handler.
+         **/
+        static hasHandler(target: Object, eventName: string): boolean;
+
+        /**
+         *  Invokes an event on the target. This causes all handlers for the specified eventName to be called.
+         **/
+        static invoke(target: Object, eventName: string, args: Object): void;
+
+        /**
+         *  Detaches the specified handler from the event. The handlerId is returned by the addHandler and addThrottledHandler methods.
+         **/
+        static removeHandler(handlerId: Object) : void;
+    }
 }
