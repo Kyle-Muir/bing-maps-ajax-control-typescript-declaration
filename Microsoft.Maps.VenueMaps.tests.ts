@@ -35,3 +35,29 @@ var test_venue_map_creation_options = () => {
 
 	var venueMapCreationOptions : Microsoft.Maps.VenueMaps.VenueMapCreationOptions = {	};
 }
+
+var test_venue_map_factory = () => {
+	var error: (errorCode: number, args: Microsoft.Maps.VenueMaps.VenueMapCreationOptions) => void;
+	var success: (venueMap: Microsoft.Maps.VenueMaps.VenueMap, options: Microsoft.Maps.VenueMaps.VenueMapCreationOptions) => void;
+
+	var map = new Microsoft.Maps.Map(document.createElement('div'));
+	var venueMapFactory = new Microsoft.Maps.VenueMaps.VenueMapFactory(map);
+
+	var createOptions : Microsoft.Maps.VenueMaps.VenueMapCreationOptions = {
+		error: error,
+		success: success,
+		venueMapId: 'venueMapId'
+	};
+
+	venueMapFactory.create(createOptions);
+
+	var callback: (venues: Microsoft.Maps.VenueMaps.VenueMap[]) => void;
+	var nearbyVenueOptions : Microsoft.Maps.VenueMaps.NearbyVenueOptions = {
+		callback: callback,
+		location: new Microsoft.Maps.Location(1, 1),
+		map: map,
+		radius: 5
+	};
+	
+	venueMapFactory.getNearbyVenues(nearbyVenueOptions);
+}

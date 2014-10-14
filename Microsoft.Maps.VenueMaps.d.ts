@@ -87,10 +87,27 @@ declare module Microsoft.Maps.VenueMaps {
 		venueMapId? : string;
 	}
 
+	/**
+	*	Contains methods for creating a venue map.
+	**/
 	export class VenueMapFactory {
+
+		/**
+    	*	Initializes a new instance of the VenueMapFactory class.
+    	**/
 		constructor (map: Map);
 
+		/**
+		*	Creates a venue map. If the venue map is created successfully, a VenueMap is returned to the function 
+		*	specified in the success property of the VenueMapCreationOptions.
+		*	
+		*	You can display a venue map using the show method of the VenueMap Class.
+		**/
 		create(options: VenueMapCreationOptions): void;
+
+		/**
+		*	Searches for venue maps within a specified distance. The callback function must accept a NearbyVenue array.
+		**/
 		getNearbyVenues(options: NearbyVenueOptions): void;
 	}
 
