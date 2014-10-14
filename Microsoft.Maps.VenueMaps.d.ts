@@ -59,20 +59,32 @@ declare module Microsoft.Maps.VenueMaps {
 		radius?: number;
 	}
 
+	/**
+	*	Contains options for creating a venue map.
+	**/
 	export interface VenueMapCreationOptions {
-		/*
-			The function to call if the venue map was not successfully created. The function must accept two parameters: an integer which is
-			an error code and an object that contains the arguments passed to the create method of the VenueMapFactory.
+		
+		/**
+		*	The function to call if the venue map was not successfully created. The function must accept two parameters: an integer which is
+		*	an error code and an object that contains the arguments passed to the create method of the VenueMapFactory.
+		*
+		*	The error codes are:
+		*	1 - The metadata needed to create the venue map was not found because of a 404 or other web exception, or because the metadata was
+		*		found but was empty.
+		*	2 - The venue map metadata is invalid.
+		*	3 - A timeout has occurred trying to retrieve the venue map metadata.
+		**/
+		error?: (errorCode: number, args: Microsoft.Maps.VenueMaps.VenueMapCreationOptions) => void;
 
-			The error codes are:
-			1 - The metadata needed to create the venue map was not found because of a 404 or other web exception, or because the metadata was
-				found but was empty.
+		/**
+		*	The function to call if the venue map was successfully created. The function must accept two parameters: a VenueMap and an object that contains the arguments passed to the create method of the VenueMapFactory.
+		**/
+		success?: (venueMap: Microsoft.Maps.VenueMaps.VenueMap, options: Microsoft.Maps.VenueMaps.VenueMapCreationOptions) => void;
 
-			2 - The venue map metadata is invalid.
-
-			3 - A timeout has occurred trying to retrieve the venue map metadata.
-		*/
-		error?: (errorCode: number, args: VenueMapCreationOptions) => void;
+		/**
+		*	A string that identifies the venue map to display.
+		**/
+		venueMapId? : string;
 	}
 
 	export class VenueMapFactory {

@@ -22,3 +22,16 @@ var test_nearby_venue_options = () => {
 
 	var nullNearbyVenueOptions : Microsoft.Maps.VenueMaps.NearbyVenueOptions = {	};
 }
+
+var test_venue_map_creation_options = () => {
+	var error: (errorCode: number, args: Microsoft.Maps.VenueMaps.VenueMapCreationOptions) => void;
+	var success: (venueMap: Microsoft.Maps.VenueMaps.VenueMap, options: Microsoft.Maps.VenueMaps.VenueMapCreationOptions) => void;
+
+	var venueMapCreationOptions : Microsoft.Maps.VenueMaps.VenueMapCreationOptions = {
+		error: error,
+		success: success,
+		venueMapId: 'venueMapId'
+	};
+
+	var venueMapCreationOptions : Microsoft.Maps.VenueMaps.VenueMapCreationOptions = {	};
+}
