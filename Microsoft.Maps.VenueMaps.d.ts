@@ -111,9 +111,24 @@ declare module Microsoft.Maps.VenueMaps {
 		getNearbyVenues(options: NearbyVenueOptions): void;
 	}
 
+	/**
+	*	Defines the shape of venue map entities.
+	**/
 	export class Polygon {
+
+		/**
+		*	The rectangle that defines the bounding box for the polygon.
+		**/
 		bounds: LocationRect;
+
+		/**
+		*	The center of the polygon.
+		**/
 		center: Location;
+
+		/**
+		*	The locations that define the vertices of the polygon.
+		**/
 		locations: Location[];
 	}
 

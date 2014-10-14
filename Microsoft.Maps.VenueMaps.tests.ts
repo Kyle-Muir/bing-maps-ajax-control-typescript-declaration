@@ -61,3 +61,11 @@ var test_venue_map_factory = () => {
 	
 	venueMapFactory.getNearbyVenues(nearbyVenueOptions);
 }
+
+var test_polygon = () => {
+	var polygon : Microsoft.Maps.VenueMaps.Polygon = {
+		bounds: new Microsoft.Maps.LocationRect(new Microsoft.Maps.Location(1, 1), 10, 50),
+		center: new Microsoft.Maps.Location(1, 1),
+		locations: [new Microsoft.Maps.Location(1, 1)]
+	};
+}
