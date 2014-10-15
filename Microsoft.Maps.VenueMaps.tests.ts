@@ -120,3 +120,18 @@ var test_directory = () => {
 	directory.mouseout(new Microsoft.Maps.MouseEventArgs(), new Microsoft.Maps.VenueMaps.Primitive());
 	directory.mouseover(new Microsoft.Maps.MouseEventArgs(), new Microsoft.Maps.VenueMaps.Primitive());
 }
+
+var test_metadata = () => {
+	var metadata : Microsoft.Maps.VenueMaps.Metadata = {
+		CenterLatitude: 15,
+		CenterLongitude: 30,
+		DefaultFloor: 'DefaultFloor',
+		FloorHeader: 'FloorHeader',
+		Floors: [new Microsoft.Maps.VenueMaps.Floor()],
+		Footprint: new Microsoft.Maps.VenueMaps.Footprint(),
+		MapId: 'MapId',
+		MapType: 'MapType',
+		Name: 'Name',
+		YpId: 'YpId'
+	};
+}

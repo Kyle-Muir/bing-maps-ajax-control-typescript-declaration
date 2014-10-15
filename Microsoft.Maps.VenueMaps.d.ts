@@ -291,16 +291,59 @@ declare module Microsoft.Maps.VenueMaps {
 		mouseover: (eventArgs: MouseEventArgs, primitive: Primitive) => void;
 	}
 
+	/**
+	*	Contains information about a venue map.
+	**/
 	export class Metadata {
-		CenterLat: number;
-		CenterLong: number;
+
+		/**
+		*	The latitude of the center location of the venue map.
+		**/
+		CenterLatitude: number;
+
+		/**
+		*	The longitude of the center location of the venue map.
+		**/
+		CenterLongitude: number;
+
+		/**
+		*	The ID of the default floor of the venue map.
+		**/
 		DefaultFloor: string;
+
+		/**
+		*	A string used in the floor bar of the venue map.
+		**/
 		FloorHeader: string;
+
+		/**
+		*	An array containing the floors of the venue map.
+		**/
 		Floors: Floor[];
+
+		/**
+		*	The footprint of the venue map.
+		**/
 		Footprint: Footprint;
+
+		/**
+		*	The unique ID of the venue map.
+		**/
 		MapId: string;
+
+		/**
+		*	A string describing the venue map type (for example, "mall").
+		**/
 		MapType: string;
+
+		/**
+		*	The name of the venue map.
+		**/
 		Name: string;
+
+		/**
+		*	The Yellow Pages ID of the venue.
+		**/
 		YpId: string;
 	}
 
