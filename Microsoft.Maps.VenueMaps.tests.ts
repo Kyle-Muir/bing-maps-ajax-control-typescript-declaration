@@ -69,3 +69,34 @@ var test_polygon = () => {
 		locations: [new Microsoft.Maps.Location(1, 1)]
 	};
 }
+
+var test_primitive = () => {
+	var primitive = new Microsoft.Maps.VenueMaps.Primitive();
+	primitive.bounds = new Microsoft.Maps.LocationRect(new Microsoft.Maps.Location(1, 1), 10, 50);
+	primitive.businessId = 'businessId';
+	primitive.categoryId = 'categoryId';
+	primitive.categoryName = 'categoryName';
+	primitive.center = new Microsoft.Maps.Location(1, 1);
+	primitive.floor = new Microsoft.Maps.VenueMaps.Floor();
+	primitive.id = 'Id';
+	primitive.locations = [new Microsoft.Maps.Location(1, 1)];
+	primitive.name = 'name';
+
+	primitive.highlight();
+	primitive.unhighlight();
+}
+
+var test_floor = () => {
+	var floor : Microsoft.Maps.VenueMaps.Floor = {
+		name: 'name',
+		primitives: [new Microsoft.Maps.VenueMaps.Primitive()],
+		zoomRange: [14]
+	};
+}
+
+var test_footprint = () => {
+	var footprint : Microsoft.Maps.VenueMaps.Footprint = {
+		polygons: [new Microsoft.Maps.VenueMaps.Polygon()],
+		zoomRange: [16]
+	};
+}

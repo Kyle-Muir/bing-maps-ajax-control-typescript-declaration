@@ -74,12 +74,12 @@ declare module Microsoft.Maps.VenueMaps {
 		*	2 - The venue map metadata is invalid.
 		*	3 - A timeout has occurred trying to retrieve the venue map metadata.
 		**/
-		error?: (errorCode: number, args: Microsoft.Maps.VenueMaps.VenueMapCreationOptions) => void;
+		error?: (errorCode: number, args: VenueMapCreationOptions) => void;
 
 		/**
 		*	The function to call if the venue map was successfully created. The function must accept two parameters: a VenueMap and an object that contains the arguments passed to the create method of the VenueMapFactory.
 		**/
-		success?: (venueMap: Microsoft.Maps.VenueMaps.VenueMap, options: Microsoft.Maps.VenueMaps.VenueMapCreationOptions) => void;
+		success?: (venueMap: VenueMap, options: VenueMapCreationOptions) => void;
 
 		/**
 		*	A string that identifies the venue map to display.
@@ -132,29 +132,101 @@ declare module Microsoft.Maps.VenueMaps {
 		locations: Location[];
 	}
 
+	/**
+	*	Represents a venue map primitive, which represents a venue map entity.
+	**/
 	export class Primitive {
+
+		/**
+		*	The rectangle that defines the bounding box for the primitive.
+		**/
 		bounds: LocationRect;
+
+		/**
+		*	The Yellow Pages ID for the entity.
+		**/
 		businessId: string;
+
+		/**
+		*	The Yellow Pages business category ID for the entity.
+		**/
 		categoryId: string;
+
+		/**
+		*	The Yellow Pages business category name for the entity.
+		**/
 		categoryName: string;
+
+		/**
+		*	The location of the center of the primitive.
+		**/
 		center: Location;
+
+		/**
+		*	The floor to which this primitive belongs.
+		**/
 		floor: Floor;
+
+		/**
+		*	The unique ID of the entity.
+		**/
 		id: string;
+
+		/**
+		*	An array of locations that represent the vertices of the primitive.
+		**/
 		locations: Location[];
+
+		/**
+		*	The name of the entity.
+		**/
 		name: string;
 
+		/**
+		*	Highlights the primitive.
+		**/
 		highlight(): void;
+
+		/**
+		*	Removes the highlighting of the primitive.
+		**/
 		unhighlight(): void;
 	}
 
+	/**
+	*	Represents one floor map of a venue map.
+	**/
 	export class Floor {
+
+		/**
+		*	The name of the floor.
+		**/
 		name: string;
+
+		/**
+		*	An array of Primitive objects that represent the points of interest (for example, stores) on this venue floor.
+		**/
 		primitives: Primitive[];
+
+		/**
+		*	An array of doubles indicating the minimum and maximum zoom levels where imagery is available for this venue map floor.
+		**/
 		zoomRange: number[];
 	}
 
+	/**
+	*	Represents the footprint of the venue map.
+	**/
 	export class Footprint {
+
+		/**
+		*	The shapes that make up the footprint of this venue.
+		**/
 		polygons: Polygon[];
+
+		/**
+		*	An array of doubles indicating the minimum and maximum zoom levels where imagery is available for this venue map.
+		**/
 		zoomRange: number[];
 	}
 
