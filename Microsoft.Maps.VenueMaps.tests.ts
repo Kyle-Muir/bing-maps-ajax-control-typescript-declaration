@@ -100,3 +100,23 @@ var test_footprint = () => {
 		zoomRange: [16]
 	};
 }
+
+var test_directory = () => {
+	var directory = new Microsoft.Maps.VenueMaps.Directory();
+	directory.addToDom(document.createElement('div'), 
+					   Microsoft.Maps.VenueMaps.DirectorySortOrder.alphabetical, 
+					   Microsoft.Maps.VenueMaps.DirectoryGrouping.byCategory);
+	directory.createUIElements();
+	directory.isInDOM();
+	directory.removeFromDOM();
+	directory.setHeight(50);
+
+	var mouseArgs = { eventArgs: new Microsoft.Maps.MouseEventArgs(), primitive: new Microsoft.Maps.VenueMaps.Primitive() };
+	directory.handleMouseClick(mouseArgs);
+	directory.handleMouseMouseOut(mouseArgs);
+	directory.handleMouseOver(mouseArgs);
+
+	directory.click(new Microsoft.Maps.MouseEventArgs(), new Microsoft.Maps.VenueMaps.Primitive());
+	directory.mouseout(new Microsoft.Maps.MouseEventArgs(), new Microsoft.Maps.VenueMaps.Primitive());
+	directory.mouseover(new Microsoft.Maps.MouseEventArgs(), new Microsoft.Maps.VenueMaps.Primitive());
+}

@@ -230,18 +230,64 @@ declare module Microsoft.Maps.VenueMaps {
 		zoomRange: number[];
 	}
 
+	/**
+	*	Represents a venue map directory, which is a list of businesses and features found within the venue.
+	**/
 	export class Directory {
+
+		/**
+		*	Adds the venue map directory to the DOM (document object model). The specified div becomes the parent element of the venue map directory. This method does nothing if the createUIElements is not called first.
+		**/
 		addToDom(div: HTMLElement, sortOrder: DirectorySortOrder, to_group_or_not: DirectoryGrouping): void;
+
+		/**
+		*	Creates the necessary UI elements and data structures to visualize the venue map directory. After this method is called, use the addToDOM method to add the elements to the DOM.
+		**/
 		createUIElements(): void;
+
+		/**
+		*	The base method to call if you override the click event.
+		**/
 		handleMouseClick(e: { eventArgs: MouseEventArgs; primitive: Primitive; }): void;
+
+		/**
+		*	The base method to call if you override the mouseout event.
+		**/
 		handleMouseMouseOut(e: { eventArgs: MouseEventArgs; primitive: Primitive; }): void;
+
+		/**
+		*	The base method to call if you override the mouseover event.
+		**/
 		handleMouseOver(e: { eventArgs: MouseEventArgs; primitive: Primitive; }): void;
+
+		/**
+		*	Returns a boolean indicating whether the venue map directory is in the DOM.
+		**/
 		isInDOM(): boolean;
+
+		/**
+		*	Removes the venue map directory from the DOM. It is recommended that you use this method to remove the venue map directory from the DOM instead of using the removeChild method of the DOM.
+		**/
 		removeFromDOM(): void;
+
+		/**
+		*	Sets the height of the venue map directory, as a percentage of the base map’s height or in absolute pixels. For example, to set the directory as 90% of the base map’s height, call setHeight(.9). To set the height as 800 pixels, call setHeight(800).
+		**/
 		setHeight(h: number): void;
 
+		/**
+		*	Occurs when the mouse is used to click a list item in the directory. If no handler is specified for this event, then the list item is selected.
+		**/
 		click: (eventArgs: MouseEventArgs, primitive: Primitive) => void;
+
+		/**
+		*	Occurs when the mouse cursor moves out of the area covered by a list item in the directory. If no handler is specified for this event, then the highlight is removed from the directory list item.
+		**/
 		mouseout: (eventArgs: MouseEventArgs, primitive: Primitive) => void;
+
+		/**
+		*	Occurs when the mouse is over a list item in the directory. If no handler is specified for this event, then the list item is highlighted.
+		**/
 		mouseover: (eventArgs: MouseEventArgs, primitive: Primitive) => void;
 	}
 
