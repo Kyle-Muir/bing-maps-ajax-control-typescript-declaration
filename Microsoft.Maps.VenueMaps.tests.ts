@@ -135,3 +135,10 @@ var test_metadata = () => {
 		YpId: 'YpId'
 	};
 }
+
+var test_nearby_venue = () => {
+	var nearbyVenue : Microsoft.Maps.VenueMaps.NearbyVenue = {
+		distance: 5,
+		metadata: new Microsoft.Maps.VenueMaps.Metadata()
+	};
+}

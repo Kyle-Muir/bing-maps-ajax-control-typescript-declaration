@@ -347,8 +347,19 @@ declare module Microsoft.Maps.VenueMaps {
 		YpId: string;
 	}
 
+	/**
+	*	Defines a nearby venue map.
+	**/
 	export class NearbyVenue {
+
+		/**
+		*	The distance, in meters, to the venue.
+		**/
 		distance: number;
+
+		/**
+		*	The venue map metadata.
+		**/
 		metadata: Metadata;
 	}
 
