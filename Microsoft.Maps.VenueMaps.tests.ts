@@ -142,3 +142,33 @@ var test_nearby_venue = () => {
 		metadata: new Microsoft.Maps.VenueMaps.Metadata()
 	};
 }
+
+var test_venue_map = () => {
+	var venueMap = new Microsoft.Maps.VenueMaps.VenueMap();
+	venueMap.address = 'address';
+	var viewOptions : Microsoft.Maps.ViewOptions = { };
+	venueMap.bestMapView = viewOptions;
+	venueMap.businessId = 'businessId';
+	venueMap.center = new Microsoft.Maps.Location(1, 1);
+	venueMap.defaultFloor = 'defaultFloor';
+	venueMap.directory = new Microsoft.Maps.VenueMaps.Directory();
+	venueMap.floorHeader = 'floorHeader';
+	venueMap.floors = [new Microsoft.Maps.VenueMaps.Floor()];
+	venueMap.footprint = new Microsoft.Maps.VenueMaps.Footprint();
+	venueMap.id = 'id';
+	venueMap.name = 'name';
+	venueMap.phoneNumber = 'phoneNumber';
+	venueMap.type = 'type';
+
+	venueMap.dispose();
+	venueMap.getActiveFloor();
+	venueMap.hide();
+	venueMap.setActiveFloor('floor');
+	venueMap.show();
+
+	venueMap.click(new Microsoft.Maps.VenueMaps.Primitive());
+	venueMap.close();
+	venueMap.footprintclick(new Microsoft.Maps.VenueMaps.Primitive());
+	venueMap.mouseout(new Microsoft.Maps.VenueMaps.Primitive());
+	venueMap.mouseover(new Microsoft.Maps.VenueMaps.Primitive());
+}

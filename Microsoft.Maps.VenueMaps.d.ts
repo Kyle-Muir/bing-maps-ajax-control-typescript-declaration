@@ -363,31 +363,124 @@ declare module Microsoft.Maps.VenueMaps {
 		metadata: Metadata;
 	}
 
+	/**
+	*	Represents a venue map. An example of a venue map is a mall.
+	**/
 	export class VenueMap {
+
+		/**
+		*	The full address of the venue.
+		**/
 		address: string;
+
+		/**
+		*	The best map view of the venue map.
+		**/
 		bestMapView: ViewOptions;
+
+		/**
+		*	The Yellow Pages ID for the venue map.
+		**/
 		businessId: string;
+
+		/**
+		*	The location of the center of the venue map.
+		**/
 		center: Location;
+
+		/**
+		*	The floor that is displayed if no floor is specified.
+		**/
 		defaultFloor: string;
+
+		/**
+		*	The venue map directory, which is a list of businesses and features found within the venue
+		**/
 		directory: Directory;
+
+		/**
+		*	The header for floors for this venue map. For example, for a mall the floor header would be "Level".
+		**/
 		floorHeader: string;
+
+		/**
+		*	An array, where each element represents a floor of the venue.
+		**/
 		floors: Floor[];
+
+		/**
+		*	The shapes that make up the venue map.
+		**/
 		footprint: Footprint;
+
+		/**
+		*	The unique venue map ID.
+		**/
 		id: string;
+
+		/**
+		*	The name of the venue represented by the venue map.
+		**/
 		name: string;
+
+		/**
+		*	The phone number for the venue represented by the venue map.
+		**/
 		phoneNumber: string;
+
+		/**
+		*	The venue map type, such as "Mall".
+		**/
 		type: string;
 
+		/**
+		*	Disposes the venue map object.
+		**/
 		dispose(): void;
+
+		/**
+		*	Returns the venue floor map that is currently displayed.
+		**/
 		getActiveFloor(): string;
+
+		/**
+		*	Hides the venue map.
+		**/
 		hide(): void;
+
+		/**
+		*	Displays the floor map for the specified floor.
+		**/
 		setActiveFloor(floor: string): void;
+
+		/**
+		*	Displays the venue map.
+		**/
 		show(): void;
 
+		/**
+		*	Occurs when the mouse is used to click the venue map.
+		**/
 		click: (eventArgs: Primitive) => void;
+
+		/**
+		*	Occurs when the close button on the venue map is clicked.
+		**/
 		close: () => void;
+
+		/**
+		*	Occurs when the detailed map of the venue is clicked.
+		**/
 		footprintclick: (eventArgs: Primitive) => void;
+
+		/**
+		*	Occurs when the mouse cursor moves out of the area covered by the venue map.
+		**/
 		mouseout: (eventArgs: Primitive) => void;
+
+		/**
+		*	Occurs when the mouse cursor is over the venue map.
+		**/
 		mouseover: (eventArgs: Primitive) => void;
 	}
 }
