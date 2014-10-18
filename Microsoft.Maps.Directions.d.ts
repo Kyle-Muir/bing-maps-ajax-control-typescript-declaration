@@ -106,6 +106,322 @@ declare module Microsoft.Maps.Directions {
 		message: string;
 	}
 
+
+	/**
+	*	Contains route maneuver types.
+	**/
+	export enum Maneuver {
+		/**
+		*	The step is not a maneuver.
+		**/
+		none = 0,
+
+		/**
+		*	The maneuver is unknown.
+		**/
+		unknown = 1,
+
+		/**
+		*	Depart from the start waypoint.
+		**/
+		departStart = 2,
+
+		/**
+		*	Depart from an intermediate stop point going in a different direction and on a different road than which you arrived.
+		**/
+		departIntermediateStop = 3,
+
+		/**
+		*	Depart from an intermediate stop point going back in the same direction and on the same road on which you arrived.
+		**/
+		departIntermediateStopReturning = 4,
+
+		/**
+		*	Arrive at the end waypoint.
+		**/
+		arriveFinish = 5,
+
+		/**
+		*	Arrive at an intermediate stop point.
+		**/
+		arriveIntermediateStop = 6,
+
+		/**
+		*	Turn left.
+		**/
+		turnLeft = 7,
+
+		/**
+		*	Turn right.
+		**/
+		turnRight = 8,
+
+		/**
+		*	Turn back sharply.
+		**/
+		turnBack = 9,
+
+		/**
+		*	Make a u-turn to go in the opposite direction.
+		**/
+		uTurn = 10,
+
+		/**
+		*	Turn left to stay on the same road.
+		**/
+		turnToStayLeft = 11,
+
+		/**
+		*	Turn right to stay on the same road.
+		**/
+		turnToStayRight = 12,
+
+		/**
+		*	Bear left.
+		**/
+		bearLeft = 13,
+
+		/**
+		*	Bear right.
+		**/
+		bearRight = 14,
+
+		/**
+		*	Keep left to stay on the same road.
+		**/
+		keepToStayLeft = 15,
+
+		/**
+		*	Keep right to stay on the same road.
+		**/
+		keepToStayRight = 16,
+
+		/**
+		*	Keep straight to stay on the same road.
+		**/
+		keepToStayStraight = 17,
+
+		/**
+		*	Keep left onto a different road.
+		**/
+		keepLeft = 18,
+
+		/**
+		*	Keep right onto a different road.
+		**/
+		keepRight = 19,
+
+		/**
+		*	Keep straight onto a different road.
+		**/
+		keepStraight = 20,
+
+		/**
+		*	Take the road. This instruction is used when you are entering or exiting a ferry.
+		**/
+		take = 21,
+
+		/**
+		*	Take the ramp to the left.
+		**/
+		takeRampLeft = 22,
+
+		/**
+		*	Take the ramp to the right.
+		**/
+		takeRampRight = 23,
+
+		/**
+		*	Stay straight to take the ramp.
+		**/
+		takeRampStraight = 24,
+
+		/**
+		*	Keep left and continue onto ramp.
+		**/
+		keepOnRampLeft = 25,
+
+		/**
+		*	Keep right and continue onto ramp.
+		**/
+		keepOnRampRight = 26,
+
+		/**
+		*	Keep straight and continue onto ramp.
+		**/
+		keepOnRampStraight = 27,
+
+		/**
+		*	Merge onto highway.
+		**/
+		merge = 28,
+
+		/**
+		*	Continue on the current road.
+		**/
+		continueRoute = 29,
+
+		/**
+		*	The road name changed.
+		**/
+		roadNameChange = 30,
+
+		/**
+		*	Enter a roundabout.
+		**/
+		enterRoundabout = 31,
+
+		/**
+		*	Exit a roundabout.
+		**/
+		exitRoundabout = 32,
+
+		/**
+		*	Turn right and then turn right.
+		**/
+		turnRightThenTurnRight = 33,
+
+		/**
+		*	Turn right and then turn left.
+		**/
+		turnRightThenTurnLeft = 34,
+
+		/**
+		*	Turn right and then bear right.
+		**/
+		turnRightThenBearRight = 35,
+
+		/**
+		*	Turn right and then bear left.
+		**/
+		turnRightThenBearLeft = 36,
+
+		/**
+		*	Turn left and then turn left.
+		**/
+		turnLeftThenTurnLeft = 37,
+
+		/**
+		*	Turn left and then turn right.
+		**/
+		turnLeftThenTurnRight = 38,
+
+		/**
+		*	Turn left and then bear left.
+		**/
+		turnLeftThenBearLeft = 39,
+
+		/**
+		*	Turn left and then bear right.
+		**/
+		turnLeftThenBearRight = 40,
+
+		/**
+		*	Bear right and then turn right.
+		**/
+		bearRightThenTurnRight = 41,
+
+		/**
+		*	Bear right and then turn left.
+		**/
+		bearRightThenTurnLeft = 42,
+
+		/**
+		*	Bear right and then bear right.
+		**/
+		bearRightThenBearRight = 43,
+
+		/**
+		*	Bear right and then bear left.
+		**/
+		bearRightThenBearLeft = 44,
+
+		/**
+		*	Bear left and then turn left.
+		**/
+		bearLeftThenTurnLeft = 45,
+
+		/**
+		*	Bear left and then turn right.
+		**/
+		bearLeftThenTurnRight = 46,
+
+		/**
+		*	Bear left and then bear right.
+		**/
+		bearLeftThenBearRight = 47,
+
+		/**
+		*	Bear left and then bear left.
+		**/
+		bearLeftThenBearLeft = 48,
+
+		/**
+		*	Take left ramp onto highway. This is part of a combined instruction.
+		**/
+		rampThenHighwayRight = 49,
+
+		/**
+		*	Take right ramp onto highway. This is part of a combined instruction.
+		**/
+		rampThenHighwayLeft = 50,
+
+		/**
+		*	Stay straight to take the ramp onto the highway. This is part of a combined instruction.
+		**/
+		rampToHighwayStraight = 51,
+
+		/**
+		*	Enter and exit a roundabout.
+		**/
+		enterThenExitRoundabout = 52,
+
+		/**
+		*	Bear instruction and then a merge instruction.
+		**/
+		bearThenMerge = 53,
+
+		/**
+		*	Turn instruction and then a merge instruction.
+		**/
+		turnThenMerge = 54,
+
+		/**
+		*	Bear instruction and then a keep instruction.
+		**/
+		bearThenKeep = 55,
+
+		/**
+		*	Transfer between public transit lines at a transit stop.
+		**/
+		transfer = 56,
+
+		/**
+		*	Wait at a transit stop.
+		**/
+		wait = 57,
+
+		/**
+		*	Take transit.
+		**/
+		takeTransit = 58,
+
+		/**
+		*	The maneuver is a walking instruction.
+		**/
+		walk = 59,
+
+		/**
+		*	Get on a public transit line at a transit stop.
+		**/
+		transitDepart = 60,
+
+		/**
+		*	Get off a public transit line at a transit stop.
+		**/
+		transitArrive = 61
+	}
+
 	/**
 	*	Represents a route summary.
 	**/
@@ -236,4 +552,5 @@ declare module Microsoft.Maps.Directions {
 		**/
 		invalidCredentials = 18
 	}
+
 }
