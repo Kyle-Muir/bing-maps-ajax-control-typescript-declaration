@@ -5,3 +5,4 @@
 /// <reference path="Microsoft.Maps.Themes.BingTheme.d.ts" />
 /// <reference path="Microsoft.Maps.Traffic.d.ts" />
 /// <reference path="Microsoft.Maps.VenueMaps.d.ts" />
+/// <reference path="Microsoft.Maps.Directions.d.ts" />
