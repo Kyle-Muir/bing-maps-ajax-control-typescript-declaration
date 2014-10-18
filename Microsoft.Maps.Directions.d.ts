@@ -600,6 +600,41 @@ declare module Microsoft.Maps.Directions {
 	}
 
 	/**
+	*	Contains types of route direction warnings.
+	**/
+	export enum StepWarningStyle {
+		/**
+		*	The warning is just information about the route direction.
+		**/
+		info = 0,
+
+		/**
+		*	The warning is a minor warning, and may affect the route direction.
+		**/
+		minor = 1,
+
+		/**
+		*	The warning is a moderate warning and is likely to affect the route direction.
+		**/
+		moderate = 2,
+
+		/**
+		*	The warning is a major warning, and is highly likely to affect the route direction.
+		**/
+		major = 3,
+
+		/**
+		*	The warning indicates a congestion zone is being entered.
+		**/
+		ccZoneEnter = 4,
+
+		/**
+		*	The warning indicates a congestion zone is being exited.
+		**/
+		ccZoneExit = 5
+	}
+
+	/**
 	*	Contains information about a transit line.
 	**/
 	export class TransitLine {
