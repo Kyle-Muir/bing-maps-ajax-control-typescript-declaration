@@ -107,6 +107,102 @@ declare module Microsoft.Maps.Directions {
 	}
 
 	/**
+	*	Represents one direction in a set of route directions.
+	**/
+	export class DirectionsStep {
+		
+		/**
+		*	The child direction items for this directions step.
+		**/
+		childItineraryItems: DirectionsStep[];
+
+		/**
+		*	The location of the start of the direction.
+		**/
+		coordinate: Location;
+
+		/**
+		*	The total distance of the step in the unit specified in the distanceUnit property of the @see DirectionsRequestOptions.
+		**/
+		distance: string;
+
+		/**
+		*	The total time, in seconds, of the direction step.
+		**/
+		durationInSeconds: number;
+
+		/**
+		*	The HTML formatted route instruction associated with the step.
+		**/
+		formattedText: string;
+
+		/**
+		*	The type of the icon associated with this step.
+		**/
+		iconType: IconType;
+
+		/**
+		*	A boolean indicating whether the maneuver image is a road shield image.
+		**/
+		isImageRoadShield: boolean;
+
+		/**
+		*	The maneuver type associated with this step.
+		**/
+		maneuver: Maneuver;
+
+		/**
+		*	The name of the maneuver image.
+		**/
+		maneuverImageName: string;
+
+		/**
+		*	The cost of the step.
+		**/
+		monetaryCost: number;
+
+		/**
+		*	An array of strings, where each string is a hint to help determine when to move to the next direction step. Not all direction steps have hints.
+		**/
+		postIntersectionHints: string[];
+
+		/**
+		*	An array of strings, where each string is a hint to help determine when you have arrived at this direction step. Not all direction steps have hints.
+		**/
+		preIntersectionHints: string[];
+
+		/**
+		*	The name of the transit stop where this step originates.
+		**/
+		startStopName: string;
+
+		/**
+		*	The transit line associated with this step.
+		**/
+		transitLine: TransitLine;
+
+		/**
+		*	The URL of the image to use for transit direction steps.
+		**/
+		transitStepIcon: string;
+
+		/**
+		*	The ID of the transit stop.
+		**/
+		transitStopId: string;
+
+		/**
+		*	The name of the transit line end.
+		**/
+		transitTerminus: string;
+
+		/**
+		*	An array of strings, where each string is a route warning associated with this step.
+		**/
+		warnings: DirectionsStepWarning[];
+	}
+
+	/**
 	*	Represents a route direction warning, such as a traffic congestion warning.
 	**/
 	export class DirectionsStepWarning {

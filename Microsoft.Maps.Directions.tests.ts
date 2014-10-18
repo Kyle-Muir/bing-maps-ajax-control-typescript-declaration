@@ -58,3 +58,31 @@ var test_directions_step_warning = () => {
 	directionsStepWarning.style = Microsoft.Maps.Directions.StepWarningStyle.major;
 	directionsStepWarning.text = 'Massive accident on the M1, avoid at all costs!';
 }
+
+var test_directions_step = () => {
+	var directionsStep = new Microsoft.Maps.Directions.DirectionsStep();
+	var arrayOfDirectionSteps = [new Microsoft.Maps.Directions.DirectionsStep(), new Microsoft.Maps.Directions.DirectionsStep()];
+	directionsStep.childItineraryItems = arrayOfDirectionSteps;
+	directionsStep.distance = '12345';
+	directionsStep.durationInSeconds = 1234;
+	directionsStep.formattedText = '<html></html>';
+	directionsStep.iconType = Microsoft.Maps.Directions.IconType.auto;
+	directionsStep.isImageRoadShield = true;
+	directionsStep.maneuver = Microsoft.Maps.Directions.Maneuver.turnLeft;
+	directionsStep.maneuverImageName = 'Turn Left!';
+	directionsStep.monetaryCost = 129.99;
+	directionsStep.postIntersectionHints = ['Yolo', '1234'];
+	directionsStep.preIntersectionHints = ['Yolo', '1234'];
+	directionsStep.startStopName = 'Stop, hammer time.';
+	var exampleTransitLine = new Microsoft.Maps.Directions.TransitLine();
+	exampleTransitLine.abbreviatedName = '123';
+	directionsStep.transitLine = exampleTransitLine;
+	directionsStep.transitStepIcon = '12345';
+	directionsStep.transitStopId = '54321';
+	directionsStep.transitTerminus = 'Auckland, New Zealand';
+	var directionsStepWarning = new Microsoft.Maps.Directions.DirectionsStepWarning();
+	directionsStepWarning.style = Microsoft.Maps.Directions.StepWarningStyle.major;
+	directionsStepWarning.text = 'Massive accident on the M1, avoid at all costs!';
+	var warnings = [directionsStepWarning];
+	directionsStep.warnings = warnings;
+}
