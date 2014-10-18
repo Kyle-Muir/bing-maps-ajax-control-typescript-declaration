@@ -599,4 +599,49 @@ declare module Microsoft.Maps.Directions {
 		invalidCredentials = 18
 	}
 
+	/**
+	*	Contains information about a transit line.
+	**/
+	export class TransitLine {
+	 	
+		/**
+		*	The short name for the transit line.
+		**/
+	 	abbreviatedName: string;
+
+	 	/**
+	 	*	The ID of the agency that owns the transit line.
+	 	**/
+	 	agencyId: number;
+
+	 	/**
+	 	*	The name of the agency that owns the transit line.
+	 	**/
+	 	agencyName: string;
+
+	 	/**
+	 	*	The URL of the website of the agency that owns the transit line.
+	 	**/
+	 	agencyUrl: string;
+
+	 	/**
+	 	*	The color to use when rendering this transit line on the map.
+	 	**/
+	 	lineColor: Color;
+
+	 	/**
+	 	*	The color to use when rendering text associated with this transit line.
+	 	**/
+	 	lineTextColor: Color;
+
+	 	/**
+	 	*	Information about the provider of this transit line data.
+	 	**/
+	 	providerInfo: string;
+
+	 	/**
+	 	*	The full name of this transit line.
+	 	**/
+	 	verboseName: string;   
+	}
 }

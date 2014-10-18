@@ -40,3 +40,15 @@ var test_route_summary = () => {
 	routeSummary.time = 123;
 	routeSummary.timeWithTraffic = 123;
 }
+
+var test_transit_line = () => {
+	var transitLine = new Microsoft.Maps.Directions.TransitLine();
+	transitLine.abbreviatedName = '123';
+	transitLine.agencyId = 123;
+	transitLine.agencyName = 'Agency Name';
+	transitLine.agencyUrl = 'http://fancypantsagency.com';
+	transitLine.lineColor = new Microsoft.Maps.Color(1, 1, 1, 1);
+	transitLine.lineTextColor = new Microsoft.Maps.Color(1, 1, 1, 1);
+	transitLine.providerInfo = 'Povider information';
+	transitLine.verboseName = 'Verbosity lives here';
+}
