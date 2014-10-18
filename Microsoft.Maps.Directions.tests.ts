@@ -30,3 +30,13 @@ var test_directions_error_event_args = () => {
 		message: 'Warning will robinson'
 	}
 }
+
+var test_route_summary = () => {
+	var routeSummary = new Microsoft.Maps.Directions.RouteSummary();
+	routeSummary.distance = 1.2;
+	routeSummary.monetaryCost = 1.5;	
+	routeSummary.northEast = new Microsoft.Maps.Location(1, 1);	
+	routeSummary.southWest = new Microsoft.Maps.Location(1, 1);	
+	routeSummary.time = 123;
+	routeSummary.timeWithTraffic = 123;
+}
