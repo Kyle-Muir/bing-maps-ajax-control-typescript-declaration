@@ -581,6 +581,28 @@ declare module Microsoft.Maps.Directions {
 	}
 
 	/**
+	*	Represents the route line shape on the map.
+	*	Tip: Use the setRenderOptions method of the @see DirectionsManager Class to set @see DirectionsRenderOptions to customize the look of the route line on the map.
+	**/
+	export class RoutePath {
+
+		/**
+		*	An array of latitudes, where each latitude is the latitude for one of the locations that define the route line.
+		**/
+		decodedLatitudes: number[];
+
+		/**
+		*	An array of longitudes, where each is the longitude value for one of the locations that define the route line.
+		**/
+		decodedLongitudes: number[];
+
+		/**
+		*	An array of regions that define, depending on the zoom level, how the route line should be rendered.
+		**/
+		decodedRegions: Object[];
+	}
+
+	/**
 	*	Represents a route summary.
 	**/
 	export class RouteSummary {

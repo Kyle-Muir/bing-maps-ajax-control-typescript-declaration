@@ -86,3 +86,10 @@ var test_directions_step = () => {
 	var warnings = [directionsStepWarning];
 	directionsStep.warnings = warnings;
 }
+
+var test_route_path = () => {
+	var routePath = new Microsoft.Maps.Directions.RoutePath();
+	routePath.decodedLatitudes = [1,2,4.5];
+	routePath.decodedLongitudes = [1,3,9.667];
+	routePath.decodedRegions = [{}, {}, {item: 1234}];
+}
