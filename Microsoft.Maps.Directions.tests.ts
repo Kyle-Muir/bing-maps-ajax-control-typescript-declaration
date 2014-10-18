@@ -93,3 +93,13 @@ var test_route_path = () => {
 	routePath.decodedLongitudes = [1,3,9.667];
 	routePath.decodedRegions = [{}, {}, {item: 1234}];
 }
+
+var test_route_sub_leg = () => {
+	var routeSubLeg = new Microsoft.Maps.Directions.RouteSubLeg();
+	routeSubLeg.actualEnd = new Microsoft.Maps.Location(1,1);
+	routeSubLeg.actualStart = new Microsoft.Maps.Location(1,1);
+	routeSubLeg.endDescription = 'Yolo';
+	routeSubLeg.routePath = new Microsoft.Maps.Directions.RoutePath();
+	routeSubLeg.startDescription = 'HashSwag';
+	routeSubLeg.summary = new Microsoft.Maps.Directions.RouteSummary();
+}

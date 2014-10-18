@@ -603,6 +603,42 @@ declare module Microsoft.Maps.Directions {
 	}
 
 	/**
+	*	Represents a route sub leg. A route sub leg is the part of the route between a stop point and a via point or between two via points. One or more sub legs make up a route leg.
+	**/
+	export class RouteSubLeg {
+
+		/**
+		*	The location of the last waypoint of the sub leg.
+		**/
+		actualEnd: Location;
+
+		/**
+		*	The location of the first waypoint of the sub leg.
+		**/
+		actualStart: Location;
+
+		/**
+		*	The description of the last waypoint of the sub leg.
+		**/
+		endDescription: string;
+
+		/**
+		*	The properties that define the route line of this sub leg on the map.
+		**/
+		routePath: RoutePath;
+
+		/**
+		*	The description of the first waypoint of the sub leg.
+		**/
+		startDescription: string;
+
+		/**
+		*	The summary of this route sub leg.
+		**/
+		summary: RouteSummary;
+	}
+
+	/**
 	*	Represents a route summary.
 	**/
 	export class RouteSummary {
