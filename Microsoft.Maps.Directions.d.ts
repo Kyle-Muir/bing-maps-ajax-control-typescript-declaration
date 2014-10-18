@@ -106,6 +106,22 @@ declare module Microsoft.Maps.Directions {
 		message: string;
 	}
 
+	/**
+	*	Represents a route direction warning, such as a traffic congestion warning.
+	**/
+	export class DirectionsStepWarning {
+
+		/**
+		*	The type of the route warning.
+		**/
+		style: StepWarningStyle;
+
+		/**
+		*	The warning text.
+		**/
+		text: string;
+	}
+
 
 	/**
 	*	Contains route maneuver types.

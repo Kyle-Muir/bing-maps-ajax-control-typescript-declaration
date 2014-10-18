@@ -52,3 +52,9 @@ var test_transit_line = () => {
 	transitLine.providerInfo = 'Povider information';
 	transitLine.verboseName = 'Verbosity lives here';
 }
+
+var test_directions_step_warning = () => {
+	var directionsStepWarning = new Microsoft.Maps.Directions.DirectionsStepWarning();
+	directionsStepWarning.style = Microsoft.Maps.Directions.StepWarningStyle.major;
+	directionsStepWarning.text = 'Massive accident on the M1, avoid at all costs!';
+}
