@@ -23,3 +23,10 @@ var test_business_disambiguation_suggestion = () => {
 	businessDisambiguationSuggestion.rooftopLocation = fakeLocation;
 	businessDisambiguationSuggestion.website = 'http://www.microsoft.com';
 }
+
+var test_directions_error_event_args = () => {
+	var errorResponse : Microsoft.Maps.Directions.DirectionsErrorEventArgs = {
+		responseCode: Microsoft.Maps.Directions.RouteResponseCode.invalidCredentials,
+		message: 'Warning will robinson'
+	}
+}
