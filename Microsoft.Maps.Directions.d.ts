@@ -423,6 +423,52 @@ declare module Microsoft.Maps.Directions {
 	}
 
 	/**
+	*	Contains route icon types.
+	**/
+	export enum IconType {
+
+		/**
+		*	There is no route icon.
+		**/
+		none = 0,
+
+		/**
+		*	The icon is some other type of icon.
+		**/
+		other = 1,
+
+		/**
+		*	The icon is a car icon.
+		**/
+		auto = 2,
+
+		/**
+		*	The icon is a ferry icon.
+		**/
+		ferry = 3,
+
+		/**
+		*	The icon is a walking icon.
+		**/
+		walk = 4,
+
+		/**
+		*	The icon is a bus, or transit, icon
+		**/
+		bus = 5,
+
+		/**
+		*	The icon is a train icon.
+		**/
+		train = 6,
+
+		/**
+		*	The icon is an airline icon.
+		**/
+		airline = 7
+	}
+
+	/**
 	*	Represents a route summary.
 	**/
 	export class RouteSummary {
