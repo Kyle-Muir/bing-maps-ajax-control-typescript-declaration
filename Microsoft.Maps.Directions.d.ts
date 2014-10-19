@@ -1151,6 +1151,27 @@ declare module Microsoft.Maps.Directions {
 	}
 
 	/**
+	*	Defines the transit time type.
+	**/
+	export enum TimeType {
+
+		/**
+		*	The time specified is an arrival time.
+		**/
+		arrival,
+
+		/**
+		*	The time specified is a departure time.
+		**/
+		departure,
+
+		/**
+		*	The time specified is the last available time. This time type is only returned for routes with a transit @see RouteMode that have the culture set to ja-jp.
+		**/
+		lastAvailable
+	}
+
+	/**
 	*	Contains information about a transit line.
 	**/
 	export class TransitLine {
