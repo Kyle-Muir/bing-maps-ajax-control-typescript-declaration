@@ -181,3 +181,14 @@ var test_way_point = () => {
 	waypoint.geocoded(eventArgs);
 	waypoint.reverseGeocoded(eventArgs);
 }
+
+var test_way_point_event_args = () => {
+		var options : Microsoft.Maps.Directions.WaypointOptions = {
+		address: '123 Fake Street, Fake Town, Fake City, Fake Country',
+	}
+	var waypoint = new Microsoft.Maps.Directions.Waypoint(options);
+
+	var waypointEventArgs : Microsoft.Maps.Directions.WaypointEventArgs = {
+		waypoint: waypoint
+	}
+}
