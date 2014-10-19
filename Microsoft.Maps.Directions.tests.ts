@@ -183,12 +183,37 @@ var test_way_point = () => {
 }
 
 var test_way_point_event_args = () => {
-		var options : Microsoft.Maps.Directions.WaypointOptions = {
+	var options : Microsoft.Maps.Directions.WaypointOptions = {
 		address: '123 Fake Street, Fake Town, Fake City, Fake Country',
 	}
 	var waypoint = new Microsoft.Maps.Directions.Waypoint(options);
 
 	var waypointEventArgs : Microsoft.Maps.Directions.WaypointEventArgs = {
 		waypoint: waypoint
+	}
+}
+
+var test_directions_render_options = () => {
+	var options : Microsoft.Maps.Directions.DirectionsRenderOptions = {
+		autoDisplayDisambiguation: true,
+		autoUpdateMapView: true,
+		disambiguationPushpinOptions: {},
+		displayDisclaimer: true,
+		displayManeuverIcons: true,
+		displayPostItineraryItemHints: true,
+		displayPreItineraryItemHints: true,
+		displayRouteSelector: true,
+		displayStepWarnings: true,
+		displayTrafficAvoidanceOption: true,
+		displayWalkingWarning: true,
+		drivingPolylineOptions: {},
+		itineraryContainer: document.getElementById('123'),
+		lastWaypointIcon: '',
+		middleWaypointIcon: '',
+		stepPushpinOptions: {},
+		transitPolylineOptions: {},
+		viapointPushpinsOptions: {},
+		walkingPolylineOptions: {},
+		waypointPushpinOptions: {}
 	}
 }

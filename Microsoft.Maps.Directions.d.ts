@@ -123,6 +123,114 @@ declare module Microsoft.Maps.Directions {
 	}
 
 	/**
+	*	Represents render options for a route.
+	**/
+	export interface DirectionsRenderOptions {
+
+		/**
+		*	A boolean indicating whether to automatically display a disambiguation dialog for waypoints. The default value is true.
+		*	If this value is set to true, a directionsError event caused by waypoint disambiguation is not thrown.
+		**/
+		autoDisplayDisambiguation?: boolean;
+
+		/**
+		*	A boolean indicating whether to automatically set the map view to the best map view of the calculated route. The default value is true.
+		**/
+		autoUpdateMapView?: boolean;
+
+		/**
+		*	The options that define the pushpin to use for disambiguation.
+		**/
+		disambiguationPushpinOptions?: Microsoft.Maps.PushpinOptions;
+
+		/**
+		*	A boolean indicating whether to display the disclaimer about the accuracy of the directions. The default value is false.
+		**/
+		displayDisclaimer?: boolean;
+
+		/**
+		*	A boolean indicating whether to display the icons for each direction maneuver. The default value is true.
+		**/
+		displayManeuverIcons?: boolean;
+
+		/**
+		*	A boolean indicating whether to display the icons for each direction maneuver. The default value is true.
+		**/
+		displayPostItineraryItemHints?: boolean;
+
+		/**
+		*	A boolean indicating whether to display direction hints that describe what to look for before you come to the next direction step. The default value is true.
+		**/
+		displayPreItineraryItemHints?: boolean;
+
+		/**
+		*	A boolean indicating whether to display the route selector control. The default value is true.
+		**/
+		displayRouteSelector?: boolean;
+
+		/**
+		*	A boolean indicating whether to display direction warnings. The default value is true.
+		**/
+		displayStepWarnings?: boolean;
+
+		/**
+		*	A boolean indicating whether to display the control that allows the user to choose to avoid traffic. The default value is true.
+		**/
+		displayTrafficAvoidanceOption?: boolean;
+
+		/**
+		*	A boolean indicating whether to display a warning about walking directions. The default value is true.
+		**/
+		displayWalkingWarning?: boolean;
+
+		/**
+		*	The options that define how to draw the route line on the map, if the @see RouteMode is driving.
+		**/
+		drivingPolylineOptions?: PolylineOptions;
+
+		/**
+		*	The DOM element inside which the directions itinerary will be rendered.
+		**/
+		itineraryContainer?: HTMLElement;
+
+		/**
+		*	The URL of the icon to use for the end waypoint.
+		**/
+		lastWaypointIcon?: string;
+
+		/**
+		*	The URL of the icon to use for intermediate waypoints.
+		**/
+		middleWaypointIcon?: string;
+
+		/**
+		*	The options that define the pushpin to use for each direction step.
+		**/
+		stepPushpinOptions?: PushpinOptions;
+
+		/**
+		*	The options that define how to draw the route line on the map, if the @see RouteMode is transit.
+		**/
+		transitPolylineOptions?: PolylineOptions;
+
+		/**
+		*	The options that define the pushpin to use for each via point of the route, which are any waypoints other than the start and end waypoints.
+		**/
+		viapointPushpinsOptions?: PushpinOptions;
+
+		/**
+		*	The options that define how to draw the route line on the map, if the @see RouteMode is walking.
+		**/
+		walkingPolylineOptions?: PolylineOptions;
+
+		/**
+		*	The options that define the pushpin to use for the route waypoint.
+		**/
+		waypointPushpinOptions?: PushpinOptions;
+
+	}
+
+	/**
 	*	Represents one direction in a set of route directions.
 	**/
 	export class DirectionsStep {
