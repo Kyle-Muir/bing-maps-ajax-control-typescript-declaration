@@ -115,3 +115,8 @@ var test_route_leg = () => {
 	routeLeg.subLegs = [new Microsoft.Maps.Directions.RouteSubLeg()];
 	routeLeg.summary = new Microsoft.Maps.Directions.RouteSummary();
 }
+
+var test_route = () => {
+	var route = new Microsoft.Maps.Directions.Route();
+	route.routeLegs = [new Microsoft.Maps.Directions.RouteLeg()];
+}

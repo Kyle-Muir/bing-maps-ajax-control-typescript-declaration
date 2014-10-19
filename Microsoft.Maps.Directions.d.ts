@@ -581,6 +581,17 @@ declare module Microsoft.Maps.Directions {
 	}
 
 	/**
+	*	Represents a route.
+	**/
+	export class Route {
+
+		/**
+		*	The legs of the route. Each route leg represents the route between two waypoints.
+		**/
+		routeLegs: RouteLeg[];
+	}
+
+	/**
 	*	Represents a leg of a route. A route leg is the part of the route between two stop waypoints.
 	**/
 	export class RouteLeg {
