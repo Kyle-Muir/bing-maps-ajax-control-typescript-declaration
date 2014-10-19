@@ -896,6 +896,37 @@ declare module Microsoft.Maps.Directions {
 	}
 
 	/**
+	*	Defines optimization options for calculating directions.
+	**/
+	export enum RouteOptimization {
+
+		/**
+		*	Calculate a route the shortest time.
+		**/
+		shortestTime = 0,
+
+		/**
+		*	Calculate a route with the shortest distance.
+		**/
+		shortestDistance = 1,
+
+		/**
+		*	Minimize the cost when calculating directions. This option only affects routes with a transit @see RouteMode that have the culture set to ja-jp.
+		**/
+		minimizeMoney = 3,
+
+		/**
+		*	Minimize transit transfers when calculating directions. This option only affects routes with a transit @see RouteMode that have the culture set to ja-jp.
+		**/
+		minimizeTransfers = 4,
+
+		/**
+		*	Minimize the amount of walking when calculating directions. This option only affects routes with a transit @see RouteMode that have the culture set to ja-jp.
+		**/
+		minimizeWalking = 5
+	}
+
+	/**
 	*	Represents the route line shape on the map.
 	*	Tip: Use the setRenderOptions method of the @see DirectionsManager Class to set @see DirectionsRenderOptions to customize the look of the route line on the map.
 	**/
