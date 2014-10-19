@@ -783,6 +783,52 @@ declare module Microsoft.Maps.Directions {
 	}
 
 	/**
+	*	Defines features to avoid when calculating the route.
+	**/
+	export enum RouteAvoidance {
+
+		/**
+		*	Calculate the best route using any travel option available.
+		**/
+		none = 0,
+
+		/**
+		*	Reduce the use of limited access highways when calculating the route.
+		**/
+		minimizeLimitedAccessHighway = 1,
+
+		/**
+		*	Reduce the use of roads with tolls when calculating the route.
+		**/
+		minimizeToll = 2,
+
+		/**
+		*	Avoid using limited access highways when calculating the route.
+		**/
+		avoidLimitedAccessHighway = 4,
+
+		/**
+		*	Avoid using roads with tolls when calculating the route.
+		**/
+		avoidToll = 8,
+
+		/**
+		*	Avoid using express trains when calculating the route. This option only affects routes with a transit @see RouteMode that have the culture set to ja-jp.
+		**/
+		avoidExpressTrain = 16,
+
+		/**
+		*	Avoid using airlines when calculating the route. This option only affects routes with a transit @see RouteMode that have the culture set to ja-jp.
+		**/
+		avoidAirline = 32,
+
+		/**
+		*	Avoid using bullet trains when calculating the route. This option only affects routes with a transit @see RouteMode that have the culture set to ja-jp.
+		**/
+		avoidBulletTrain = 64
+	}
+
+	/**
 	*	Represents a leg of a route. A route leg is the part of the route between two stop waypoints.
 	**/
 	export class RouteLeg {
