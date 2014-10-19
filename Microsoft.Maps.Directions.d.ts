@@ -227,7 +227,6 @@ declare module Microsoft.Maps.Directions {
 		*	The options that define the pushpin to use for the route waypoint.
 		**/
 		waypointPushpinOptions?: PushpinOptions;
-
 	}
 
 	/**
@@ -366,6 +365,94 @@ declare module Microsoft.Maps.Directions {
 		*	The possible location result matches for the originally specified waypoint address or location.
 		**/
 		locationSuggestions: LocationDisambiguationSuggestion[];
+	}
+
+	/**
+	*	Defines the distance unit to use when generating routes and corresponding itineraries.
+	**/
+	export enum DistanceUnit {
+
+		/**
+		*	Kilometers are used to measure route distances.
+		**/
+		kilometers = 0,
+
+		/**
+		*	Miles are used to measure route distances.
+		**/
+		miles = 1
+	}
+
+	/**
+	*	Contains route icon types.
+	**/
+	export enum IconType {
+
+		/**
+		*	There is no route icon.
+		**/
+		none = 0,
+
+		/**
+		*	The icon is some other type of icon.
+		**/
+		other = 1,
+
+		/**
+		*	The icon is a car icon.
+		**/
+		auto = 2,
+
+		/**
+		*	The icon is a ferry icon.
+		**/
+		ferry = 3,
+
+		/**
+		*	The icon is a walking icon.
+		**/
+		walk = 4,
+
+		/**
+		*	The icon is a bus, or transit, icon
+		**/
+		bus = 5,
+
+		/**
+		*	The icon is a train icon.
+		**/
+		train = 6,
+
+		/**
+		*	The icon is an airline icon.
+		**/
+		airline = 7
+	}
+
+	/**
+	*	Contains a possible result returned from geocoding a specified waypoint address or location.
+	**/
+	export class LocationDisambiguationSuggestion {
+
+		/**
+		*	The HTML formatted address suggestion.
+		**/
+		formattedSuggestion: string;
+
+		/**
+		*	The location of the suggestion.
+		**/
+		location: Location;
+
+		/**
+		*	The rooftop location of the suggestion.
+		**/
+		rooftopLocation: Location;
+
+		/**
+		*	The address suggestion.
+		**/
+		suggestion: string;
 	}
 
 
@@ -682,78 +769,6 @@ declare module Microsoft.Maps.Directions {
 		*	Get off a public transit line at a transit stop.
 		**/
 		transitArrive = 61
-	}
-
-	/**
-	*	Contains route icon types.
-	**/
-	export enum IconType {
-
-		/**
-		*	There is no route icon.
-		**/
-		none = 0,
-
-		/**
-		*	The icon is some other type of icon.
-		**/
-		other = 1,
-
-		/**
-		*	The icon is a car icon.
-		**/
-		auto = 2,
-
-		/**
-		*	The icon is a ferry icon.
-		**/
-		ferry = 3,
-
-		/**
-		*	The icon is a walking icon.
-		**/
-		walk = 4,
-
-		/**
-		*	The icon is a bus, or transit, icon
-		**/
-		bus = 5,
-
-		/**
-		*	The icon is a train icon.
-		**/
-		train = 6,
-
-		/**
-		*	The icon is an airline icon.
-		**/
-		airline = 7
-	}
-
-	/**
-	*	Contains a possible result returned from geocoding a specified waypoint address or location.
-	**/
-	export class LocationDisambiguationSuggestion {
-
-		/**
-		*	The HTML formatted address suggestion.
-		**/
-		formattedSuggestion: string;
-
-		/**
-		*	The location of the suggestion.
-		**/
-		location: Location;
-
-		/**
-		*	The rooftop location of the suggestion.
-		**/
-		rooftopLocation: Location;
-
-		/**
-		*	The address suggestion.
-		**/
-		suggestion: string;
 	}
 
 	/**
