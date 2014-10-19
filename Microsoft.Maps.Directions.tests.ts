@@ -155,3 +155,29 @@ var test_disambiguation = () => {
 	disambiguation.headerText = '1234';
 	disambiguation.locationSuggestions = [new Microsoft.Maps.Directions.LocationDisambiguationSuggestion()];
 }
+
+var test_way_point = () => {
+	var options : Microsoft.Maps.Directions.WaypointOptions = {
+		address: '123 Fake Street, Fake Town, Fake City, Fake Country',
+	}
+	var waypoint = new Microsoft.Maps.Directions.Waypoint(options);
+	waypoint.clear();
+	waypoint.dispose();
+	var address = waypoint.getAddress();
+	var businessDetails = waypoint.getBusinessDetails();
+	var htmlElement = waypoint.getDisambiguationContainer();
+	var disambiguation = waypoint.getDisambiguationResult();
+	var location = waypoint.getLocation();
+	var pushpin = waypoint.getPushpin();
+	var shortAddress = waypoint.getShortAddress();
+	var isExactLocation = waypoint.isExactLocation();
+	var isViapoint = waypoint.isViapoint();
+	waypoint.setOptions(options);
+
+	var eventArgs : Microsoft.Maps.Directions.WaypointEventArgs = {
+		waypoint: waypoint
+	}
+	waypoint.changed(eventArgs);
+	waypoint.geocoded(eventArgs);
+	waypoint.reverseGeocoded(eventArgs);
+}

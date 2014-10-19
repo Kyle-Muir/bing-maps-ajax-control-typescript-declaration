@@ -976,6 +976,105 @@ declare module Microsoft.Maps.Directions {
 	}
 
 	/**
+	*	Represents a route waypoint.
+	**/
+	export class Waypoint {
+
+		/**
+		*	Initializes a new instance of the Waypoint class.
+		**/
+		constructor(options: WaypointOptions);
+
+		/**
+		*	Clears all options associated with this waypoint.
+		**/
+		clear(): void;
+
+		/**
+		*	Releases any resources associated with the waypoint.
+		**/
+		dispose(): void;
+
+		/**
+		*	Returns the address associated with the waypoint.
+		**/
+		getAddress(): string;
+
+		/**
+		*	Returns the business details associated with the waypoint.
+		**/
+		getBusinessDetails(): BusinessDetails;
+
+		/**
+		*	Returns the container element for the waypoint disambiguation list.
+		**/
+		getDisambiguationContainer(): HTMLElement;
+
+		/**
+		*	Returns the result of the waypoint geocoding disambiguation.
+		**/
+		getDisambiguationResult(): Disambiguation;
+
+		/**
+		*	Returns the location of the waypoint.
+		**/
+		getLocation(): Location;
+
+		/**
+		*	Returns the custom pushpin associated with this waypoint, if one has been specified.
+		**/
+		getPushpin(): Pushpin;
+
+		/**
+		*	Returns the short address for the waypoint.
+		**/
+		getShortAddress(): string;
+
+		/**
+		*	Returns a boolean indicating whether the waypoint location is the exact location.
+		**/
+		isExactLocation(): boolean;
+
+		/**
+		*	Returns a boolean value indicating whether the waypoint is a via point. A via point is a location that your route is guaranteed to pass through. There can be multiple via points between two stop points.
+		**/
+		isViapoint(): boolean;
+
+		/**
+		*	Sets options for the waypoint. For these options to take effect, you must recalculate the route.
+		**/
+		setOptions(options: WaypointOptions): void;
+
+
+		/**
+		*	Occurs when the any properties of the waypoint change or are updated.
+		**/
+		changed(waypointEventArgs: WaypointEventArgs);
+
+		/**
+		*	Occurs when a geocoding request for the waypoint’s address is made.
+		**/
+		geocoded(waypointEventArgs: WaypointEventArgs);
+
+		/**
+		*	Occurs when a reverse geocoding request for the waypoint’s location is made. This happens when no address is provided for the waypoint, or if the waypoint is dragged (in which case its location is changed).
+		**/
+		reverseGeocoded(waypointEventArgs: WaypointEventArgs);
+	}
+
+
+	/**
+	*	Contains the arguments for route waypoint events.
+	**/
+	export interface WaypointEventArgs {
+
+		/**
+		*	The waypoint for which the event occurred.
+		**/
+		waypoint: Waypoint;
+	}
+
+	/**
 	*	Contains waypoint options.
 	**/
 	export interface WaypointOptions {
@@ -983,41 +1082,41 @@ declare module Microsoft.Maps.Directions {
 		/**
 		*	The address string, business name, or search string of the waypoint. For example, the following strings are valid for this parameter: “Seattle”, “Microsoft”, “pizza”, or “pizza Seattle”. Either the address or location property must be specified.
 		**/
-		address: string;
+		address?: string;
 
 		/**
 		*	The business details of the waypoint, if it is a business.
 		**/
-		businessDetails: BusinessDetails;
+		businessDetails?: BusinessDetails;
 
 		/**
 		*	The DOM element inside which the waypoint disambiguation list will be rendered. If this property is not set, the disambiguation list is rendered inside the itineraryContainer.
 		**/
-		disambiguationContainer: HTMLElement;
+		disambiguationContainer?: HTMLElement;
 
 		/**
 		*	A boolean indicating whether the waypoint location is the exact location. The default value is false.
 		**/
-		exactLocation: boolean;
+		exactLocation?: boolean;
 
 		/**
 		*	A boolean indicating whether the waypoint is a via point. A via point is a point along the route that is not a stop point. Set this property to true if you just want the route to pass through this location. The default value is false.
 		**/
-		isViapoint: boolean;
+		isViapoint?: boolean;
 
 		/**
 		*	The location of the waypoint. Either the address or location property must be specified.
 		**/
-		location: Location;
+		location?: Location;
 
 		/**
 		*	The custom pushpin to use to represent this waypoint. This property overrides any pushpin options that apply to this waypoint that have been set in the @see DirectionsRenderOptions Object.
 		**/
-		pushpin: Pushpin;
+		pushpin?: Pushpin;
 
 		/**
 		*	The short address of the waypoint.
 		**/
-		shortAddress: string;
+		shortAddress?: string;
 	}
 }
