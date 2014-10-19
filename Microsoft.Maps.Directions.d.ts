@@ -922,4 +922,50 @@ declare module Microsoft.Maps.Directions {
 	 	**/
 	 	verboseName: string;   
 	}
+
+	/**
+	*	Contains waypoint options.
+	**/
+	export interface WaypointOptions {
+
+		/**
+		*	The address string, business name, or search string of the waypoint. For example, the following strings are valid for this parameter: “Seattle”, “Microsoft”, “pizza”, or “pizza Seattle”. Either the address or location property must be specified.
+		**/
+		address: string;
+
+		/**
+		*	The business details of the waypoint, if it is a business.
+		**/
+		businessDetails: BusinessDetails;
+
+		/**
+		*	The DOM element inside which the waypoint disambiguation list will be rendered. If this property is not set, the disambiguation list is rendered inside the itineraryContainer.
+		**/
+		disambiguationContainer: HTMLElement;
+
+		/**
+		*	A boolean indicating whether the waypoint location is the exact location. The default value is false.
+		**/
+		exactLocation: boolean;
+
+		/**
+		*	A boolean indicating whether the waypoint is a via point. A via point is a point along the route that is not a stop point. Set this property to true if you just want the route to pass through this location. The default value is false.
+		**/
+		isViapoint: boolean;
+
+		/**
+		*	The location of the waypoint. Either the address or location property must be specified.
+		**/
+		location: Location;
+
+		/**
+		*	The custom pushpin to use to represent this waypoint. This property overrides any pushpin options that apply to this waypoint that have been set in the @see DirectionsRenderOptions Object.
+		**/
+		pushpin: Pushpin;
+
+		/**
+		*	The short address of the waypoint.
+		**/
+		shortAddress: string;
+	}
 }

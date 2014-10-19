@@ -126,3 +126,16 @@ var test_directions_event_args = () => {
 	directionsEventArgs.routeSummary = [new Microsoft.Maps.Directions.RouteSummary()];
 	directionsEventArgs.route = [new Microsoft.Maps.Directions.Route()];
 }
+
+var test_way_point_options = () => {
+	var wayPointOptions : Microsoft.Maps.Directions.WaypointOptions	= {
+		address: '123 Fake Street, Fake Town, Fake City, Fake Country',
+		businessDetails: new Microsoft.Maps.Directions.BusinessDetails(),
+		disambiguationContainer: new HTMLElement(),
+		exactLocation: true,
+		isViapoint: false,
+		location: new Microsoft.Maps.Location(1,1),
+		pushpin: new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(1,1)),
+		shortAddress: '123 Fake Street'
+	}
+}
