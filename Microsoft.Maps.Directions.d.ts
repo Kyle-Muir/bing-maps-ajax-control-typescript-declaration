@@ -107,6 +107,22 @@ declare module Microsoft.Maps.Directions {
 	}
 
 	/**
+	*	Contains the arguments for directions events.
+	**/
+	export class DirectionsEventArgs {
+
+		/**
+		*	The route summary (or summaries) of the route(s) defined in the route property.
+		**/
+		routeSummary: RouteSummary[];
+
+		/**
+		*	The calculated route (or routes, if the route mode is transit).
+		**/
+		route: Route[];
+	}
+
+	/**
 	*	Represents one direction in a set of route directions.
 	**/
 	export class DirectionsStep {

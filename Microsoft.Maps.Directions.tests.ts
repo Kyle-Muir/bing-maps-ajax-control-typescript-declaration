@@ -120,3 +120,9 @@ var test_route = () => {
 	var route = new Microsoft.Maps.Directions.Route();
 	route.routeLegs = [new Microsoft.Maps.Directions.RouteLeg()];
 }
+
+var test_directions_event_args = () => {
+	var directionsEventArgs = new Microsoft.Maps.Directions.DirectionsEventArgs();
+	directionsEventArgs.routeSummary = [new Microsoft.Maps.Directions.RouteSummary()];
+	directionsEventArgs.route = [new Microsoft.Maps.Directions.Route()];
+}
