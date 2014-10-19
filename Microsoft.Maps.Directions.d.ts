@@ -581,6 +581,52 @@ declare module Microsoft.Maps.Directions {
 	}
 
 	/**
+	*	Represents a leg of a route. A route leg is the part of the route between two stop waypoints.
+	**/
+	export class RouteLeg {
+
+		/**
+		*	The end time of the route leg. This property only applies when the routeMode of the @see DirectionsRequestOptions is set to transit.
+		**/
+		endTime: Date;
+
+		/**
+		*	The location of the last waypoint of this leg.
+		**/
+		endWaypointLocation: Location;
+
+		/**
+		*	The directions steps associated with this route leg.
+		**/
+		itineraryItems: DirectionsStep[];
+
+		/**
+		*	The index of the route to which this route leg belongs.
+		**/
+		originalRouteIndex: number;
+
+		/**
+		*	The start time of the route leg. This property only applies when the routeMode of the @see DirectionsRequestOptions is set to transit.
+		**/
+		startTime: Date;
+
+		/**
+		*	The location of the first waypoint of this route leg.
+		**/
+		startWaypointLocation: Location;
+
+		/**
+		*	The sub legs of this route leg. A sub leg of a route is the part of the route between a stop point and a via point or between two via points.
+		**/
+		subLegs: RouteSubLeg[];
+
+		/**
+		*	The summary which describes this route leg.
+		**/
+		summary: RouteSummary;
+	}
+
+	/**
 	*	Represents the route line shape on the map.
 	*	Tip: Use the setRenderOptions method of the @see DirectionsManager Class to set @see DirectionsRenderOptions to customize the look of the route line on the map.
 	**/

@@ -103,3 +103,15 @@ var test_route_sub_leg = () => {
 	routeSubLeg.startDescription = 'HashSwag';
 	routeSubLeg.summary = new Microsoft.Maps.Directions.RouteSummary();
 }
+
+var test_route_leg = () => {
+	var routeLeg = new Microsoft.Maps.Directions.RouteLeg();
+	routeLeg.endTime = new Date();
+	routeLeg.endWaypointLocation = new Microsoft.Maps.Location(1, 1);
+	routeLeg.itineraryItems = [new Microsoft.Maps.Directions.DirectionsStep()];
+	routeLeg.originalRouteIndex = 1;
+	routeLeg.startTime = new Date();
+	routeLeg.startWaypointLocation = new Microsoft.Maps.Location(1, 1);
+	routeLeg.subLegs = [new Microsoft.Maps.Directions.RouteSubLeg()];
+	routeLeg.summary = new Microsoft.Maps.Directions.RouteSummary();
+}
