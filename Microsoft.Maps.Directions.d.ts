@@ -875,6 +875,27 @@ declare module Microsoft.Maps.Directions {
 	}
 
 	/**
+	*	Defines the type of route to calculate.
+	**/
+	export enum RouteMode {
+
+		/**
+		*	Driving directions are calculated.
+		**/
+		driving,
+
+		/**
+		*	Transit directions are calculated.
+		**/
+		transit,
+
+		/**
+		*	Walking directions are calculated.
+		**/
+		walking
+	}
+
+	/**
 	*	Represents the route line shape on the map.
 	*	Tip: Use the setRenderOptions method of the @see DirectionsManager Class to set @see DirectionsRenderOptions to customize the look of the route line on the map.
 	**/
