@@ -597,6 +597,32 @@ declare module Microsoft.Maps.Directions {
 	}
 
 	/**
+	*	Contains a possible result returned from geocoding a specified waypoint address or location.
+	**/
+	export class LocationDisambiguationSuggestion {
+
+		/**
+		*	The HTML formatted address suggestion.
+		**/
+		formattedSuggestion: string;
+
+		/**
+		*	The location of the suggestion.
+		**/
+		location: Location;
+
+		/**
+		*	The rooftop location of the suggestion.
+		**/
+		rooftopLocation: Location;
+
+		/**
+		*	The address suggestion.
+		**/
+		suggestion: string;
+	}
+
+	/**
 	*	Represents a route.
 	**/
 	export class Route {

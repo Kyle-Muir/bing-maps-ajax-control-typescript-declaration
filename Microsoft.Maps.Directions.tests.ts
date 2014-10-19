@@ -139,3 +139,11 @@ var test_way_point_options = () => {
 		shortAddress: '123 Fake Street'
 	}
 }
+
+var test_location_disambiguation_suggestion = () => {
+	var locationDisambiguationSuggestion = new Microsoft.Maps.Directions.LocationDisambiguationSuggestion();
+	locationDisambiguationSuggestion.formattedSuggestion = '<p>You should turn left</p>';
+	locationDisambiguationSuggestion.location = new Microsoft.Maps.Location(1,1);
+	locationDisambiguationSuggestion.rooftopLocation = new Microsoft.Maps.Location(1,1);
+	locationDisambiguationSuggestion.suggestion = 'You should turn left';
+}
