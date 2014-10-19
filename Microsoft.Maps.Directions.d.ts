@@ -1218,6 +1218,22 @@ declare module Microsoft.Maps.Directions {
 	}
 
 	/**
+	*	Contains extra options for transit routes.
+	**/
+	export interface TransitOptions {
+
+		/**
+		*	The type of the time specified in transitTime. The default value is departure.
+		**/
+		timeType?: TimeType;
+
+		/**
+		*	The transit time to use when calculating the route. If this property is set to null, the current time is used.
+		**/
+		transitTime?: Date;
+	}
+
+	/**
 	*	Represents a route waypoint.
 	**/
 	export class Waypoint {

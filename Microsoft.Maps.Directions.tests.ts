@@ -217,3 +217,10 @@ var test_directions_render_options = () => {
 		waypointPushpinOptions: {}
 	}
 }
+
+var test_transit_options = () => {
+	var options : Microsoft.Maps.Directions.TransitOptions = {
+		timeType: Microsoft.Maps.Directions.TimeType.departure,
+		transitTime: new Date()
+	}
+}
