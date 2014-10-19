@@ -147,3 +147,11 @@ var test_location_disambiguation_suggestion = () => {
 	locationDisambiguationSuggestion.rooftopLocation = new Microsoft.Maps.Location(1,1);
 	locationDisambiguationSuggestion.suggestion = 'You should turn left';
 }
+
+var test_disambiguation = () => {
+	var disambiguation = new Microsoft.Maps.Directions.Disambiguation();
+	disambiguation.businessSuggestions = [new Microsoft.Maps.Directions.BusinessDisambiguationSuggestion()];
+	disambiguation.hasMoreSuggestions = true;
+	disambiguation.headerText = '1234';
+	disambiguation.locationSuggestions = [new Microsoft.Maps.Directions.LocationDisambiguationSuggestion()];
+}

@@ -234,6 +234,32 @@ declare module Microsoft.Maps.Directions {
 		text: string;
 	}
 
+	/**
+	*	Contains disambiguation results for a waypoint geocoding request.
+	**/
+	export class Disambiguation {
+
+		/**
+		*	The possible business result matches for the originally specified waypoint address or location.
+		**/
+		businessSuggestions: BusinessDisambiguationSuggestion[];
+
+		/**
+		*	A boolean indicating whether there are more result suggestions available.
+		**/
+		hasMoreSuggestions: boolean;
+
+		/**
+		*	The disambiguation header text.
+		**/
+		headerText: string;
+
+		/**
+		*	The possible location result matches for the originally specified waypoint address or location.
+		**/
+		locationSuggestions: LocationDisambiguationSuggestion[];
+	}
+
 
 	/**
 	*	Contains route maneuver types.
