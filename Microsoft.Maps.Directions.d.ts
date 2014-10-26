@@ -230,6 +230,59 @@ declare module Microsoft.Maps.Directions {
 	}
 
 	/**
+	*	Contains options for the directions to calculate.
+	**/
+	export interface DirectionsRequestOptions {
+
+		/**
+		*	A boolean indicating whether to return traffic info when calculating the route. The default value is false.
+		**/
+		avoidTraffic?: boolean;
+
+		/**
+		*	The unit to use when displaying direction distances. The default value is based on the specified culture.
+		**/
+		distanceUnit?: DistanceUnit;
+
+		/**
+		*	The number of routes to calculate. If the routeMode is driving or walking, only 1 route is supported. If the routeMode is transit, up to 6 routes can be calculated and the default is 3.
+		**/
+		maxRoutes?: number;
+
+		/**
+		*	The features to avoid when calculating the route. The default value is none.
+		**/
+		routeAvoidance?: RouteAvoidance;
+
+		/**
+		*	A boolean indicating whether the route line on the map can be dragged with the mouse cursor. The default value is true.
+		*	When a route is dragged, a via point is added to the route.
+		*	To change the drag behavior of a waypoint, set the draggable property of the waypointPushpinOptions (of the DirectionsRenderOptions).
+		**/
+		routeDraggable?: boolean;
+
+		/**
+		*	If multiple routes are returned, the index of the route and directions to display. This property only applies to routes where the routeMode is transit, and in this case up to 6 routes are supported.
+		**/
+		routeIndex?: number;
+
+		/**
+		*	The type of directions to calculate. The default value is driving. When the culture is ja-jp, only the transit route mode is supported, which is the default for that market.
+		**/
+		routeMode?: RouteMode;
+
+		/**
+		*	The optimization setting for the route calculation. The default value is shortestTime.
+		**/
+		routeOptimization?: RouteOptimization;
+
+		/**
+		*	The extra options for calculating a route if the routeMode is transit.
+		**/
+		transitOptions?: TransitOptions;
+	}
+
+	/**
 	*	Represents one direction in a set of route directions.
 	**/
 	export class DirectionsStep {

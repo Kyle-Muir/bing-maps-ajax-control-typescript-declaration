@@ -224,3 +224,12 @@ var test_transit_options = () => {
 		transitTime: new Date()
 	}
 }
+
+var test_directions_request_options = () => {
+	var options : Microsoft.Maps.Directions.DirectionsRequestOptions = {
+		avoidTraffic: true, 
+		maxRoutes: 3,
+		routeDraggable: false,
+		routeOptimization: Microsoft.Maps.Directions.RouteOptimization.shortestDistance
+	}
+}
