@@ -1136,6 +1136,32 @@ declare module Microsoft.Maps.Directions {
 	}
 
 	/**
+	*	Contains arguments for route summary render events.
+	**/
+	export interface RouteSummaryRenderEventArgs {
+
+		/**
+		*	The DOM element which contains the summary. You can use this property to add custom content.
+		**/
+		containerElement?: Object;
+
+		/**
+		*	A boolean indicating whether the event is handled. This property is only available for the beforeSummaryRender event. Set this property to true to override the default behavior.
+		**/
+		handled?: boolean;
+
+		/**
+		*	A number indicating the index of the route leg which this summary describes.
+		**/
+		routeLegIndex?: number;
+
+		/**
+		*	The summary that was rendered.
+		**/
+		summary?: RouteSummary;
+	}
+
+	/**
 	*	Contains response codes for a route calculation request.
 	**/
 	export enum RouteResponseCode {

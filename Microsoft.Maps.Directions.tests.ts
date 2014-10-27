@@ -257,3 +257,12 @@ var test_route_selector_event_args = () => {
 		routeIndex: 0
 	}
 }
+
+var test_route_summary_render_event_args = () => {
+	var options : Microsoft.Maps.Directions.RouteSummaryRenderEventArgs = {
+		containerElement: {},
+		handled: true,
+		routeLegIndex: 0,
+		summary: new Microsoft.Maps.Directions.RouteSummary()
+	}
+}
