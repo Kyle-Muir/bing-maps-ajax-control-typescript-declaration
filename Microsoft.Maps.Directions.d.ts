@@ -1622,4 +1622,25 @@ declare module Microsoft.Maps.Directions {
 		**/
 		shortAddress?: string;
 	}
+
+	/**
+	*	Contains arguments for waypoint render events.
+	**/
+	export interface WaypointRenderEventArgs {
+
+		/**
+		*	The DOM element which contains the waypoint. You can use this property to add custom content.
+		**/
+		containerElement?: Object;
+
+		/**
+		*	A boolean indicating whether the event is handled. This property is only available for the beforeWaypointRender event. Set this property to true to override the default behavior.
+		**/
+		handled?: boolean;
+
+		/**
+		*	The waypoint for which the event occurred.
+		**/
+		waypoint?: Waypoint;
+	}
 }
