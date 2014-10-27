@@ -379,6 +379,47 @@ declare module Microsoft.Maps.Directions {
 	}
 
 	/**
+	*	Contains arguments for directions step events.
+	**/
+	export interface DirectionsStepEventArgs {
+
+		/**
+		*	A boolean indicating whether the event is handled. Set this property to true to override the default behavior.
+		**/
+		handled?: boolean;
+
+		/**
+		*	The location along the route where the direction step occurs.
+		**/
+		location?: Location;
+
+		/**
+		*	A number indicating the route (if multiple routes were returned) to which the directions step belongs.
+		**/
+		routeIndex?: number;
+
+		/**
+		*	A number indicating the route leg to which the directions step belongs.
+		**/
+		routeLegIndex?: number;
+
+		/**
+		*	The directions step.
+		**/
+		step?: DirectionsStep;
+
+		/**
+		*	A number indicating the index of the directions step within the route leg array.
+		**/
+		stepIndex?: number;
+
+		/**
+		*	A number indicating the directions step number within the route.
+		**/
+		stepNumber?: number;
+	}
+
+	/**
 	*	Represents a route direction warning, such as a traffic congestion warning.
 	**/
 	export class DirectionsStepWarning {

@@ -266,3 +266,15 @@ var test_route_summary_render_event_args = () => {
 		summary: new Microsoft.Maps.Directions.RouteSummary()
 	}
 }
+
+var test_directions_step_event_args = () => {
+	var options : Microsoft.Maps.Directions.DirectionsStepEventArgs = {
+		handled: true,
+		location: new Microsoft.Maps.Location(1, 1),
+		routeIndex: 2,
+		routeLegIndex: 0,
+		step: new Microsoft.Maps.Directions.DirectionsStep(),
+		stepIndex: 1,
+		stepNumber: 6
+	}
+}
