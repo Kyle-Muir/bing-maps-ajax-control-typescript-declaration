@@ -420,6 +420,47 @@ declare module Microsoft.Maps.Directions {
 	}
 
 	/**
+	*	Contains arguments for directions step render events.
+	**/
+	export interface DirectionsStepRenderEventArgs {
+
+		/**
+		*	The DOM element which contains the directions step. You can use this property to add custom content.
+		**/
+		containerElement?: Object;
+
+		/**
+		*	A boolean indicating whether the event is handled. This property is only available for the beforeStepRender event. Set this property to true to override the default behavior.
+		**/
+		handled?: boolean;
+
+		/**
+		*	A boolean indicating whether the step is the last directions step.
+		**/
+		lastStep?: boolean;
+
+		/**
+		*	A number indicating the index of the route to which this step belongs.
+		**/
+		routeIndex?: number;
+
+		/**
+		*	A number indicating the index of the route leg to which this step belongs.
+		**/
+		routeLegIndex?: number;
+
+		/**
+		*	The directions step.
+		**/
+		step?: DirectionsStep;
+
+		/**
+		*	The index of this directions step within the route leg step array.
+		**/
+		stepIndex?: number;
+	}
+
+	/**
 	*	Represents a route direction warning, such as a traffic congestion warning.
 	**/
 	export class DirectionsStepWarning {

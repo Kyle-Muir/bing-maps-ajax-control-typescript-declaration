@@ -278,3 +278,15 @@ var test_directions_step_event_args = () => {
 		stepNumber: 6
 	}
 }
+
+var test_directions_step_render_event_args = () => {
+	var options : Microsoft.Maps.Directions.DirectionsStepRenderEventArgs = {
+		containerElement: {},
+		handled: true,
+		lastStep: false,
+		routeIndex: 2,
+		routeLegIndex: 0,
+		step: new Microsoft.Maps.Directions.DirectionsStep(),
+		stepIndex: 1
+	}
+}
