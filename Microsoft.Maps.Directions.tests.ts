@@ -250,3 +250,10 @@ var test_route_selector_render_event_args = () => {
 		routeLeg: new Microsoft.Maps.Directions.RouteLeg()
 	}
 }
+
+var test_route_selector_event_args = () => {
+	var options : Microsoft.Maps.Directions.RouteSelectorEventArgs = {
+		handled: true,
+		routeIndex: 0
+	}
+}

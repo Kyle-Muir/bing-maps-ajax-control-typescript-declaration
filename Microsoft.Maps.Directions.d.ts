@@ -1023,6 +1023,22 @@ declare module Microsoft.Maps.Directions {
 	}
 
 	/**
+	*	Contains arguments for route selector events.
+	**/
+	export interface RouteSelectorEventArgs {
+
+		/**
+		*	A boolean indicating whether the event is handled. Set this property to true to override the default behavior.
+		**/
+		handled?: boolean;
+
+		/**
+		*	A number indicating the index of the route that was selected.
+		**/
+		routeIndex?: number;
+	}
+
+	/**
 	*	Contains arguments for route selector render events.
 	**/
 	export interface RouteSelectorRenderEventArgs {
