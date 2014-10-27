@@ -825,6 +825,27 @@ declare module Microsoft.Maps.Directions {
 	}
 
 	/**
+	*	Contains options for the resetDirections method of the @see DirectionsManager Class.
+	**/
+	export interface ResetDirectionsOptions {
+
+		/**
+		*	A boolean indicating whether to remove all of the waypoints of the route. The default value is false.
+		**/
+		removeAllWaypoints?: boolean;
+
+		/**
+		*	A boolean indicating whether to reset all of the render options set for the route. The default value is false.
+		**/
+		resetRenderOptions?: boolean;
+
+		/**
+		*	A boolean indicating whether to reset all of the request options set for the route. The default value is false.
+		**/
+		resetRequestOptions?: boolean;
+	}
+
+	/**
 	*	Represents a route.
 	**/
 	export class Route {

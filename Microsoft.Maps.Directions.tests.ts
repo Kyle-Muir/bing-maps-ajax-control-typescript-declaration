@@ -233,3 +233,11 @@ var test_directions_request_options = () => {
 		routeOptimization: Microsoft.Maps.Directions.RouteOptimization.shortestDistance
 	}
 }
+
+var test_reset_directions_options = () => {
+	var options : Microsoft.Maps.Directions.ResetDirectionsOptions = {
+		removeAllWaypoints: true,
+		resetRenderOptions: true,
+		resetRequestOptions: true
+	}
+}
