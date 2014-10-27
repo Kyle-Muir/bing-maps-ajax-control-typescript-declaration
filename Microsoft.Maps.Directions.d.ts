@@ -503,6 +503,27 @@ declare module Microsoft.Maps.Directions {
 	}
 
 	/**
+	*	Contains arguments for a beforeDisambiguationRender event.
+	**/
+	export interface DisambiguationRenderEventArgs {
+
+		/**
+		*	The DOM element which contains the disambiguation list. You can use this property to add custom content.
+		**/
+		containerElement: Object;
+
+		/**
+		*	A boolean indicating whether the event is handled. Set this property to true to override the default behavior. If this property is set to true, a directionsError event for waypoint disambiguation is thrown.
+		**/
+		handled: boolean;
+
+		/**
+		*	The waypoint that needs to be disambiguated.
+		**/
+		waypoint: Waypoint;
+	}
+
+	/**
 	*	Defines the distance unit to use when generating routes and corresponding itineraries.
 	**/
 	export enum DistanceUnit {

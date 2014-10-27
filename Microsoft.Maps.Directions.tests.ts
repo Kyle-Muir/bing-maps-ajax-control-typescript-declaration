@@ -290,3 +290,15 @@ var test_directions_step_render_event_args = () => {
 		stepIndex: 1
 	}
 }
+
+var test_disambiguation_render_event_args = () => {
+	var wayPointOptions : Microsoft.Maps.Directions.WaypointOptions = {
+		address: '123 Fake Street, Fake Town, Fake City, Fake Country',
+	}
+	var waypoint = new Microsoft.Maps.Directions.Waypoint(wayPointOptions);
+	var options : Microsoft.Maps.Directions.DisambiguationRenderEventArgs = {
+		containerElement: {},
+		handled: true,
+		waypoint: waypoint
+	}
+}
