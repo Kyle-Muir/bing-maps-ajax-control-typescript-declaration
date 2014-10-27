@@ -1023,6 +1023,32 @@ declare module Microsoft.Maps.Directions {
 	}
 
 	/**
+	*	Contains arguments for route selector render events.
+	**/
+	export interface RouteSelectorRenderEventArgs {
+		
+		/**
+		*	The DOM element which contains the route selector. You can use this property to add custom content.
+		**/
+		containerElement?: Object;
+
+		/**
+		*	A boolean indicating whether the event is handled. This property is only available for the beforeRouteSelectorRender event. Set this property to true to override the default behavior.
+		**/
+		handled?: boolean;
+
+		/**
+		*	A number indicating the index of the selected route.
+		**/
+		routeIndex?: number;
+
+		/**
+		*	The route leg of the selected route.
+		**/
+		routeLeg?: RouteLeg;
+	}
+
+	/**
 	*	Represents a route sub leg. A route sub leg is the part of the route between a stop point and a via point or between two via points. One or more sub legs make up a route leg.
 	**/
 	export class RouteSubLeg {

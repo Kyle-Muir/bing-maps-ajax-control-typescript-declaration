@@ -241,3 +241,12 @@ var test_reset_directions_options = () => {
 		resetRequestOptions: true
 	}
 }
+
+var test_route_selector_render_event_args = () => {
+	var options : Microsoft.Maps.Directions.RouteSelectorRenderEventArgs = {
+		containerElement: {},
+		handled: true,
+		routeIndex: 0,
+		routeLeg: new Microsoft.Maps.Directions.RouteLeg()
+	}
+}
