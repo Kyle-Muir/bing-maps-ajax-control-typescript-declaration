@@ -244,69 +244,96 @@ declare module Microsoft.Maps.Search {
         website: string;
     }
 
+    /**
+    *    Represents a place result.
+    **/
     export class PlaceResult {
-        bestview: LocationRect;
-        //KM 11/10/14 - PlaceResult.location actually returns a location, contrary to MSDN documentation.
+
+        /**
+        *    The location rectangle that defines the boundaries of the best map view of the place result.
+        **/
+        bestView: LocationRect;
+        
+        /**
+        *    The geocoded location of the best result.
+        *    KM 11/10/14 - PlaceResult.location actually returns a location, contrary to MSDN documentation.
+        **/
         location: Location;
+
+        /**
+        *    The geocoded locations.
+        **/
         locations: GeocodeLocation[];
+
+        /**
+        *    The match code of the best result.
+        **/
         matchCode: MatchCode;
+
+        /**
+        *    The match confidence of the best result.
+        **/
         matchConfidence: MatchConfidence;
+
+        /**
+        *    The name of the place result, if one exists.
+        **/
         name: string;
     }
 
     /**
      *  Defines the confidence of the location match found by the geocoding service.
      **/
-    export class MatchConfidence {
+    export enum MatchConfidence {
         /**
          *  The confidence of the match is high.
          **/
-        static high: string;
+        high,
 
         /**
          *  The confidence of the match is medium.
          **/
-        static medium: string;
+        medium,
 
         /**
          *  The confidence of the match is low.
          **/
-        static low: string;
+        low,
 
         /**
          *  The confidence of the match is unknown.
          **/
-        static unknown: string;
+        unknown
     }
 
     /**
      *  Defines the geocoding level of the location match found by the geocoder.
      **/
-    export class MatchCode {
+    export enum MatchCode {
         /**
          *  No match was found. 
          **/
-        static none: string;
+        none,
 
         /**
          *  The match was good. 
          **/
-        static good: string;
+        good,
         
         /**
          *  The match was ambiguous. Multiple results were returned. 
          **/
-        static ambiguous: string;
+        ambiguous,
 
         /**
          *  The match was found by a broader search.
          **/
-        static upHeirarchy: string;
+        upHeirarchy,
 
         /**
          *  The match was found, but possibly using a modified query.
          **/
-        static modified: string;
+        modified
     }
 
     /**

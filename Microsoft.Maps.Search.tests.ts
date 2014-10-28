@@ -47,16 +47,13 @@ var test_location_precision = () => {
     Microsoft.Maps.Search.LocationPrecision.rooftop = '123';
 }
 
-var test_match_code = () => {
-    Microsoft.Maps.Search.MatchCode.ambiguous = '123';
-    Microsoft.Maps.Search.MatchCode.good = '123';
-    Microsoft.Maps.Search.MatchCode.modified = '123';
-    Microsoft.Maps.Search.MatchCode.none = '123';
-    Microsoft.Maps.Search.MatchCode.upHeirarchy = '123';
-}
-var test_match_confidence = () => {
-    Microsoft.Maps.Search.MatchConfidence.high = '123';
-    Microsoft.Maps.Search.MatchConfidence.low = '123';
-    Microsoft.Maps.Search.MatchConfidence.medium = '123';
-    Microsoft.Maps.Search.MatchConfidence.unknown = '123';
+var test_place_result = () => {
+    var placeResult = new Microsoft.Maps.Search.PlaceResult();
+    var location = new Microsoft.Maps.Location(1,1);
+    placeResult.bestView = new Microsoft.Maps.LocationRect(location, 100, 100);
+    placeResult.location = location;
+    placeResult.locations = [new Microsoft.Maps.Search.GeocodeLocation()];
+    placeResult.matchCode = Microsoft.Maps.Search.MatchCode.ambiguous;
+    placeResult.matchConfidence = Microsoft.Maps.Search.MatchConfidence.high;
+    placeResult.name = 'Kyle\'s Place';
 }
