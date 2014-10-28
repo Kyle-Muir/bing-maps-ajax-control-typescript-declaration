@@ -75,5 +75,17 @@ var test_search_parse_result = () => {
     var searchParseResult = new Microsoft.Maps.Search.SearchParseResult();
     searchParseResult.keyword = '123';
     searchParseResult.location = new Microsoft.Maps.Search.GeocodeLocation();
-    searchParseResult.matchConfidence =  Microsoft.Maps.Search.MatchConfidence.low;
+    searchParseResult.matchConfidence = Microsoft.Maps.Search.MatchConfidence.low;
+}
+
+var test_search_region = () => {
+    var searchRegion = new Microsoft.Maps.Search.SearchRegion();
+    searchRegion.address = new Microsoft.Maps.Search.Address();
+    searchRegion.geocodeLocations = [new Microsoft.Maps.Search.GeocodeLocation()];
+    searchRegion.explicitLocation = new Microsoft.Maps.Search.GeocodeLocation();
+    var location = new Microsoft.Maps.Location(1,1);
+    searchRegion.mapBounds = new Microsoft.Maps.LocationRect(location, 100, 100);
+    searchRegion.matchCode = Microsoft.Maps.Search.MatchCode.ambiguous;
+    searchRegion.matchConfidence = Microsoft.Maps.Search.MatchConfidence.low;
+    searchRegion.source = 'Bing Maps API';
 }

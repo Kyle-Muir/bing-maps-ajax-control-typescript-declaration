@@ -252,13 +252,44 @@ declare module Microsoft.Maps.Search {
         matchConfidence: MatchConfidence;
     }
 
+    /**
+    *    Represents a search area.
+    **/
     export class SearchRegion {
+
+        /**
+        *    The address of the center of the search region.
+        **/
         address: Address;
+
+        /**
+        *    The geocoded locations.
+        **/
         geocodeLocations: GeocodeLocation[];
+
+        /**
+        *    The best geocoded location.
+        **/
         explicitLocation: GeocodeLocation;
+
+        /**
+        *    A location rectangle that defines the boundaries of the search area.
+        **/
         mapBounds: LocationRect;
+
+        /**
+        *    The match code of the geocoded location.
+        **/
         matchCode: MatchCode;
+
+        /**
+        *    The match confidence of the geocoded location.
+        **/
         matchConfidence: MatchConfidence;
+
+        /**
+        *    A string indicating the region used to infer the location. The current values are “Query” or “MapView”.
+        **/
         source: string;
     }
 
