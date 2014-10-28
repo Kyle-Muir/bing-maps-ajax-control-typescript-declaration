@@ -359,19 +359,74 @@ declare module Microsoft.Maps.Search {
         traceId: number;
     }
 
+    /**
+    *    Represents a distinct search result.
+    **/
     export class SearchResult {
+
+        /**
+        *    The address of the search result.
+        **/
         address: Address;
+
+        /**
+        *    The city of the search result.
+        **/
         city: string;
+
+        /**
+        *    The country of the search result.
+        **/
         country: string;
+
+        /**
+        *    The entity type of the search result.
+        **/
         entityType: string;
+
+        /**
+        *    The hours of operation of the entity defined by the search result.
+        **/
         hoursOfOperation: string;
+
+        /**
+        *    The entity ID of the search result.
+        **/
         id: number;
+
+        /**
+        *    The location of the search result.
+        **/
         location: Location;
+
+        /**
+        *    The name of the entity defined by the search result.
+        **/
         name: string;
+
+        /**
+        *    The phone number of the search result.
+        **/
         phone: string;
+
+        /**
+        *    The postal code of the search result.
+        **/
         postalCode: string;
+
+        /**
+        *    The number of user reviews recorded for this search result.
+        **/
         reviewCount: number;
+
+        /**
+        *    The average user rating for the entity defined by the search result.
+        **/
         userRating: number;
+
+        /**
+        *    The URL of the entity defined by the search result.
+        **/
         website: string;
     }
 

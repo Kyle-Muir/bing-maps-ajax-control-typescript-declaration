@@ -143,3 +143,20 @@ var test_search_response_summary = () => {
     searchResponseSummary.statusCode = 404;
     searchResponseSummary.traceId = 1233211233231;
 }
+
+var test_search_result = () => {
+    var searchResult = new Microsoft.Maps.Search.SearchResult();
+    searchResult.address = new Microsoft.Maps.Search.Address();
+    searchResult.city = 'Auckland';
+    searchResult.country = 'New Zealand';
+    searchResult.entityType = 'Entity';
+    searchResult.hoursOfOperation = '9 till 5';
+    searchResult.id = 123;
+    searchResult.location = new Microsoft.Maps.Location(1,1);
+    searchResult.name = 'Kyle\'s house';
+    searchResult.phone = '555-5555';
+    searchResult.postalCode = '0914';
+    searchResult.reviewCount = 0;
+    searchResult.userRating = 0;
+    searchResult.website = 'http://www.microsoft.com';
+}
