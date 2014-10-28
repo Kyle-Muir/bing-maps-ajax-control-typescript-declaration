@@ -11,3 +11,7 @@ var test_events = () => {
 var test_pixel_reference = () => {
 	Microsoft.Maps.PixelReference.isValid(Microsoft.Maps.PixelReference.control);
 }
+
+var test_label_overlay = () => {
+	Microsoft.Maps.LabelOverlay.isValid(Microsoft.Maps.LabelOverlay.hidden);
+}

@@ -487,12 +487,24 @@
         message: string;
     }
 
+    /**
+    *    Defines how map labels are displayed.
+    **/
     export class LabelOverlay {
-        //Map labels are not shown on top of imagery.
+        
+        /**
+        *    Map labels are not shown on top of imagery.
+        **/
         static hidden: string;
-        //Map labels are shown on top of imagery.
+
+        /**
+        *    Map labels are shown on top of imagery.
+        **/
         static visible: string;
 
+        /**
+        *    Determines whether the specified labelOverlay is a supported LabelOverlay.
+        **/
         static isValid(labelOverlay: LabelOverlay): boolean;
     }
 
