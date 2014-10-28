@@ -52,3 +52,13 @@ var test_place_result = () => {
     placeResult.matchConfidence = Microsoft.Maps.Search.MatchConfidence.high;
     placeResult.name = 'Kyle\'s Place';
 }
+
+var test_reverse_geocode_request_options = () => {
+    var options : Microsoft.Maps.Search.ReverseGeocodeRequestOptions = {
+        callback: (options : Microsoft.Maps.Search.PlaceResult, userData: any) => {},
+        errorCallback: (options: Microsoft.Maps.Search.ReverseGeocodeRequestOptions) => {},
+        location: new Microsoft.Maps.Location(1,1),
+        timeout: 12,
+        userData: {}
+    }
+}

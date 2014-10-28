@@ -58,15 +58,34 @@ declare module Microsoft.Maps.Search {
         postalTown: string;
     }
 
+    /**
+    *    Contains options for a reverse geocode request.
+    **/
     export interface ReverseGeocodeRequestOptions {
-        /*
-            The name of the function to call when a successful result is returned from the reverse geocode request.
-            The callback function must accept two parameters: a result, which is a PlaceResult type, and a userData object.
-        */
+        
+        /**
+        *    The name of the function to call when a successful result is returned from the reverse geocode request. The callback function must accept two parameters: a result, which is a @see PlaceResult type, and a userData object.
+        **/
         callback?: (result: PlaceResult, userData: any) => void;
+
+        /**
+        *    The name of the function to call when the request is returned with an error. The callback function must accept a @see ReverseGeocodeRequestOptions object.
+        **/
         errorCallback?: (requestOptions: ReverseGeocodeRequestOptions) => void;
+
+        /**
+        *    The location to use to match to geographic entities and addresses.
+        **/
         location?: Location;
+
+        /**
+        *    A number indicating how long to wait, in seconds, for the reverse geocode request to return. The default value is 5 seconds.
+        **/
         timeout?: number;
+
+        /**
+        *    An object containing any data that needs to be passed to the callback when the request is completed.
+        **/
         userData?: any;
     }
 
