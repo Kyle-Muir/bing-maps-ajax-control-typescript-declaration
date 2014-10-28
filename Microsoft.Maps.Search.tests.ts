@@ -89,3 +89,38 @@ var test_search_region = () => {
     searchRegion.matchConfidence = Microsoft.Maps.Search.MatchConfidence.low;
     searchRegion.source = 'Bing Maps API';
 }
+
+var test_search_request_options = () => {
+    var searchRequestOptionsForQuery : Microsoft.Maps.Search.SearchRequestOptions = {
+        callback: (result: Microsoft.Maps.Search.SearchResponse, userData: Object) => {},
+        count: 20,
+        errorCallback: (options: Microsoft.Maps.Search.SearchRequestOptions) => {},
+        query: 'Seattle',
+        startIndex: 10,
+        timeout: 20,
+        entityType: 'Business',
+        userData: {}
+    }
+
+    var searchRequestOptionsForWhat : Microsoft.Maps.Search.SearchRequestOptions = {
+        callback: (result: Microsoft.Maps.Search.SearchResponse, userData: Object) => {},
+        count: 20,
+        errorCallback: (options: Microsoft.Maps.Search.SearchRequestOptions) => {},
+        startIndex: 10,
+        timeout: 20,
+        entityType: 'Business',
+        userData: {},
+        what: 'Pizza'
+    }
+
+    var searchRequestOptionsForWhere : Microsoft.Maps.Search.SearchRequestOptions = {
+        callback: (result: Microsoft.Maps.Search.SearchResponse, userData: Object) => {},
+        count: 20,
+        errorCallback: (options: Microsoft.Maps.Search.SearchRequestOptions) => {},
+        startIndex: 10,
+        timeout: 20,
+        entityType: 'Business',
+        userData: {},
+        where: '1 Microsoft Way'
+    }
+}

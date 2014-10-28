@@ -106,64 +106,63 @@ declare module Microsoft.Maps.Search {
         userData?: any;
     }
 
+    /**
+    *    Contains options for a search request.
+    **/
     export interface SearchRequestOptions {
-        /*
-            The name of the function to call when a successful result is returned from the search request. The callback
-            function must accept two parameters: a result, which is a SearchResponse, and a userData object.
-        */
+        
+        /**
+        *    The name of the function to call when a successful result is returned from the search request. The callback function must accept two parameters: a result, which is a @see SearchResponse, and a userData object.
+        **/
         callback?: (result: SearchResponse, userData: any) => void;
-        /*
-            The maximum number of results to return. Required. The maximum number than can be returned is 20.
-        */
+        
+        /**
+        *    The maximum number of results to return. Required. The maximum number than can be returned is 20.
+        **/
         count?: number;
-        /*
-            The name of the function to call when the request is returned with an error. The callback function must accept
-            a SearchRequestOptions object.
-        */
+        
+        /**
+        *    The name of the function to call when the request is returned with an error. The callback function must accept a @see SearchRequestOptions object.
+        **/
         errorCallback?: (requestOptions: SearchRequestOptions) => void;
 
-        /*
-            The search string, such as “pizza in Seattle, WA”. Either query or what/where needs to be specified.
-            If both are specified, an error occurs.
-        */
+        /**
+        *    The search string, such as “pizza in Seattle, WA”. Either query or what/where needs to be specified. If both are specified, an error occurs.
+        **/
         query?: string;
 
-        /*
-            The index of the first result in the results. For example, if you had already returned a first set of
-            10 search results and now wanted to return the second set of 10 results, you would specify 10 as the
-            startIndex and 10 as the count.
-        */
+        /**
+        *    The index of the first result in the results. For example, if you had already returned a first set of 10 search results and now wanted to return the second set of 10 results, you would specify 10 as the startIndex and 10 as the count.
+        **/
         startIndex?: number;
 
-        /*
-            A number indicating how long to wait, in seconds, for the search request to return. The default value is 5 seconds.
-        */
+        /**
+        *    A number indicating how long to wait, in seconds, for the search request to return. The default value is 5 seconds.
+        **/
         timeout?: number;
 
-        /*
-            The type of entities to find. Currently only “Business” is allowed.
-        */
+        /**
+        *    The type of entities to find. Currently only “Business” is allowed.
+        **/
         entityType?: string;
 
-        /*
-            An object containing any data that needs to be passed to the callback when the request is completed.
-        */
+        /**
+        *    An object containing any data that needs to be passed to the callback when the request is completed.
+        **/
         userData?: any;
 
-        /*
-            The business name, category, or other item for which the search is conducted. For example, “pizza” in the search
-            string “pizza in Seattle”.
-        */
+        /**
+        *    The business name, category, or other item for which the search is conducted. For example, “pizza” in the search string “pizza in Seattle”.
+        **/
         what?: string;
 
-        /*
-            The address or place name of the area for which the search is conducted. For example, “Seattle” in the searc
-            string “pizza in Seattle”.
-        */
+        /**
+        *    The address or place name of the area for which the search is conducted. For example, “Seattle” in the search string “pizza in Seattle”.
+        **/
         where?: string;
     }
 
-       /**
+    /**
      *  Contains the options for a geocode request.
      **/
     export interface GeocodeRequestOptions {
