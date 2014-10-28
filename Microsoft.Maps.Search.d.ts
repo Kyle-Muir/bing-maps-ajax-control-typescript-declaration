@@ -300,12 +300,39 @@ declare module Microsoft.Maps.Search {
         traceId: number;
     }
 
+    /**
+    *    Represents the results of a search request.
+    **/
     export class SearchResponse {
+
+        /**
+        *    An array of alternate search regions.
+        **/
         alternateSearchRegions: SearchRegion[];
+
+        /**
+        *    A boolean indicating whether there are more results to return.
+        **/
         hasMore: boolean;
+
+        /**
+        *    An array containing the parsed results of the search.
+        **/
         parseResults: SearchParseResult[];
+
+        /**
+        *    The summary of the response to the search request.
+        **/
         responseSummary: SearchResponseSummary;
+
+        /**
+        *    The region in which the search was performed.
+        **/
         searchRegion: SearchRegion;
+
+        /**
+        *    A search result array containing the search results.
+        **/
         searchResults: SearchResult[];
     }
 

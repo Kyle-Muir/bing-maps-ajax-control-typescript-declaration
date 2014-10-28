@@ -124,3 +124,13 @@ var test_search_request_options = () => {
         where: '1 Microsoft Way'
     }
 }
+
+var test_search_response = () => {
+    var searchResponse = new Microsoft.Maps.Search.SearchResponse();
+    searchResponse.alternateSearchRegions = [new Microsoft.Maps.Search.SearchRegion()];
+    searchResponse.hasMore = false;
+    searchResponse.parseResults = [new Microsoft.Maps.Search.SearchParseResult()];
+    searchResponse.responseSummary = new Microsoft.Maps.Search.SearchResponseSummary();
+    searchResponse.searchRegion = new Microsoft.Maps.Search.SearchRegion();
+    searchResponse.searchResults = [new Microsoft.Maps.Search.SearchResult()];
+}
