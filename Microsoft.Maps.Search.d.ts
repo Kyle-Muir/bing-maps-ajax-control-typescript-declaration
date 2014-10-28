@@ -339,16 +339,16 @@ declare module Microsoft.Maps.Search {
     /**
      *  Defines the match precision of a geocoded result.
      **/
-    export class LocationPrecision {
+    export enum LocationPrecision {
         /**
          *  The geocoding service matched the location to a point on the road using interpolation of multiple geocoded sources.
          **/
-        static interpolated: string;
+        interpolated,
 
         /**
          *  The geocoding service matched the location to the rooftop of a building.
          **/
-        static rooftop: string;
+        rooftop
     }
 
     /**

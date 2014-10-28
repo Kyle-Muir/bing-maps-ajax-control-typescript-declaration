@@ -42,11 +42,6 @@ var test_geocode_gesult = () => {
     geocodeResult.results = [];
 }
 
-var test_location_precision = () => {
-    Microsoft.Maps.Search.LocationPrecision.interpolated = '123';
-    Microsoft.Maps.Search.LocationPrecision.rooftop = '123';
-}
-
 var test_place_result = () => {
     var placeResult = new Microsoft.Maps.Search.PlaceResult();
     var location = new Microsoft.Maps.Location(1,1);
