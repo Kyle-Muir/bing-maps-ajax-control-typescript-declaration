@@ -70,3 +70,10 @@ var test_search_manager = () => {
     manager.reverseGeocode({});
     manager.search({});
 }
+
+var test_search_parse_result = () => {
+    var searchParseResult = new Microsoft.Maps.Search.SearchParseResult();
+    searchParseResult.keyword = '123';
+    searchParseResult.location = new Microsoft.Maps.Search.GeocodeLocation();
+    searchParseResult.matchConfidence =  Microsoft.Maps.Search.MatchConfidence.low;
+}

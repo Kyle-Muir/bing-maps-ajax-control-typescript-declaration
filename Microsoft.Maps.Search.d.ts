@@ -231,9 +231,24 @@ declare module Microsoft.Maps.Search {
         results: PlaceResult[];
     }
 
+    /**
+    *    Represents a search request parse result.
+    **/
     export class SearchParseResult {
+
+        /**
+        *    The keyword of the input query string.
+        **/
         keyword: string;
+
+        /**
+        *    The geocoded location of the input query string.
+        **/
         location: GeocodeLocation;
+
+        /**
+        *    The confidence of the geocode match.
+        **/
         matchConfidence: MatchConfidence;
     }
 
