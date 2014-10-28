@@ -93,33 +93,235 @@ declare module Microsoft.Maps.Directions {
 	/**
 	*	Contains arguments for directions error events.
 	**/
-	export class DirectionsErrorEventArgs {
+	export interface DirectionsErrorEventArgs {
 
 		/**
 		*	The code which identifies the error that occurred.
 		**/
-		responseCode: RouteResponseCode;
+		responseCode?: RouteResponseCode;
 
 		/**
 		*	The error message.
 		**/
-		message: string;
+		message?: string;
 	}
 
 	/**
 	*	Contains the arguments for directions events.
 	**/
-	export class DirectionsEventArgs {
+	export interface DirectionsEventArgs {
 
 		/**
 		*	The route summary (or summaries) of the route(s) defined in the route property.
 		**/
-		routeSummary: RouteSummary[];
+		routeSummary?: RouteSummary[];
 
 		/**
 		*	The calculated route (or routes, if the route mode is transit).
 		**/
-		route: Route[];
+		route?: Route[];
+	}
+
+	/**
+	*	Contains methods for calculating directions and displaying a route on a map.
+	**/
+	export class DirectionsManager {
+
+		/**
+		*	Initializes a new instance of the DirectionsManager class.
+		**/
+		constructor(map: Map);
+
+		/**
+		*	Adds a waypoint to the route at the given index, if specified. If an index is not specified the waypoint is added as the last waypoint in the route.
+		*	To recalculate the route, use calculateDirections.
+		*	The maximum number of walking or driving waypoints is 25. The maximum number of transit waypoints is 2.
+		*	Up to 10 via points are allowed between two stop waypoints.
+		**/
+		addWaypoint(waypoint: Waypoint, index: number): void;
+
+		/**
+		*	Calculates directions based on request and render options set (setRequestOptions, setRenderOptions) and the waypoints added (addWaypoint). The directionsUpdated event fires when the calculation is complete and the route is displayed on the map.
+		*	You must call this method after making any changes to the route options or waypoints.
+		**/
+		calculateDirections(): void;
+
+		/**
+		*	Clears the directions displayed and removes the route line from the map. This method does not remove waypoints from the route and retains all calculated direction information and option settings. To clear the calculated directions and options, use resetDirections.
+		**/
+		clearDisplay(): void;
+
+		/**
+		*	Deletes the DirectionsManager object and releases any associated resources.
+		**/
+		dispose(): void;
+
+		/**
+		*	Returns the waypoints for the route.
+		**/
+		getAllWaypoints(): Waypoint[];
+
+		/**
+		*	Returns the map object associated with the directions manager.
+		**/
+		getMap(): Map;
+
+		//TODO: KM - the documentation for this is extremely weak, need to find out what these callbacks return.
+		/**
+		*	Searches around the specified location for nearby major roads and returns them as an object to the callback function.
+		**/
+		getNearbyMajorRoads(location: Location, callback: (nearbyMajorRoads: any) => void, errorCallback: () => void, userData: Object): void;
+
+		/**
+		*	Returns the route render options.
+		**/
+		getRenderOptions(): DirectionsRenderOptions;
+
+		/**
+		*	Returns the directions request options.
+		**/
+		getRequestOptions(): DirectionsRequestOptions;
+
+		/**
+		*	Returns the current calculated route(s). If the route was not successfully calculated, null is returned.
+		**/
+		getRouteResult(): Route[];
+
+		/**
+		*	Removes the given waypoint or the waypoint identified by the given index from the route. Use calculateDirections to update the route once a waypoint has been removed.
+		**/
+		removeWaypoint(waypoint: Waypoint): void;
+
+		/**
+		*	Removes the given waypoint or the waypoint identified by the given index from the route. Use calculateDirections to update the route once a waypoint has been removed.
+		**/
+		removeWaypoint(index: number): void;
+
+		/**
+		*	If no options object is supplied, clears the directions request and render options and removes all waypoints.
+		**/
+		resetDirections(options: ResetDirectionsOptions): void;
+
+		//TODO: KM - the documentation for this is extremely weak, need to find out what these callbacks return.	
+		/**
+		*	Matches the specified location to an address and returns the address to the specified callback function.
+		**/
+		reverseGeocode(location: Location, callback: (address : any) => void, errorCallback: () => void, userData: Object): void;
+
+		/**
+		*	Sets the map view based on the current route index.
+		**/
+		setMapView(): void;
+
+		/**
+		*	Sets the specified render options for the route.
+		**/
+		setRenderOptions(options: DirectionsRenderOptions): void;
+
+		/**
+		*	Sets the specified route calculation options.
+		**/
+		setRequestOptions(options: DirectionsRequestOptions): void;
+
+		/**
+		*	Occurs after the route selector has fully rendered.
+		**/
+		afterRouteSelectorRender: (eventArgs: RouteSelectorRenderEventArgs) => any;
+
+		/**
+		*	Occurs after each step in the itinerary has fully rendered.
+		**/
+		afterStepRender: (eventArgs: DirectionsStepRenderEventArgs) => any;
+
+		/**
+		*	Occurs after the route summary has fully rendered.
+		**/
+		afterSummaryRender: (eventArgs: RouteSummaryRenderEventArgs) => any;
+
+		/**
+		*	Occurs after each route waypoint has fully rendered.
+		**/
+		afterWaypointRender: (eventArgs: WaypointRenderEventArgs) => any;
+
+		/**
+		*	Occurs before the waypoint disambiguation element is rendered. Use the autoDisplayDisambiguation directions render option to automatically display waypoint disambiguation.
+		**/
+		beforeDisambiguationRender: (eventArgs: DisambiguationRenderEventArgs) => any;
+
+		/**
+		*	Occurs just before the route selector renders.
+		**/
+		beforeRouteSelectorRender: (eventArgs: RouteSelectorRenderEventArgs) => any;
+
+		/**
+		*	Occurs just before each step in the itinerary renders.
+		**/
+		beforeStepRender: (eventArgs: DirectionsStepRenderEventArgs) => any;
+
+		/**
+		*	Occurs just before the route summary renders.
+		**/
+		beforeSummaryRender: (eventArgs: RouteSummaryRenderEventArgs) => any;
+
+		/**
+		*	Occurs just before each route waypoint renders.
+		**/
+		beforeWaypointRender: (eventArgs: WaypointRenderEventArgs) => any;
+
+		/**
+		*	Occurs when calculating the directions caused an error.
+		**/
+		directionsError: (eventArgs: DirectionsErrorEventArgs) => any;
+
+		/**
+		*	Occurs when the directions calculation was successful and the itinerary and route on the map have been updated.
+		**/
+		directionsUpdated: (eventArgs: DirectionsEventArgs) => any;
+
+		/**
+		*	Occurs when the drag of a waypoint or route is completed.
+		**/
+		dragDropCompleted: () => void;
+
+		/**
+		*	Occurs when a step in the itinerary is clicked.
+		**/
+		itineraryStepClicked: (eventArgs: DirectionsStepEventArgs) => any;
+
+		/**
+		*	Occurs when the mouse cursor is over the route selector.
+		**/
+		mouseEnterRouteSelector: (eventArgs: RouteSelectorEventArgs) => any;
+
+		/**
+		*	Occurs when the mouse cursor is over a directions step.
+		**/
+		mouseEnterStep: (eventArgs: DirectionsStepEventArgs) => any;
+
+		/**
+		*	Occurs when the mouse cursor leaves the route selector.
+		**/
+		mouseLeaveRouteSelector: (eventArgs: RouteSelectorEventArgs) => any;
+
+		/**
+		*	Occurs when the mouse cursor leaves a directions step.
+		**/
+		mouseLeaveStep: (eventArgs: DirectionsStepEventArgs) => any;
+
+		/**
+		*	Occurs when the route selector is clicked.
+		**/
+		routeSelectorClicked: (eventArgs: RouteSelectorEventArgs) => any;
+
+		/**
+		*	Occurs when a new waypoint is added to the route.
+		**/
+		waypointAdded: (eventArgs: WaypointEventArgs) => any;
+
+		/**
+		*	Occurs when a waypoint is removed from the route.
+		**/
+		waypointRemoved: (eventArgs: WaypointEventArgs) => any;
 	}
 
 	/**
@@ -510,17 +712,17 @@ declare module Microsoft.Maps.Directions {
 		/**
 		*	The DOM element which contains the disambiguation list. You can use this property to add custom content.
 		**/
-		containerElement: Object;
+		containerElement?: Object;
 
 		/**
 		*	A boolean indicating whether the event is handled. Set this property to true to override the default behavior. If this property is set to true, a directionsError event for waypoint disambiguation is thrown.
 		**/
-		handled: boolean;
+		handled?: boolean;
 
 		/**
 		*	The waypoint that needs to be disambiguated.
 		**/
-		waypoint: Waypoint;
+		waypoint?: Waypoint;
 	}
 
 	/**
@@ -1574,7 +1776,7 @@ declare module Microsoft.Maps.Directions {
 		/**
 		*	The waypoint for which the event occurred.
 		**/
-		waypoint: Waypoint;
+		waypoint?: Waypoint;
 	}
 
 	/**

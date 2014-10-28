@@ -122,9 +122,10 @@ var test_route = () => {
 }
 
 var test_directions_event_args = () => {
-	var directionsEventArgs = new Microsoft.Maps.Directions.DirectionsEventArgs();
-	directionsEventArgs.routeSummary = [new Microsoft.Maps.Directions.RouteSummary()];
-	directionsEventArgs.route = [new Microsoft.Maps.Directions.Route()];
+	var directionsEventArgs : Microsoft.Maps.Directions.DirectionsEventArgs = {
+		routeSummary: [new Microsoft.Maps.Directions.RouteSummary()],
+		route: [new Microsoft.Maps.Directions.Route()]
+	}
 }
 
 var test_way_point_options = () => {
@@ -313,4 +314,53 @@ var test_waypoint_render_event_args = () => {
 		handled: true,
 		waypoint: waypoint
 	}
+}
+
+var test_directions_manager = () => {
+	var map = new Microsoft.Maps.Map(document.createElement('div'));
+	var manager = new Microsoft.Maps.Directions.DirectionsManager(map);
+	var wayPointOptions : Microsoft.Maps.Directions.WaypointOptions = {
+		address: '123 Fake Street, Fake Town, Fake City, Fake Country',
+	}
+	var waypoint = new Microsoft.Maps.Directions.Waypoint(wayPointOptions);
+	manager.addWaypoint(waypoint, 1);
+	manager.calculateDirections();
+	manager.clearDisplay();
+	manager.dispose();
+	var items: Microsoft.Maps.Directions.Waypoint[] = manager.getAllWaypoints();
+	var map : Microsoft.Maps.Map = manager.getMap();
+
+	var fakeLocation  = new Microsoft.Maps.Location(1, 1);
+	manager.getNearbyMajorRoads(fakeLocation, () => {}, () => {}, {});
+	var renderOptions : Microsoft.Maps.Directions.DirectionsRenderOptions = manager.getRenderOptions();
+	var requestOptions : Microsoft.Maps.Directions.DirectionsRequestOptions = manager.getRequestOptions();
+	var routeResults : Microsoft.Maps.Directions.Route[] = manager.getRouteResult();
+	manager.removeWaypoint(waypoint);
+	manager.removeWaypoint(1);
+	manager.resetDirections({});
+	manager.reverseGeocode(fakeLocation, () => {}, () => {}, {});
+	manager.setMapView();
+	manager.setRenderOptions({});
+	manager.setRequestOptions({});
+
+	manager.afterRouteSelectorRender({});
+	manager.afterStepRender({});
+	manager.afterSummaryRender({});
+	manager.afterWaypointRender({});
+	manager.beforeDisambiguationRender({});
+	manager.beforeRouteSelectorRender({});
+	manager.beforeStepRender({});
+	manager.beforeSummaryRender({});
+	manager.beforeWaypointRender({});
+	manager.directionsError({});
+	manager.directionsUpdated({});
+	manager.dragDropCompleted();
+	manager.itineraryStepClicked({});
+	manager.mouseEnterRouteSelector({});
+	manager.mouseEnterStep({});
+	manager.mouseLeaveRouteSelector({});
+	manager.mouseLeaveStep({});
+	manager.routeSelectorClicked({});
+	manager.waypointAdded({});
+	manager.waypointRemoved({});
 }
