@@ -28,7 +28,7 @@ Todo
 - [ ] Update declarations for latest version w\ full Visual Studio 2013 intellisense (In progress)
 	- [ ] Microsoft.Maps
 	- [ ] Microsoft.Maps.AdvancedShapes
-	- [ ] Microsoft.Maps.Directions (In progress)
+	- [X] Microsoft.Maps.Directions
 	- [ ] Microsoft.Maps.Search (In progress)
 	- [X] Microsoft.Maps.Traffic
 	- [X] Microsoft.Maps.VenueMaps
