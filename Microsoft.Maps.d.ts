@@ -315,14 +315,29 @@
         zoom?: number;
     }
 
+    /**
+    *    Contains constants used to show how pixels are defined.
+    **/
     export class PixelReference {
-        //The pixel is defined relative to the map control’s root element, where the top left corner of the map control is (0, 0). Using this option might cause a page reflow which may negatively impact performance.
+        
+        /**
+        *    The pixel is defined relative to the map control’s root element, where the top left corner of the map control is (0, 0). Using this option might cause a page reflow which may negatively impact performance.
+        **/
         static control: string;
-        //The pixel is defined relative to the page, where the top left corner of the HTML page is (0, 0). This option is best used when working with mouse or touch events. Using this option might cause a page reflow which may negatively impact performance.
+        
+        /**
+        *    The pixel is defined relative to the page, where the top left corner of the HTML page is (0, 0). This option is best used when working with mouse or touch events. Using this option might cause a page reflow which may negatively impact performance.
+        **/
         static page: string;
-        //The pixel is defined in viewport coordinates, relative to the center of the map, where the center of the map is (0, 0). This option is best used for positioning geo-aligned entities added to the user layer.
+        
+        /**
+        *    The pixel is defined in viewport coordinates, relative to the center of the map, where the center of the map is (0, 0). This option is best used for positioning geo-aligned entities added to the user layer.
+        **/
         static viewport: string;
 
+        /**
+        *    Determines whether the specified reference is a supported PixelReference.
+        **/
         static isValid(reference: PixelReference): boolean;
     }
 
