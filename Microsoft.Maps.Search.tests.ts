@@ -134,3 +134,12 @@ var test_search_response = () => {
     searchResponse.searchRegion = new Microsoft.Maps.Search.SearchRegion();
     searchResponse.searchResults = [new Microsoft.Maps.Search.SearchResult()];
 }
+
+var test_search_response_summary = () => {
+    var searchResponseSummary = new Microsoft.Maps.Search.SearchResponseSummary();
+    searchResponseSummary.authResultCode = 1;
+    searchResponseSummary.copyright = 'copyright Microsoft';
+    searchResponseSummary.errorMessage = 'something went wrong!';
+    searchResponseSummary.statusCode = 404;
+    searchResponseSummary.traceId = 1233211233231;
+}

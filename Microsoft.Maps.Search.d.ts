@@ -292,14 +292,6 @@ declare module Microsoft.Maps.Search {
         source: string;
     }
 
-    export class SearchResponseSummary {
-        authResultCode: number;
-        copyright: string;
-        errorMessage: string;
-        statusCode: number;
-        traceId: number;
-    }
-
     /**
     *    Represents the results of a search request.
     **/
@@ -334,6 +326,37 @@ declare module Microsoft.Maps.Search {
         *    A search result array containing the search results.
         **/
         searchResults: SearchResult[];
+    }
+
+    /**
+    *    Contains properties that summarize the search service response to a request.
+    **/
+    export class SearchResponseSummary {
+
+        /**
+        *    The authentication result code.
+        **/
+        authResultCode: number;
+
+        /**
+        *    The copyright string.
+        **/
+        copyright: string;
+
+        /**
+        *    The error message, if an error occurred.
+        **/
+        errorMessage: string;
+
+        /**
+        *    The status code of the request.
+        **/
+        statusCode: number;
+
+        /**
+        *    A string representing a trace ID to enable debugging of the request.
+        **/
+        traceId: number;
     }
 
     export class SearchResult {
