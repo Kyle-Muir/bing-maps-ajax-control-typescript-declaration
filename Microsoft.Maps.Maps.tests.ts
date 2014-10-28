@@ -7,3 +7,7 @@ var test_events = () => {
 	Microsoft.Maps.Events.invoke({}, 'click', {});
 	Microsoft.Maps.Events.removeHandler({});
 }
+
+var test_pixel_reference = () => {
+	Microsoft.Maps.PixelReference.isValid(Microsoft.Maps.PixelReference.control);
+}
