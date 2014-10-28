@@ -62,3 +62,11 @@ var test_reverse_geocode_request_options = () => {
         userData: {}
     }
 }
+
+var test_search_manager = () => {
+    var map = new Microsoft.Maps.Map(document.createElement('div'));
+    var manager = new Microsoft.Maps.Search.SearchManager(map);
+    manager.geocode({where: '1 Microsoft Way'});
+    manager.reverseGeocode({});
+    manager.search({});
+}

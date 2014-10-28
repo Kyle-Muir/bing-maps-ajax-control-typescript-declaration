@@ -1,15 +1,32 @@
 ﻿/// <reference path="Microsoft.Maps.All.d.ts" />
-/*
-    Contains types that allow you to return search and location results to display on your Bing Maps AJAX Control 7.0 map.
-    Use the methods geocode, reverseGeocode, and search found on the SearchManager Class.
-*/
+/**
+*    This section contains reference documentation for the Microsoft.Maps.Search API, which contains types that allow you to return search and location results to display on your Bing Maps AJAX Control 7.0 map. Use the methods geocode, reverseGeocode, and search found on the @see SearchManager Class.
+**/
 declare module Microsoft.Maps.Search {
 
+    /**
+    *    Contains methods for returning search and location results.
+    **/
     export class SearchManager {
+
+        /**
+        *    Initializes a new instance of the SearchManager class.
+        **/
         constructor(map: Map);
 
+        /**
+        *    Matches the address or place query in the specified request options to a location and returns the results to the request options callback function.
+        **/
         geocode(request: GeocodeRequestOptions): void;
+
+        /**
+        *    Matches the specified location to an address and returns the address results to the specified request options callback function.
+        **/
         reverseGeocode(request: ReverseGeocodeRequestOptions): void;
+
+        /**
+        *    Performs a search based on the specified request options and returns the results to the request options callback function.
+        **/
         search(request: SearchRequestOptions): void;
     }
 
