@@ -26,10 +26,10 @@ Todo
 ====
 - [X] Update declarations so they at least work with latest version
 - [ ] Update declarations for latest version w\ full Visual Studio 2013 intellisense (In progress)
-	- [ ] Microsoft.Maps
+	- [ ] Microsoft.Maps (In progress)
 	- [X] Microsoft.Maps.AdvancedShapes
 	- [X] Microsoft.Maps.Directions
-	- [ ] Microsoft.Maps.Search (In progress)
+	- [X] Microsoft.Maps.Search
 	- [X] Microsoft.Maps.Traffic
 	- [X] Microsoft.Maps.VenueMaps
 - [ ] Create\Update nuget package
