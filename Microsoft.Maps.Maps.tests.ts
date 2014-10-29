@@ -417,3 +417,17 @@ var test_tile_layer = () => {
 	tileLayer.setOptions(options);
 	var toString: string = tileLayer.toString();
 }
+
+var test_tile_source = () => {
+	var tileSource = new Microsoft.Maps.TileSource({});
+	var options : Microsoft.Maps.TileSourceOptions = {
+		height: 100,
+		uriConstructor: 'http://www.microsoft.com/maps/isdk/ajax/layers/lidar/{quadkey}.png',
+		width: 100
+	}
+	var tileSourceWithOptions = new Microsoft.Maps.TileSource(options);
+	var height: number = tileSource.getHeight();
+	var uriConstructor: string = tileSource.getUriConstructor();
+	var width: number = tileSource.getWidth();
+	var toString: string = tileSource.toString();
+}

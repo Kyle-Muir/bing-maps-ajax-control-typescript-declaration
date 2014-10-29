@@ -1219,12 +1219,34 @@
         width?: number;
     }
 
+    /**
+    *    Defines a tile source for a tile layer.
+    **/
     export class TileSource {
+
+        /**
+        *    Initializes a new instance of the TileSource class.
+        **/
         constructor (options: TileSourceOptions);
 
+        /**
+        *    Returns the pixel height of each tile in the tile source.
+        **/
         getHeight(): number;
+
+        /**
+        *    Returns a string that constructs tile URLs used to retrieve tiles for the tile layer.
+        **/
         getUriConstructor(): string;
-        getWidth(): string;
+
+        /**
+        *    Returns the pixel width of each tile in the tile source.
+        **/
+        getWidth(): number;
+
+        /**
+        *    Converts the TileSource object to a string.
+        **/
         toString(): string;
     }
 
