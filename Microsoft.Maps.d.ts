@@ -1043,19 +1043,50 @@
         rightclick: (eventArgs: MouseEventArgs) => any;
     }
 
+    /**
+    *    Represents a tile layer.
+    **/
     export class TileLayer implements Entity {
+
+        /**
+        *    Initializes a new instance of the TileLayer class.
+        **/
         constructor (options: TileLayerOptions);
 
-        getOpacty(): number;
-        /*
-        Returns the tile source of the tile layer.
-        The projection parameter accepts the following values: mercator, enhancedBirdseyeNorthUp, enhancedBirdseyeSouthUp, enhancedBirdseyeEastUp, enhancedBirdseyeWestUp
-        */
+        /**
+        *    Returns the opacity of the tile layer, defined as a double between 0 (not visible) and 1.
+        **/
+        getOpacity(): number;
+        
+        /**
+        *    Returns the tile source of the tile layer.
+        *    The projection parameter accepts the following values: mercator, enhancedBirdseyeNorthUp, enhancedBirdseyeSouthUp, enhancedBirdseyeEastUp, enhancedBirdseyeWestUp
+        **/
         getTileSource(projection: string): TileSource;
+
+        /**
+        *    Returns whether the tile layer is visible. A value of false indicates that the tile layer is hidden.
+        **/
+        getVisible(): boolean;
+
+        /**
+        *    Returns the z-index of the tile layer with respect to other items on the map.
+        **/
         getZIndex(): number;
+
+        /**
+        *    Sets options for the tile layer.
+        **/
         setOptions(options: TileLayerOptions): void;
+
+        /**
+        *    Converts the TileLayer object to a string.
+        **/
         toString(): string;
 
+        /**
+        *    Occurs when all the tiles of the tile layer have loaded.
+        **/
         tiledownloadcomplete: () => any;
     }
 

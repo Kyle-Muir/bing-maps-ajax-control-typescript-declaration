@@ -398,3 +398,22 @@ var test_tile_layer_options = () => {
 		zIndex: 3
 	}
 }
+
+var test_tile_layer = () => {
+	var tileLayer = new Microsoft.Maps.TileLayer({});
+	var options : Microsoft.Maps.TileLayerOptions = {
+		animationDisplay: Microsoft.Maps.AnimationVisibility.auto,
+		downloadTimeout: 5000,
+		mercator: new Microsoft.Maps.TileSource({}),
+		opacity: 3,
+		visible: true,
+		zIndex: 3
+	}
+	var tileLayerWithOptions = new Microsoft.Maps.TileLayer(options);
+	var opacity: number = tileLayer.getOpacity();
+	var tileSource: Microsoft.Maps.TileSource = tileLayer.getTileSource('123');
+	var isVisible: boolean = tileLayer.getVisible();
+	var zIndex: number = tileLayer.getZIndex();
+	tileLayer.setOptions(options);
+	var toString: string = tileLayer.toString();
+}
