@@ -1169,77 +1169,338 @@
         entityremoved: (object: { collection: EntityCollection; entity: Entity; }) => any;
     }
 
+    /**
+    *    Represents a map.
+    **/
     export class Map {
-        //Constructors
+        
+        /**
+        *    Initializes a new instance of the Map class.
+        **/
         constructor (mapElement: HTMLElement, options?: MapOptions);
+
+        /**
+        *    Initializes a new instance of the Map class.
+        **/
         constructor (mapElement: HTMLElement, options?: ViewOptions);
 
-        //Properties
+        /**
+        *    The map’s entities. Use this property to add or remove entities from the map.
+        **/
         entities: EntityCollection;
 
-        //Static Methods
-        getVersion(): string;
+        /**
+        *  Returns the version of the map control.  
+        **/
+        static getVersion(): string;
 
-        //Methods
+        /**
+        *    Removes focus from the map control so that it does not respond to keyboard events.
+        **/
         blur(): void;
+
+        /**
+        *    Deletes the Map object and releases any associated resources.
+        **/
         dispose(): void;
+
+        /**
+        *    Applies focus to the map control so that it responds to keyboard events.
+        **/
         focus(): void;
+
+        /**
+        *    Returns the location rectangle that defines the boundaries of the current map view.
+        **/
         getBounds(): LocationRect;
+
+        /**
+        *    Returns the location of the center of the current map view.
+        **/
         getCenter(): Location;
+
+        /**
+        *    Returns to the specified callback an array of strings representing the attributions of the imagery currently displayed on the map.
+        **/
         getCopyrights(callback: (attributions: string[]) => void ): string[];
+
+        /**
+        *    Gets the session ID. This method calls the callback function with the session ID as the first parameter.
+        *   map.getCredentials(function(credentials) 
+        *   { 
+        *   if(credentials !== null) { \/* Valid session Id. Use it to call REST service *\/ } 
+        *   });
+        **/
         getCredentials(callback: (credentials: string) => void ): void;
+
+        /**
+        *    Returns the heading of the current map view.
+        **/
         getHeading(): number;
+
+        /**
+        *    Returns the height of the map control.
+        **/
         getHeight(): number;
+
+        /**
+        *    Returns the string that represents the imagery currently displayed on the map.
+        **/
         getImageryId(): string;
+
+        /**
+        *    Returns a string that represents the current map type displayed on the map. Valid map types are listed in the @see MapTypeId Enumeration topic. Note that the short name and not the full MapTypeId string is returned. For example, 'a' is returned when the MapTypeId is set to 'Aerial'.
+        **/
         getMapTypeId(): string;
+
+        /**
+        *    Returns the current scale in meters per pixel of the center of the map.
+        **/
         getMetersPerPixel(): number;
+
+        /**
+        *    Returns the current map mode.
+        **/
         getMode(): MapMode;
+
+        /**
+        *    Returns the map’s mode node.
+        **/
         getModeLayer(): Node;
+
+        /**
+        *    Returns the map options that have been set. Note that if an option is not set, then the default value for that option is assumed and getOptions returns undefined for that option.
+        **/
         getOptions(): MapOptions;
+
+        /**
+        *    Returns the x coordinate of the top left corner of the map control, relative to the page.
+        **/
         getPageX(): number;
+
+        /**
+        *    Returns the y coordinate of the top left corner of the map control, relative to the page.
+        **/
+        getPageY(): number;
+
+        /**
+        *    Returns the map’s root node.
+        **/
         getRootElement(): Node;
+
+        /**
+        *    Returns the location rectangle that defines the boundaries of the view to which the map is navigating.
+        **/
         getTargetBounds(): LocationRect;
+
+        /**
+        *    Returns the center location of the view to which the map is navigating.
+        **/
         getTargetCenter(): Location;
+
+        /**
+        *    Returns the heading of the view to which the map is navigating.
+        **/
         getTargetHeading(): number;
+
+        /**
+        *    Returns the scale in meters per pixel of the center of the view to which the map is navigating.
+        **/
         getTargetMetersPerPixel(): number;
+
+        /**
+        *    Returns the zoom level of the view to which the map is navigating.
+        **/
         getTargetZoom(): number;
+
+        /**
+        *    Returns the map’s user node.
+        **/
         getUserLayer(): Node;
+
+        /**
+        *    Returns the x coordinate of the viewport origin (the center of the map), relative to the page.
+        **/
         getViewportX(): number;
+
+        /**
+        *    Returns the y coordinate of the viewport origin (the center of the map), relative to the page.
+        **/
         getViewportY(): number;
+
+        /**
+        *    Returns the width of the map control.
+        **/
         getWidth(): number;
+
+        /**
+        *    Returns the zoom level of the current map view.
+        **/
         getZoom(): number;
+
+        /**
+        *    Returns the range of valid zoom levels for the current map view.
+        **/
         getZoomRange(): { min: number; max: number; };
+
+        /**
+        *    Returns a boolean indicating whether map imagery tiles are currently being downloaded.
+        **/
         isDownloadingTiles(): boolean;
+
+        /**
+        *    Returns a boolean indicating whether the map is in a regular Mercator nadir mode.
+        **/
         isMercator(): boolean;
+
+        /**
+        *    Returns true if the current map type allows the heading to change; false if the display heading is fixed.
+        **/
         isRotationEnabled(): boolean;
+
+        /**
+        *    Sets the current map type. The specified mapTypeId must be a valid map type ID or a registered map type ID. Valid map type IDs are listed in the @see MapTypeId Enumeration topic.
+        **/
         setMapType(mapTypeId: string): void;
-        setOptions(options: { height: number; width: number; }): void;
+
+        /**
+        *    Sets @see MapOptions such as the width and height of the map and whether panning of the map is allowed. Note that some map options can only be set in the Map constructor as stated in the map option description.
+        **/
+        setOptions(options: MapOptions): void;
+
+        /**
+        *    Sets the map view based on the specified options.
+        **/
         setView(options: ViewOptions): void;
+
+        /**
+        *    Converts a specified Location to a Point on the map relative to the specified PixelReference. If reference is not specified, PixelReference.viewport is used. If the map is not able to convert the Location, null is returned.
+        *    Alternatively, converts an array of Locations and returns an array of Points if all locations were converted. If any of the conversions fail, null is returned.
+        **/
         tryLocationToPixel(location: Location, reference?: PixelReference): Point;
+
+        /**
+        *    Converts a specified Location to a Point on the map relative to the specified PixelReference. If reference is not specified, PixelReference.viewport is used. If the map is not able to convert the Location, null is returned.
+        *    Alternatively, converts an array of Locations and returns an array of Points if all locations were converted. If any of the conversions fail, null is returned.
+        **/
         tryLocationToPixel(location: Location[], reference?: PixelReference): Point[];
+
+        /**
+        *    Converts a specified Point to a Location on the map relative to the specified PixelReference. If reference is not specified, PixelReference.viewport is used. If the map is not able to convert the Point, null is returned.
+        *    Alternatively, converts an array of Points and returns an array of Locations if all points were converted. If any of the conversions fail, null is returned.
+        **/
         tryPixelToLocation(point: Point, reference?: PixelReference): Location;
+        
+        /**
+        *    Converts a specified Point to a Location on the map relative to the specified PixelReference. If reference is not specified, PixelReference.viewport is used. If the map is not able to convert the Point, null is returned.
+        *    Alternatively, converts an array of Points and returns an array of Locations if all points were converted. If any of the conversions fail, null is returned.
+        **/
         tryPixelToLocation(point: Point[], reference?: PixelReference): Location[];
 
-        //Events
+        /**
+        *    Occurs when the mouse is used to click the map.
+        **/
         click: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *    Occurs when the copyright of the map changes.
+        **/
         copyrightchanged: () => any;
+
+        /**
+        *    Occurs when the mouse is used to double click the map.
+        **/
         dblclick: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *    Occurs when the underlying imagery used by the map changes. This is different from the maptypechanged event, which occurs when the map type being used is changed.
+        **/
         imagerychanged: () => any;
+
+        /**
+        *    Occurs when a keyboard key is pressed down.
+        **/
         keydown: (eventArgs: KeyEventArgs) => any;
+
+        /**
+        *    Occurs when a keyboard key is pressed.
+        **/
         keypress: (eventArgs: KeyEventArgs) => any;
+
+        /**
+        *    Occurs when a keyboard key that is pressed down is released.
+        **/
         keyup: (eventArgs: KeyEventArgs) => any;
+
+        /**
+        *    Occurs when the map type changes.
+        **/
         maptypechanged: () => any;
+
+        /**
+        *    Occurs when the left mouse button is pressed when the mouse cursor is over the map.
+        **/
         mousedown: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *    Occurs when the mouse cursor moves over the map.
+        **/
         mousemove: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *    Occurs when the mouse cursor moves out of the area covered by the map.
+        **/
         mouseout: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *    Occurs when the mouse is over the map.
+        **/
         mouseover: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *    Occurs when the left mouse button is lifted up when the mouse cursor is over the map.
+        **/
         mouseup: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *    Occurs when the mouse wheel is used when the mouse cursor is over the map.
+        **/
         mousewheel: (eventArgs: MouseEventArgs) => any;
-        rightlick: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *    Occurs when one or more map options change.
+        **/
+        optionschanged: () => any;
+
+        /**
+        *    Occurs when the right mouse button is used to click the map.
+        **/
+        rightclick: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *    Occurs when the view towards which the map is navigating changes.
+        **/
         targetviewchanged: () => any;
+
+        /**
+        *    Occurs when all the map tiles of a map view have loaded.
+        **/
         tiledownloadcomplete: () => any;
+
+        /**
+        *    Occurs for every frame of a map view change.
+        **/
         viewchange: () => any;
+
+        /**
+        *    Occurs when the map view is done changing.
+        *    This event occurs when a view is the same for one frame of a map view change. For example, if the mouse is used to drag the map to change the view, but pauses during the drag (without releasing the mouse button), viewchangeend occurs twice. You can use the @see addThrottledHandler method to customize the number of events that occur.
+        **/
         viewchangeend: () => any;
+
+        /**
+        *    Occurs when the map view starts changing.
+        **/
         viewchangestart: () => any;
     }
 
