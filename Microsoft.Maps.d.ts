@@ -669,12 +669,20 @@
         show
     }
 
-    export class InfoboxType {
-        //A smaller info box with space for a title.
-        static mini: string;
+    /**
+    *    Contains info box styles. To get the latest Bing Maps design, load the Microsoft.Maps.Themes.BingTheme module before creating your info box.
+    **/
+    export enum InfoboxType {
 
-        //The default info box style. This standard info box makes space for a title, title link, description, and other links if they are specified.
-        static standard: string;
+        /**
+        *    A smaller info box with space for a title.
+        **/
+        mini,
+
+        /**
+        *    The default info box style. This standard info box makes space for a title, title link, description, and other links if they are specified.
+        **/
+        standard
     }
 
     export class Position {
