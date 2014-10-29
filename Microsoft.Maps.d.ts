@@ -180,22 +180,24 @@
         toString(): string;
     }
 
-    /*
-        Defines the reference point from which the altitude is measured.
-    */
+    /**
+    *    Defines the reference point from which the altitude is measured.
+    **/
     export class AltitudeReference {
-        /*
-            The altitude is measured from the ground level.
-        */
+        
+        /**
+        *    The altitude is measured from the ground level.
+        **/
         static ground: string;
-        /*
-            The altitude is measured from the WGS 84 ellipsoid of the Earth.
-        */
+        
+        /**
+        *    The altitude is measured from the WGS 84 ellipsoid of the Earth.
+        **/
         static ellipsoid: string;
 
-        /*
-            Determines if the specified reference is a supported AltitudeReference.
-        */
+        /**
+        *    Determines if the specified reference is a supported AltitudeReference.
+        **/
         static isValid(reference: AltitudeReference): boolean;
     }
 

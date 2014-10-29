@@ -15,3 +15,7 @@ var test_pixel_reference = () => {
 var test_label_overlay = () => {
 	Microsoft.Maps.LabelOverlay.isValid(Microsoft.Maps.LabelOverlay.hidden);
 }
+
+var test_altitude_reference = () => {
+	Microsoft.Maps.AltitudeReference.isValid(Microsoft.Maps.AltitudeReference.ground);
+}
