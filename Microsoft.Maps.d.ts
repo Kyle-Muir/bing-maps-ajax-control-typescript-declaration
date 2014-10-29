@@ -784,25 +784,101 @@
         visible?: boolean;
     }
 
+    /**
+    *    Represents the options for an info box.
+    **/
     export interface InfoboxOptions {
-        //A list of the info box actions, where each item is a label (the link text) or icon (the URL of the image to use as the icon link) and eventHandler (name of the function handling a click of the action link).
+        
+        /**
+        *    A list of the info box actions, where each item is a label (the link text) or icon (the URL of the image to use as the icon link) and eventHandler (name of the function handling a click of the action link).
+        *    var infoboxOptions = {title:'My Infobox', description:'Testing actions', actions:[{label: 'test1', eventHandler: testEvent1}, {label: 'test2', eventHandler: testEvent2},{label: 'test3', eventHandler: testEvent3}] };
+        **/
         actions?: { label?: string; icon?: string; eventHandler: () => void; };
-        //The string displayed inside the info box.
+        
+        /**
+        *    The string displayed inside the info box.
+        **/
         description?: string;
-        htmlContent?: string;
-        id?: string;
-        location?: Location;
-        offset?: Point;
-        showCloseButton?: boolean;
-        showPointer?: boolean;
-        pushpin?: Pushpin;
-        title?: string;
-        titleAction?: { label?: string; eventHandler: () => void; };
-        titleClickHandler?: string;
-        typeName?: InfoboxType;
-        visible?: boolean;
-        width?: number;
+        
+        /**
+        *    The height of the info box. The default value is 126.
+        **/
         height?: number;
+
+        /**
+        *    The HTML that represents the info box. Note that info box options are ignored if custom HTML is set. Also, if custom HTML is used to represent the info box, the info box is anchored at the top-left corner.
+        *    var infoboxOptions = {width :200, height :100, showCloseButton: true, zIndex: 0, offset:new Microsoft.Maps.Point(10,0), showPointer: true, htmlContent:'<b>Custom HTML</b>'};
+        **/
+        htmlContent?: string;
+
+        /**
+        *    The ID associated with the info box.
+        **/
+        id?: string;
+
+        /**
+        *    The location on the map where the info box’s anchor is attached.
+        **/
+        location?: Location;
+
+        /**
+        *    The amount the info box pointer is shifted from the location of the info box, or if showPointer is false, then it is the amount the info box bottom left edge is shifted from the location of the info box. If custom HTML is set, it is the amount the top-left corner of the info box is shifted from its location. The default offset value is (0,0), which means there is no offset.
+        **/
+        offset?: Point;
+
+        /**
+        *    A boolean indicating whether to show the close dialog button on the info box. The default value is true. By default the close button is displayed as an X in the top right corner of the info box.
+        *    This property is ignored if custom HTML is used to represent the info box.
+        **/
+        showCloseButton?: boolean;
+
+        /**
+        *    A boolean indicating whether to display the info box with a pointer. The default value is true. In this case the info box is anchored at the bottom point of the pointer. If this property is set to false, the info box is anchored at the bottom left corner.
+        *    This property is ignored if custom HTML is used to represent the info box.
+        **/
+        showPointer?: boolean;
+
+        /**
+        *    The pushpin associated with this info box. If the Microsoft.Maps.Themes.BingTheme module is loaded, then the info box appears when the hover or click events of the pushpin occur.
+        **/
+        pushpin?: Pushpin;
+
+        /**
+        *    The title of the info box.
+        **/
+        title?: string;
+
+        /**
+        *    An action to take when the link to the right of an info box title is clicked. The specified object contains a label (the link text) and an eventHandler (the name of the function handling a click of the link).
+        **/
+        titleAction?: { label?: string; eventHandler: () => void; };
+
+        /**
+        *    The name of the function to call when the title of the info box is clicked. If this property is set, the title of the info box is displayed as a link.
+        **/
+        titleClickHandler?: string;
+
+        /**
+        *    The style of the info box. The default value is standard.
+        *    To get the latest Bing Maps design, load the Microsoft.Maps.Themes.BingTheme module before creating your info box. In addition, when the BingTheme module is loaded, typeName can be set to mini to use the mini info box type.
+        **/
+        typeName?: InfoboxType;
+
+        /**
+        *    A boolean indicating whether to show or hide the info box. The default value is true. A value of false indicates that the info box is hidden, although it is still an entity on the map.
+        **/
+        visible?: boolean;
+
+        /**
+        *    The width of the info box. The default value is 256.
+        **/
+        width?: number;
+
+        /**
+        *    The z-index of the info box with respect to other items on the map.
+        **/
+        zIndex?: number;
+        
     }
 
     /**

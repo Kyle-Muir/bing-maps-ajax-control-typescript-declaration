@@ -117,3 +117,26 @@ var test_infobox = () => {
 	infoBox.mouseenter(mouseEventArgs);
 	infoBox.mouseleave(mouseEventArgs);
 }
+
+var test_infobox_options = () => {
+	var location = new Microsoft.Maps.Location(1,1);
+	var options: Microsoft.Maps.InfoboxOptions = {
+		actions: {eventHandler: () => {}},
+		description: 'description',
+		height: 255,
+		htmlContent: 'html content here',
+		id: '1234',
+		location: location,
+		offset: new Microsoft.Maps.Point(1, 1),
+		showCloseButton: true,
+		showPointer: true,
+		pushpin: new Microsoft.Maps.Pushpin(location),
+		title: 'Title',
+		titleAction: {eventHandler: () => {}},
+		titleClickHandler: 'Title Click Handler',
+		typeName: Microsoft.Maps.InfoboxType.mini,
+		visible: true,
+		width: 255,
+		zIndex: 9001
+	}	
+}
