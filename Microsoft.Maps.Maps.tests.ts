@@ -444,3 +444,25 @@ var test_position_error = () => {
 	error.errorCode = 1;
 	error.internalError = 'Stack trace here';
 }
+
+var test_pushpin_options = () => {
+	var point = new Microsoft.Maps.Point(1,1);
+	var location = new Microsoft.Maps.Location(1,1);
+	var infoBox = new Microsoft.Maps.Infobox(location);
+	var options: Microsoft.Maps.PushpinOptions = {
+		anchor: point,
+		draggable: true,
+		height: 255,
+		htmlContent: '<div></div>',
+		icon: 'icon.png',
+		infoBox: infoBox,
+		state: Microsoft.Maps.EntityState.selected,
+		text: 'text here',
+		textOffset: point,
+		typeName: 'type',
+		visible: true,
+		width: 32,
+		zIndex: 9001
+	}
+
+}

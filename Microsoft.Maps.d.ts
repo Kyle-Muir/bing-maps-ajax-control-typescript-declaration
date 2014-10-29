@@ -1289,19 +1289,74 @@
         zIndex?: number;
     }
 
+    /**
+    *    Represents the options for a pushpin.
+    **/
     export interface PushpinOptions {
+
+        /**
+        *    The point on the pushpin icon which is anchored to the pushpin location. An anchor of (0,0) is the top left corner of the icon. The default anchor is the bottom center of the icon.
+        **/
         anchor?: Point;
+
+        /**
+        *    A boolean indicating whether the pushpin can be dragged to a new position with the mouse.
+        **/
         draggable?: boolean;
+
+        /**
+        *    The height of the pushpin, which is the height of the pushpin icon. The default value is 39.
+        **/
         height?: number;
+
+        /**
+        *    The HTML that represents the pushpin.
+        **/
         htmlContent?: string;
+
+        /**
+        *    The path of the image to use as the pushpin icon.
+        **/
         icon?: string;
+
+        /**
+        *    The info box associated with this pushpin. If the Microsoft.Maps.Themes.BingTheme module is loaded, then the info box appears when the hover or click events of the pushpin occur.
+        **/
         infobox?: Infobox;
+
+        /**
+        *    The state of the pushpin, such as highlighted or selected. To get the latest pushpin state design, load the Microsoft.Maps.Themes.BingTheme module before creating the pushpin.
+        **/
         state?: EntityState;
+
+        /**
+        *    The text associated with the pushpin.
+        **/
         text?: string;
+
+        /**
+        *    The amount the text is shifted from the pushpin icon. The default value is (0,5).
+        **/
         textOffset?: Point;
+
+        /**
+        *    The type of the pushpin, as a string. The pushpin DOM (document object model) node created for the pushpin will have the specified typeName. A standard pushpin type is used unless the Microsoft.Maps.Themes.BingTheme module is loaded, in which case typeName can be set to ‘micro’ to use the micro pushpin type.
+        **/
         typeName?: string;
+
+        /**
+        *    A boolean indicating whether to show or hide the pushpin. The default value is true. A value of false indicates that the pushpin is hidden, although it is still an entity on the map.
+        **/
         visible?: boolean;
+
+        /**
+        *    The width of the pushpin, which is the width of the pushpin icon. The default value is 25.
+        **/
         width?: number;
+
+        /**
+        *    The z-index of the pushpin with respect to other items on the map.
+        **/
         zIndex?: number;
     }
 
