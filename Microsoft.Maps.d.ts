@@ -1163,10 +1163,28 @@
         timestamp: string;
     }
 
+    /**
+    *    Defines options for a tile source.
+    **/
     export interface TileSourceOptions {
+
+        /**
+        *    The pixel height of each tile in the tile source. The default value is 256.
+        *    The specified height needs to be a multiplier of 2 of the current projection’s tile height for the tiles to be shown. For example, since Mercator tile source tiles are 256x256, this projection supports tiles that are 64x64, 128x128, 256x256, 512x512, or any combination of these.
+        **/
         height?: number;
-        //The string that constructs the URLs used to retrieve tiles from the tile source. This property is required. The uriConstructor will replace {subdomain} and {quadkey}.
-        uriConstructor: string;
+        
+        /**
+        *    The string that constructs the URLs used to retrieve tiles from the tile source. This property is required.
+        *    The uriConstructor will replace {subdomain} and {quadkey}.
+        *    You can also set this to a callback function that receives a tile URL with location (x,y) and zoom level properties. This is useful when you want to use tiles with x/y/zoom URL structure, or if you are connecting to a Web Map Service (WMS) and need to pass the tile bounding box in the URL.
+        **/
+        uriConstructor?: string;
+
+        /**
+        *    The pixel width of each tile in the tile source. The default value is 256.
+        *    The specified width needs to be a multiplier of 2 of the current projection’s tile width for the tiles to be shown. For example, since Mercator tile source tiles are 256x256, this projection supports tiles that are 64x64, 128x128, 256x256, 512x512, or any combination of these.
+        **/
         width?: number;
     }
 

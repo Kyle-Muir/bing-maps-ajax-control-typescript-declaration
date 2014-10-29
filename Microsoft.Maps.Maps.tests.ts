@@ -379,3 +379,11 @@ var test_view_options = () => {
 		zoom: 123
 	}
 }
+
+var test_tile_source_options = () => {
+	var options : Microsoft.Maps.TileSourceOptions = {
+		height: 100,
+		uriConstructor: 'http://www.microsoft.com/maps/isdk/ajax/layers/lidar/{quadkey}.png',
+		width: 100
+	}
+}
