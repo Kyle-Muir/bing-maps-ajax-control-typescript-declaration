@@ -286,3 +286,32 @@ var test_map_mode = () => {
 	mapMode.setOptions({shouldClipPolygons: true});
 	mapMode.setViewChangeEndDelay(1000);
 }
+
+var test_map_options = () => {
+	var options : Microsoft.Maps.MapOptions = {
+		backgroundColor: new Microsoft.Maps.Color(1, 1, 1, 1),
+		credentials: 'CREDENTIALSHERE',
+		customizeOverlays: true,
+		disableBirdseye: true,
+		disableKeyboardInput: true,
+		disableMouseInput: true,
+		disablePanning: true,
+		disableTouchInput: true,
+		disableUserInput: true,
+		disableZooming: true,
+		enableClickableLogo: true,
+		enableSearchLogo: true,
+		fixedMapPosition: true,
+		height: 123,
+		inertiaIntensity: 123,
+		showBreadcrumb: true,
+		showCopyright: true,
+		showDashboard: true,
+		showMapTypeSelector: true,
+		showScalebar: true,
+		theme: {},
+		tileBuffer: 123,
+		useInertia: true,
+		width: 123
+	}
+}

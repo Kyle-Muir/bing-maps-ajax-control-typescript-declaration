@@ -514,30 +514,145 @@
         toString(): string;
     }
 
+    /**
+    *    Represents options to customize the map that is displayed.
+    **/
     export interface MapOptions {
+
+        /**
+        *    The color to use for the map control background. The default color is #F4F2EE.
+        *    This property can only be set when using the @see Map constructor.
+        **/
         backgroundColor?: Color;
+
+        /**
+        *    The Bing Maps Key used to authenticate the application.
+        *    This property can only be set when using the @see Map constructor.
+        **/
         credentials?: string;
+
+        /**
+        *    A boolean indicating whether to load the new Bing Maps overlay styles. The default value is false.
+        *    This property setting only takes effect if the Microsoft.Maps.Overlays.Style module is loaded.
+        **/
         customizeOverlays?: boolean;
+
+        /**
+        *    A boolean indicating whether to disable the bird’s eye map type. The default value is false. If this property is set to true, bird’s eye will be removed from the map navigation control and the birdseyeMapTypeId is disabled. Additionally, the auto map type will only display road or aerial.
+        *    This property can only be set when using the @see Map constructor.
+        **/
         disableBirdseye?: boolean;
+
+        /**
+        *    A boolean value indicating whether to disable the map’s response to keyboard input. The default value is false.
+        **/
         disableKeyboardInput?: boolean;
+
+        /**
+        *    A boolean value indicating whether to disable the map’s response to mouse input. The default value is false.
+        **/
         disableMouseInput?: boolean;
+
+        /**
+        *    A boolean value indicating whether to disable the user’s ability to pan the map. The default value is false.
+        **/
         disablePanning?: boolean;
+
+        /**
+        *    A boolean value indicating whether to disable the map’s response to touch input. The default value is false.
+        **/
         disableTouchInput?: boolean;
+
+        /**
+        *    A boolean value indicating whether to disable the map’s response to any user input. The default value is false.
+        **/
         disableUserInput?: boolean;
+
+        /**
+        *    A boolean value indicating whether to disable the user’s ability to zoom in or out. The default value is false.
+        **/
         disableZooming?: boolean;
+
+        /**
+        *    A boolean value indicating whether the BingTM logo on the map is clickable. The default value is true.
+        *    This property can only be set when using the @see Map constructor.
+        **/
         enableClickableLogo?: boolean;
+
+        /**
+        *    A boolean value indicating whether to enable the BingTM hovering search logo on the map. The default value is true.
+        *    This property can only be set when using the @see Map constructor.
+        **/
         enableSearchLogo?: boolean;
+
+        /**
+        *    A boolean indicating whether the div containing the map control is fixed on the page and the browser will not be resized. The default value is false. In this case the map control redraws if necessary based on any div or window resize.
+        *    If this property is set to true, the map control does not check the size of the div containing it every time the map view changes, thus increasing the performance of the control.
+        *    This property can only be set when using the @see Map constructor.
+        **/
         fixedMapPosition?: boolean;
+
+        /**
+        *    The height of the map. The default value is null. If no height is specified, the height of the div is used. If height is specified, then width must be specified as well.
+        **/
         height?: number;
+
+        /**
+        *    A number between 0 and 1 specifying the intensity of the inertia animation effect. The inertia effect increases as the intensity value gets larger. The default value is .85. Setting this property to 0 indicates no inertia effect.
+        *    The useInertia property must be set to true for the inertiaIntensity value to have an effect.
+        **/
         inertiaIntensity?: number;
+
+        /**
+        *    A boolean value indicating whether to display the “breadcrumb control”. The breadcrumb control shows the current center location’s geography hierarchy. For example, if the location center is Seattle, the breadcrumb control displays “World . United States . WA”. The default value is false.
+        *    The breadcrumb control displays best when the width of the map is at least 300 pixels.
+        *    This property can only be set when using the @see Map constructor.
+        **/
         showBreadcrumb?: boolean;
+
+        /**
+        *    A boolean value indicating whether or not to show the map copyright. The default value is true.
+        *    This property can only be set when using the @see Map constructor.
+        *    IMPORTANT: Bing Maps Platform API Terms of Use requires copyright information to be displayed. Only set this option to false when copyright information is displayed through alternate means.
+        **/
         showCopyright?: boolean;
+
+        /**
+        *    A boolean value indicating whether to show the map navigation control. The default value is true.
+        *    This property can only be set when using the @see Map constructor.
+        **/
         showDashboard?: boolean;
+
+        /**
+        *    A boolean value indicating whether to show the map type selector in the map navigation control. The default value is true.
+        *    This property can only be set when using the @see Map constructor.
+        **/
         showMapTypeSelector?: boolean;
+
+        /**
+        *    A boolean value indicating whether to show the scale bar. The default value is true.
+        *    This property can only be set when using the @see Map constructor.
+        **/
         showScalebar?: boolean;
+
+        /**
+        *    A theme object specifying the theme to use for the design of the map. To get the latest Bing Maps design, load the Microsoft.Maps.Themes.BingTheme module and assign a BingTheme object to this property.
+        **/
         theme?: any;
+
+        /**
+        *    A number between 0 and 4 specifying how many tiles to use as a buffer around the map view. The default value is 0.
+        **/
         tileBuffer?: number;
+
+        /**
+        *    A boolean value indicating whether to use the inertia animation effect during map navigation. The default value is true.
+        **/
         useInertia?: boolean;
+
+        /**
+        *    The width of the map. The default value is null. If no width is specified, the width of the div is used. If width is specified, then height must be specified as well.
+        **/
         width?: number;
     }
 
