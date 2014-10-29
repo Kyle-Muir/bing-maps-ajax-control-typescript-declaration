@@ -521,18 +521,25 @@
         static selected: string;
     }
 
-    /*
-        Defines a tile layer’s visibility during animation.
-    */
-    export class AnimationVisibility {
-        //The map control determines whether or not to show a tile layer based on system capability. If a browser can render a tile layer with acceptable performance, it is displayed during animations.
-        static auto: string;
+    /**
+    *    Defines a tile layer’s visibility during animation.
+    **/
+    export enum AnimationVisibility {
 
-        //The tile layer is not displayed during animation.
-        static hide: string;
+        /**
+        *    The map control determines whether or not to show a tile layer based on system capability. If a browser can render a tile layer with acceptable performance, it is displayed during animations.
+        **/
+        auto,
 
-        //The tile layer is displayed during animations. This option may impact performance on older browsers.
-        static show: string;
+        /**
+        *    The tile layer is not displayed during animation.
+        **/
+        hide,
+
+        /**
+        *    The tile layer is displayed during animations. This option may impact performance on older browsers.
+        **/
+        show
     }
 
     export class InfoboxType {
