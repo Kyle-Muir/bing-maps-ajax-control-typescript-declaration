@@ -362,3 +362,20 @@ var test_point = () => {
 	var returnedClone: Microsoft.Maps.Point = point.clone();
 	var toString: string = point.toString();
 }
+
+var test_view_options = () => {
+	var location = new Microsoft.Maps.Location(1,1);
+	var locationRect = new Microsoft.Maps.LocationRect(location, 200, 200);
+	var point = new Microsoft.Maps.Point(1,1);
+	var viewOptions : Microsoft.Maps.ViewOptions = {
+		animate: true,
+		bounds: locationRect,
+		center: location,
+		centerOffset: point,
+		heading: 1,
+		labelOverlay: Microsoft.Maps.LabelOverlay.hidden,
+		mapTypeId: '123',
+		padding: 123,
+		zoom: 123
+	}
+}

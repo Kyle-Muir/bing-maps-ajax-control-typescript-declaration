@@ -710,16 +710,55 @@
         width?: number;
     }
 
+    /**
+    *    Contains options for the map view.
+    **/
     export interface ViewOptions {
-        //Properties
+        
+        /**
+        *    A boolean that specifies whether to animate map navigation. Note that this option is associated with each setView call and defaults to true if not specified.
+        **/
         animate?: boolean;
+
+        /**
+        *    The bounding rectangle of the map view. If both are specified, bounds takes precedence over center.
+        **/
         bounds?: LocationRect;
+
+        /**
+        *    The location of the center of the map view. If both are specified, bounds takes precedence over center.
+        **/
         center?: Location;
+
+        /**
+        *    The amount the center is shifted. This property is ignored if center is not specified.
+        **/
         centerOffset?: Point;
+
+        /**
+        *    The directional heading of the map. The heading is represented in geometric degrees with 0 or 360 = North, 90 = East, 180 = South, and 270 = West.
+        **/
         heading?: number;
+
+        /**
+        *    A constant indicating how map labels are displayed.
+        **/
         labelOverlay?: LabelOverlay;
+
+        /**
+        *    The map type of the view. Valid map types are found in the @see MapTypeId Enumeration topic.
+        **/
         mapTypeId?: string;
+
+        /**
+        *    The amount of padding to be added to each side of the bounds of the map view.
+        **/
         padding?: number;
+
+        /**
+        *    The zoom level of the map view.
+        *    For information about map scale and resolution with respect to zoom level, see Understanding Scale and Resolution.
+        **/
         zoom?: number;
     }
 
