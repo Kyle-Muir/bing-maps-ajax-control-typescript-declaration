@@ -112,20 +112,74 @@
         removeAccuracyCircle(): void;
     }
 
-    export class MouseEventArgs {
-        eventName: string;
-        handled: boolean;
-        isPrmary: boolean;
-        isSecondary: boolean;
-        isTouchEvent: boolean;
-        originalEvent: any;
-        pageX: number;
-        pageY: number;
-        target: any;
-        targetType: string;
-        wheelDelta: number;
+    /**
+    *    Contains the arguments for mouse events.
+    **/
+    export interface MouseEventArgs {
 
+        /**
+        *    The event that occurred.
+        **/
+        eventName?: string;
+
+        /**
+        *    A boolean indicating whether the event is handled. If this property is set to true, the default map control behavior for the event is cancelled.
+        **/
+        handled?: boolean;
+
+        /**
+        *    A boolean indicating if the primary button (such as the left mouse button or a tap on a touch screen) was used.
+        **/
+        isPrimary?: boolean;
+
+        /**
+        *    A boolean indicating if the secondary mouse button (such as the right mouse button) was used.
+        **/
+        isSecondary?: boolean;
+
+        /**
+        *    A boolean indicating whether the event that occurred was a touch event.
+        **/
+        isTouchEvent?: boolean;
+
+        /**
+        *    The original browser event.
+        **/
+        originalEvent?: any;
+
+        /**
+        *    The x-value of the pixel coordinate on the page of the mouse cursor.
+        **/
+        pageX?: number;
+
+        /**
+        *    The y-value of the pixel coordinate on the page of the mouse cursor.
+        **/
+        pageY?: number;
+
+        /**
+        *    The object that fired the event.
+        **/
+        target?: any;
+
+        /**
+        *    The type of the object that fired the event. Valid values include the following: ‘map’, ‘polygon’, ‘polyline’, or ‘pushpin’
+        **/
+        targetType?: string;
+
+        /**
+        *    The number of units that the mouse wheel has changed.
+        **/
+        wheelDelta?: number;
+
+        /**
+        *    Returns the x-value of the pixel coordinate, relative to the map, of the mouse.
+        **/
         getX(): number;
+
+        /**
+        *    Returns the y-value of the pixel coordinate, relative to the map, of the mouse.
+        **/
         getY(): number;
     }
 

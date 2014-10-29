@@ -111,7 +111,14 @@ var test_infobox = () => {
 	infoBox.setOptions(options);
 	var toString: string = infoBox.toString();
 
-	var mouseEventArgs = new Microsoft.Maps.MouseEventArgs();
+	var mouseEventArgs: Microsoft.Maps.MouseEventArgs = {
+		getX: () => {
+			return 1;
+		},
+		getY: () => {
+			return 1;
+		}
+	};
 	infoBox.click(mouseEventArgs);
 	infoBox.entitychanged(infoBox);
 	infoBox.mouseenter(mouseEventArgs);
@@ -246,7 +253,14 @@ var test_map = () => {
 	var pixelToLocationArrayPoint: Microsoft.Maps.Location[] = map.tryPixelToLocation(arrayOfPoints);
 	var pixelToLocationArrayPointWithPixelReference: Microsoft.Maps.Location[] = map.tryPixelToLocation(arrayOfPoints, Microsoft.Maps.PixelReference.control);
 
-	var mouseEventArgs = new Microsoft.Maps.MouseEventArgs();
+	var mouseEventArgs: Microsoft.Maps.MouseEventArgs = {
+		getX: () => {
+			return 1;
+		},
+		getY: () => {
+			return 1;
+		}
+	};
 	var keyEventArgs : Microsoft.Maps.KeyEventArgs = {};
 
 	map.click(mouseEventArgs);
@@ -314,4 +328,27 @@ var test_map_options = () => {
 		useInertia: true,
 		width: 123
 	}
+}
+
+var test_mouse_event_args = () => {
+	var mouseEventArgs: Microsoft.Maps.MouseEventArgs = {
+		eventName: 'click',
+		handled: true,
+		isPrimary: true,
+		isSecondary: true,
+		isTouchEvent: true,
+		originalEvent: {},
+		pageX: 1,
+		pageY: 1,
+		target: {},
+		targetType: 'target type',
+		wheelDelta: 1,
+
+		getX: () => {
+			return 1;
+		},
+		getY: () => {
+			return 1;
+		}
+	};
 }
