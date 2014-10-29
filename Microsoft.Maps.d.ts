@@ -170,28 +170,114 @@
         shiftKey?: boolean;
     }
 
+    /**
+    *    Represents a rectangle on the map.
+    **/
     export class LocationRect {
+
+        /**
+        *    Initializes a new instance of the LocationRect class.
+        **/
         constructor (center: Location, width: number, height: number);
 
+        /**
+        *    The location that defines the center of the rectangle.
+        **/
         center: Location;
+
+        /**
+        *    The height, in degrees, of the rectangle.
+        **/
         height: number;
+
+        /**
+        *    The width, in degrees, of the rectangle.
+        **/
         width: number;
 
+        /**
+        *    Returns a LocationRect using the specified locations for the northwest and southeast corners.
+        **/
         static fromCorners(northwest: Location, southeast: Location): LocationRect;
+
+        /**
+        *    Returns a LocationRect using the specified northern and southern latitudes and western and eastern longitudes for the rectangle boundaries.
+        **/
         static fromEdges(north: number, west: number, south: number, east: number, altitude: number, altitudeReference: AltitudeReference): LocationRect;
 
+        /**
+        *    Returns a LocationRect using a list of locations or an array of locations.
+        *    To provide a list of locations: 
+        *    Microsoft.Maps.LocationRect.fromLocations(location1, location2, location3);
+        *    To provide an array of locations: 
+        *    var locations = [location1, location2, location3];
+        *    Microsoft.Maps.LocationRect.fromLocations(locations);
+        **/
         static fromLocations(...locations: Location[]): LocationRect;
+        
+        /**
+        *    Returns a LocationRect using a list of locations or an array of locations.
+        *    To provide a list of locations: 
+        *    Microsoft.Maps.LocationRect.fromLocations(location1, location2, location3);
+        *    To provide an array of locations: 
+        *    var locations = [location1, location2, location3];
+        *    Microsoft.Maps.LocationRect.fromLocations(locations);
+        **/
+        static fromLocations(locations: Location[]): LocationRect;
+        
+        /**
+        *    Creates a LocationRect from a string with the following format: "north,west,south,east". North, west, south and east specify the coordinate number values.
+        **/
         static fromString(str: string): LocationRect;
 
+        /**
+        *    Returns a copy of the LocationRect object.
+        **/
         clone(): LocationRect;
+
+        /**
+        *    Returns whether the specified Location is within the LocationRect.
+        **/
         contains(location: Location): boolean;
+
+        /**
+        *    Returns the longitude that defines the eastern edge of the LocationRect.
+        **/
         getEast(): number;
+
+        /**
+        *    Returns the latitude that defines the northern edge of the LocationRect.
+        **/
         getNorth(): number;
+
+        /**
+        *    Returns the Location that defines the northwest corner of the LocationRect.
+        **/
         getNorthwest(): Location;
+
+        /**
+        *    Returns the latitude that defines the southern edge of the LocationRect.
+        **/
         getSouth(): number;
+
+        /**
+        *    Returns the Location that defines the southeast corner of the LocationRect.
+        **/
         getSoutheast(): Location;
+
+        /**
+        *    Returns the latitude that defines the western edge of the LocationRect.
+        **/
         getWest(): number;
-        insersects(rect: LocationRect): boolean;
+
+        /**
+        *    Returns whether the specified LocationRect intersects with this LocationRect.
+        **/
+        intersects(rect: LocationRect): boolean;
+
+        /**
+        *    Converts the LocationRect object to a string.
+        **/
         toString(): string;
     }
 

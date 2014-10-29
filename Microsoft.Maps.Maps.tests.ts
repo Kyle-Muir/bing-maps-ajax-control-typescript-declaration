@@ -167,3 +167,27 @@ var test_location = () => {
 	var clone : Microsoft.Maps.Location = location.clone();
 	var locationAsString : string = location.toString();
 }
+
+var test_location_rect = () => {
+	var location = new Microsoft.Maps.Location(1,1);
+	var locationRect = new Microsoft.Maps.LocationRect(location, 200, 200);
+	var center: Microsoft.Maps.Location = locationRect.center;
+	var height: number = locationRect.height;
+	var width: number = locationRect.width;
+	var fromCorners : Microsoft.Maps.LocationRect = Microsoft.Maps.LocationRect.fromCorners(location, location);
+	var fromEdges : Microsoft.Maps.LocationRect = Microsoft.Maps.LocationRect.fromEdges(1,1,1,1,1,Microsoft.Maps.AltitudeReference.ground);
+	var fromLocationsWithList : Microsoft.Maps.LocationRect = Microsoft.Maps.LocationRect.fromLocations(location, location, location);
+	var locations = [location, location, location];
+	var fromLocationsWithArray : Microsoft.Maps.LocationRect = Microsoft.Maps.LocationRect.fromLocations(locations);
+	var fromString : Microsoft.Maps.LocationRect = Microsoft.Maps.LocationRect.fromString('1,1,1,1');
+	var clone : Microsoft.Maps.LocationRect = locationRect.clone();
+	var contains : boolean = locationRect.contains(location);
+	var getEast : number = locationRect.getEast();
+	var getNorth : number = locationRect.getNorth();
+	var getNorthwest : Microsoft.Maps.Location = locationRect.getNorthwest();
+	var getSouth : number = locationRect.getSouth();
+	var getSoutheast : Microsoft.Maps.Location = locationRect.getSoutheast();
+	var getWest : number = locationRect.getWest();
+	var intersects : boolean = locationRect.intersects(locationRect);
+	var toString : string = locationRect.toString();
+}
