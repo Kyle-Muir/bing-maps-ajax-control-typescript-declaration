@@ -63,3 +63,14 @@ var test_entity_collection = () => {
 	entityCollection.entitychanged(object);
 	entityCollection.entityremoved(object);
 }
+
+var test_entity_collection_options = () => {
+	var options : Microsoft.Maps.EntityCollectionOptions = {
+		bubble: true,
+		visible: true,
+		zIndex: 2
+	}
+
+	var emptyOptions : Microsoft.Maps.EntityCollectionOptions = {
+	}
+}

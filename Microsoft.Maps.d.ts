@@ -677,12 +677,25 @@
         height?: number;
     }
 
-    /*
-        Contains a collection of entities. An Entity can be any one of the following types: Infobox, Polygon, Polyline, Pushpin, TileLayer, or EntityCollection.
-    */
+    /**
+    *    Contains options for an entity collection.
+    **/
     export interface EntityCollectionOptions {
+
+        /**
+        *    A boolean indicating whether to set the options of all entities when an option of an entity within the collection is set. The default value is true. For example, in an entity collection composed of multiple polygons, if this property is set to true setting one polygon’s fill color to red changes the fill color of all of the other polygons in the entity collection to red.
+        *    NOTE: This property is only available when the Microsoft.Maps.AdvancedShapes module is loaded.
+        **/
         bubble?: boolean;
+
+        /**
+        *    A boolean indicating whether the entity collection is visible on the map.
+        **/
         visible?: boolean;
+
+        /**
+        *    The z-index of the entity collection with respect to other items on the map.
+        **/
         zIndex?: number;
     }
 
