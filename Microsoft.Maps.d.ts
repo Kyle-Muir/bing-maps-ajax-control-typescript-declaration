@@ -38,46 +38,44 @@
         //No members
     }
 
-    /*
-        Represents the coordinates of the position of the user.
-    */
+    /**
+    *    Represents the coordinates of the position of the user.
+    **/
     export class Coordinates {
-        /*************
-        * PROPERTIES *
-        **************/
-        /*
-            The accuracy, in meters, of the latitude and longitude values.
-        */
+        
+        /**
+        *    The accuracy, in meters, of the latitude and longitude values.
+        **/
         accuracy: number;
 
-        /*
-            The altitude of the location.
-        */
+        /**
+        *    The altitude of the location.
+        **/
         altitude: number;
 
-        /*
-            The accuracy, in meters, of the altitude value.
-        */
+        /**
+        *    The accuracy, in meters, of the altitude value.
+        **/
         altitudeAccuracy: number;
 
-        /*
-            The direction of travel of the hosting device.
-        */
+        /**
+        *    The direction of travel of the hosting device.
+        **/
         heading: number;
 
-        /*
-            The latitude of the location.
-        */
+        /**
+        *    The latitude of the location.
+        **/
         latitude: number;
 
-        /*
-            The longitude of the location.
-        */
+        /**
+        *    The longitude of the location.
+        **/
         longitude: number;
 
-        /*
-            The ground speed of the hosting device, in meters per second.
-        */
+        /**
+        *    The ground speed of the hosting device, in meters per second.
+        **/
         speed: number;
     }
 

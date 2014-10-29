@@ -29,3 +29,14 @@ var test_color = () => {
 	var hexValue : string = color.toHex();
 	var stringValue : string = color.toString();
 }
+
+var test_coordinates = () => {
+	var coordinates = new Microsoft.Maps.Coordinates();
+	coordinates.accuracy = 1;
+	coordinates.altitude = 1;
+	coordinates.altitudeAccuracy = 1;
+	coordinates.heading = 1;
+	coordinates.latitude = 1;
+	coordinates.longitude = 1;
+	coordinates.speed = 1;
+}
