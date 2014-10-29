@@ -140,3 +140,15 @@ var test_infobox_options = () => {
 		zIndex: 9001
 	}	
 }
+
+var test_key_event_args = () => {
+	var eventArgs : Microsoft.Maps.KeyEventArgs = {
+		altKey: false,
+		ctrlKey: true,
+		eventName: 'click',
+		handled: true,
+		keyCode: '51',
+		originalEvent: {},
+		shiftKey: true
+	}
+}

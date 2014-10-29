@@ -129,16 +129,45 @@
         getY(): number;
     }
 
-    export class KeyEventArgs {
-        altKey: boolean;
-        ctrlKey: boolean;
-        eventName: string;
-        //A booleanean indicating whether the event is handled. If this property is set to true, the default map control behavior for the event is cancelled.
-        handled: boolean;
-        //The ASCII character code that identifies the keyboard key that was pressed.
-        keyCode: string;
-        originalEvent: any;
-        shiftKey: boolean;
+    /**
+    *    Contains the arguments for keyboard events.
+    **/
+    export interface KeyEventArgs {
+
+        /**
+        *    A boolean indicating if the ALT key was pressed.
+        **/
+        altKey?: boolean;
+
+        /**
+        *    A boolean indicating if the CTRL key was pressed.
+        **/
+        ctrlKey?: boolean;
+
+        /**
+        *    The event that occurred.
+        **/
+        eventName?: string;
+
+        /**
+        *    A boolean indicating whether the event is handled. If this property is set to true, the default map control behavior for the event is cancelled.
+        **/
+        handled?: boolean;
+
+        /**
+        *    The ASCII character code that identifies the keyboard key that was pressed.
+        **/
+        keyCode?: string;
+
+        /**
+        *    The original browser event.
+        **/
+        originalEvent?: any;
+
+        /**
+        *    A boolean indicating if the SHIFT key was pressed.
+        **/
+        shiftKey?: boolean;
     }
 
     export class LocationRect {
