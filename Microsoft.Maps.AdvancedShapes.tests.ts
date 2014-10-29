@@ -50,14 +50,21 @@ var test_polygon = () => {
     polygon.setOptions(options);
     polygon.setRings(locationArrays);
     polygon.toString();
-
-    polygon.click(new Microsoft.Maps.MouseEventArgs());
-    polygon.dblclick(new Microsoft.Maps.MouseEventArgs());
+    var mouseEventArgs: Microsoft.Maps.MouseEventArgs = {
+        getX: () => {
+            return 1;
+        },
+        getY: () => {
+            return 1;
+        }
+    };
+    polygon.click(mouseEventArgs);
+    polygon.dblclick(mouseEventArgs);
     var entity: Microsoft.Maps.Entity = {};
     polygon.entitychanged(entity);
-    polygon.mousedown(new Microsoft.Maps.MouseEventArgs());
-    polygon.mouseout(new Microsoft.Maps.MouseEventArgs());
-    polygon.mouseover(new Microsoft.Maps.MouseEventArgs());
-    polygon.mouseup(new Microsoft.Maps.MouseEventArgs());
-    polygon.rightclick(new Microsoft.Maps.MouseEventArgs());
+    polygon.mousedown(mouseEventArgs);
+    polygon.mouseout(mouseEventArgs);
+    polygon.mouseover(mouseEventArgs);
+    polygon.mouseup(mouseEventArgs);
+    polygon.rightclick(mouseEventArgs);
 }

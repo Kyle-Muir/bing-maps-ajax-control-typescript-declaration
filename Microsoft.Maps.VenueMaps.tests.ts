@@ -110,15 +110,22 @@ var test_directory = () => {
 	directory.isInDOM();
 	directory.removeFromDOM();
 	directory.setHeight(50);
-
-	var mouseArgs = { eventArgs: new Microsoft.Maps.MouseEventArgs(), primitive: new Microsoft.Maps.VenueMaps.Primitive() };
+	var mouseEventArgs: Microsoft.Maps.MouseEventArgs = {
+		getX: () => {
+			return 1;
+		},
+		getY: () => {
+			return 1;
+		}
+	};
+	var mouseArgs = { eventArgs: mouseEventArgs, primitive: new Microsoft.Maps.VenueMaps.Primitive() };
 	directory.handleMouseClick(mouseArgs);
 	directory.handleMouseMouseOut(mouseArgs);
 	directory.handleMouseOver(mouseArgs);
 
-	directory.click(new Microsoft.Maps.MouseEventArgs(), new Microsoft.Maps.VenueMaps.Primitive());
-	directory.mouseout(new Microsoft.Maps.MouseEventArgs(), new Microsoft.Maps.VenueMaps.Primitive());
-	directory.mouseover(new Microsoft.Maps.MouseEventArgs(), new Microsoft.Maps.VenueMaps.Primitive());
+	directory.click(mouseEventArgs, new Microsoft.Maps.VenueMaps.Primitive());
+	directory.mouseout(mouseEventArgs, new Microsoft.Maps.VenueMaps.Primitive());
+	directory.mouseover(mouseEventArgs, new Microsoft.Maps.VenueMaps.Primitive());
 }
 
 var test_metadata = () => {
