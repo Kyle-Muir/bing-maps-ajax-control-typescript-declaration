@@ -509,15 +509,25 @@
         static isValid(labelOverlay: LabelOverlay): boolean;
     }
 
-    export class EntityState {
-        //The entity is highlighted on the map.
-        static highlighted: string;
+    /**
+    *    Defines the highlighted or selected state of an entity, such as a pushpin. To get the latest Bing Maps entity state design, load the Microsoft.Maps.Themes.BingTheme module before creating your entity.
+    **/
+    export enum EntityState {
 
-        //The entity is not highlighted or selected.
-        static none: string;
+        /**
+        *    The entity is highlighted on the map.
+        **/
+        highlighted,
 
-        //The entity is selected on the map.
-        static selected: string;
+        /**
+        *    The entity is not highlighted or selected.
+        **/
+        none,
+        
+        /**
+        *    The entity is selected on the map.
+        **/
+        selected
     }
 
     /**
