@@ -358,29 +358,144 @@
         toString(): string;
     }
 
+    /**
+    *    Represents an info box on the map. You can use this class to create pop-up balloons for pushpins.
+    **/
     export class Infobox implements Entity {
+
+        /**
+        *    Initializes a new instance of the Infobox class.
+        **/
         constructor(location: Location, options?: InfoboxOptions);
+
+        /**
+        *    Returns a list of actions, where each item is a name-value pair indicating an action link name and the event name for the action that corresponds to that action link.
+        **/
         getActions(): Object;
+
+        /**
+        *    Returns the point on the infobox which is anchored to the map. An anchor of (0,0) is the top left corner of the infobox.
+        **/
         getAnchor(): Point;
+
+        /**
+        *    Returns the string that is printed inside the infobox.
+        **/
         getDescription(): string;
+
+        /**
+        *    Returns the height of the info box.
+        **/
         getHeight(): number;
+
+        /**
+        *    Returns the info box as HTML.
+        **/
         getHtmlContent(): string;
+
+        /**
+        *    Returns the ID of the info box.
+        **/
         getId(): string;
+
+        /**
+        *    Returns the location on the map where the infobox’s anchor is attached.
+        **/
         getLocation(): Location;
+
+        /**
+        *    Returns the amount the infobox pointer is shifted from the location of the infobox, or if showPointer is false, then it is the amount the infobox bottom left edge is shifted from the location of the infobox. The default value is (0,0), which means there is no offset.
+        **/
         getOffset(): Point;
+
+        /**
+        *    Returns the info box options.
+        **/
         getOptions(): InfoboxOptions;
+
+        /**
+        *    Returns a boolean indicating whether the infobox close button is shown.
+        **/
         getShowCloseButton(): boolean;
+
+        /**
+        *    Returns a boolean indicating whether the infobox is drawn with a pointer.
+        **/
         getShowPointer(): boolean;
+
+        /**
+        *    Returns a string that is the title of the info box.
+        **/
         getTitle(): string;
+
+        /**
+        *    Returns an object containing a name-value pair indicating the link text to the right of an info box title and the event name for the action that corresponds to that link.
+        **/
         getTitleAction(): Object;
+
+        /**
+        *    Returns the name of the function to call when the title of the info box is clicked.
+        **/
         getTitleClickHandler(): Function;
+
+        /**
+        *    Returns whether the infobox is visible. A value of false indicates that the infobox is hidden, although it is still an entity on the map.
+        **/
         getVisible(): boolean;
+
+        /**
+        *    Returns the width of the infobox.
+        **/
         getWidth(): number;
+
+        /**
+        *    Returns the z-index of the infobox with respect to other items on the map.
+        **/
         getZIndex(): number;
+
+        /**
+        *    Sets the HTML content of the infobox. You can use this method to change the look of the infobox. Note that info box options are ignored if custom HTML is set. Also, when custom HTML is used to represent the info box, the info box is anchored at the top-left corner.
+        *    var infoboxOptions = {width :200, height :100, showCloseButton: true, zIndex: 0, offset:new Microsoft.Maps.Point(10,0), showPointer: true}; 
+        *    var defInfobox = new Microsoft.Maps.Infobox(map.getCenter(), infoboxOptions ); 
+        *    map.entities.push(defInfobox); 
+        *    defInfobox.setHtmlContent('<div id="infoboxText" style="background-color:White; border-style:solid;border-width:medium; border-color:DarkOrange; min-height:100px; position:absolute;top:0px; left:23px; width:240px;"><b id="infoboxTitle" style="position:absolute; top:10px; left:10px; width:220px;">myTitle</b><a id="infoboxDescription" style="position:absolute; top:30px; left:10px; width:220px;">lkjsl lkjdkl lkajdlkj klasdjfkl</a></div>');
+        **/
         setHtmlContent(content: string): void;
+
+        /**
+        *    Sets the location on the map where the anchor of the infobox is attached.
+        **/
         setLocation(location: Location): void;
+
+        /**
+        *    Sets options for the infobox.
+        **/
         setOptions(options: InfoboxOptions): void;
+
+        /**
+        *    Converts the Infobox object to a string.
+        **/
         toString(): string;
+
+        /**
+        *    Occurs when the mouse is used to click the infobox.
+        **/
+        click: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *    Occurs when the location of the infobox or any of the infobox options change.
+        **/
+        entitychanged: (entity: Entity) => any;
+
+        /**
+        *    Occurs when the mouse cursor enters the area covered by the infobox.
+        **/
+        mouseenter: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *    Occurs when the mouse cursor leaves the area covered by the infobox.
+        **/
+        mouseleave: (eventArgs: MouseEventArgs) => any;
     }
 
     export class Polygon implements Entity {

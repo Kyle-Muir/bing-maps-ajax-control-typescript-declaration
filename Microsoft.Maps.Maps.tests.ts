@@ -84,3 +84,36 @@ var test_geo_location_provider = () => {
 	provider.getCurrentPosition({enableHighAccuracy: true});
 	provider.removeAccuracyCircle();
 }
+
+var test_infobox = () => {
+	var location = new Microsoft.Maps.Location(1,1);
+	var infoBox = new Microsoft.Maps.Infobox(location);
+	var infoBoxWithOptions = new Microsoft.Maps.Infobox(location, {id: '1234', showPointer: true});
+	var item: Object = infoBox.getActions();
+	var point: Microsoft.Maps.Point = infoBox.getAnchor();
+	var description: string = infoBox.getDescription();
+	var height: number = infoBox.getHeight();
+	var htmlContent: string = infoBox.getHtmlContent();
+	var id: string = infoBox.getId();
+	var returnedLocation: Microsoft.Maps.Location = infoBox.getLocation();
+	var returnedPoint: Microsoft.Maps.Point = infoBox.getOffset();
+	var options: Microsoft.Maps.InfoboxOptions = infoBox.getOptions();
+	var showCloseButton: boolean = infoBox.getShowCloseButton();
+	var showPointer: boolean = infoBox.getShowPointer();
+	var title: string = infoBox.getTitle();
+	var titleAction: Object = infoBox.getTitleAction();
+	var titleClickHandler: Function = infoBox.getTitleClickHandler();
+	var isVisible: boolean = infoBox.getVisible();
+	var width: number = infoBox.getWidth();
+	var zIndex: number = infoBox.getZIndex();
+	infoBox.setHtmlContent('123456');
+	infoBox.setLocation(location);
+	infoBox.setOptions(options);
+	var toString: string = infoBox.toString();
+
+	var mouseEventArgs = new Microsoft.Maps.MouseEventArgs();
+	infoBox.click(mouseEventArgs);
+	infoBox.entitychanged(infoBox);
+	infoBox.mouseenter(mouseEventArgs);
+	infoBox.mouseleave(mouseEventArgs);
+}
