@@ -152,3 +152,18 @@ var test_key_event_args = () => {
 		shiftKey: true
 	}
 }
+
+var test_location = () => {
+	var location = new Microsoft.Maps.Location(1,1);
+	var locationWithAltitude = new Microsoft.Maps.Location(1,1,1,Microsoft.Maps.AltitudeReference.ground);
+	var altitude: number = location.altitude;
+	var altitudeReference: Microsoft.Maps.AltitudeReference = location.altitudeReference;
+	var latitude: number = location.latitude;
+	var longitude: number = location.longitude;
+
+	var areEqual: boolean = Microsoft.Maps.Location.areEqual(location, locationWithAltitude);
+	var normalizedLongitude : number = Microsoft.Maps.Location.normalizeLongitude(123);
+
+	var clone : Microsoft.Maps.Location = location.clone();
+	var locationAsString : string = location.toString();
+}

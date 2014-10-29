@@ -195,18 +195,54 @@
         toString(): string;
     }
 
+    /**
+    *    Contains the altitude and coordinate values of a location on the map.
+    **/
     export class Location {
+
+        /**
+        *    Initializes a new instance of the Location class. The altitude and altitudeReference parameters default to undefined.
+        **/
         constructor (latitude: number, longitude: number, altitude?: number, altitudeReference?: AltitudeReference);
 
+        /**
+        *    The altitude of the location.
+        **/
         altitude: number;
+
+        /**
+        *    The reference from which the altitude is measured.
+        **/
         altitudeReference: AltitudeReference;
+
+        /**
+        *    The latitude of the location.
+        **/
         latitude: number;
+
+        /**
+        *    The longitude of the location.
+        **/
         longitude: number;
 
+        /**
+        *    Determines if the specified Location objects are equal.
+        **/
         static areEqual(location1: Location, location2: Location): boolean;
+
+        /**
+        *    Normalizes the specified longitude so that it is between -180 and 180.
+        **/
         static normalizeLongitude(longitude: number): number;
 
+        /**
+        *    Returns a copy of the Location object.
+        **/
         clone(): Location;
+
+        /**
+        *    Converts the Location object to a string.
+        **/
         toString(): string;
     }
 
