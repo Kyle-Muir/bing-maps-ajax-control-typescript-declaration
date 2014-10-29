@@ -686,41 +686,111 @@
         zIndex?: number;
     }
 
+    /**
+    *    Contains a collection of entities. An Entity can be any one of the following types: @see Infobox, @see Polygon, @see Polyline, @see Pushpin, @see TileLayer, or @see EntityCollection.
+    **/
     export class EntityCollection implements Entity {
-        /*
-         * CONSTRUCTOR
-         */
-
-        /*
-            Initializes a new instance of the EntityCollection class.
-        */
+        
+        /**
+        *    Initializes a new instance of the EntityCollection class.
+        **/
         EntityCollection(options?: EntityCollectionOptions);
 
-        /*
-         * METHODS
-         */
-
-        /*
-            Removes all entities from the collection.
-        */
+        /**
+        *    Removes all entities from the collection.
+        **/
         clear(): void;
+
+        /**
+        *    Returns the entity at the specified index in the collection.
+        **/
         get(index: number): Entity;
+
+        /**
+        *    Returns the number of entities in the collection.
+        **/
         getLength(): number;
+
+        /**
+        *    Returns whether the entity collection is visible on the map.
+        **/
         getVisible(): boolean;
+
+        /**
+        *    Gets the z-index of the entity collection with respect to other items on the map.
+        **/
         getZIndex(): number;
+
+        /**
+        *    Returns the index of the specified entity in the collection. If the entity is not found in the collection, -1 is returned.
+        **/
         indexOf(entity: Entity): number;
+
+        /**
+        *    Inserts the specified entity into the collection at the given index.
+        **/
         insert(entity: Entity, index: number): void;
+
+        /**
+        *    Removes the last entity from the collection and returns it.
+        **/
         pop(): Entity;
+
+        /**
+        *    Adds the specified entity to the last position in the collection.
+        **/
         push(entity: Entity): void;
+
+        /**
+        *    Removes the specified entity from the collection and returns it.
+        **/
         remove(entity: Entity): Entity;
+
+        /**
+        *    Removes the entity at the specified index from the collection and returns it.
+        **/
         removeAt(index: number): Entity;
+
+        /**
+        *    Sets the options for the entity collection.
+        **/
         setOptions(options: EntityCollectionOptions): void;
+
+        /**
+        *    Converts the EntityCollection object to a string.
+        **/
         toString(): string;
 
-        //Events
-        entityAdded: (object: { collection: EntityCollection; entity: Entity; }) => any;
-        entityChanged: (object: { collection: EntityCollection; entity: Entity; }) => any;
-        entityRemoved: (object: { collection: EntityCollection; entity: Entity; }) => any;
+        /**
+        *    Occurs when one of the following happens:
+        *
+        *    - An entity is added to the collection.
+        *    - One of the entities of the collection (such as another entity collection) fires the entityadded event.
+        *
+        *    For example, if collection #1 contains an entity, which is another collection #2, then when an entity is added to collection #2, two entityadded events are fired.
+        **/ 
+        entityadded: (object: { collection: EntityCollection; entity: Entity; }) => any;
+
+        /**
+        *    Occurs when one of the following happens:
+        *
+        *    - The collection changes.
+        *    - An entity of the collection changes.
+        *    - One of the entities of the collection (such as another entity collection) fires the entitychanged event.
+        *
+        *    For example, if collection #1 contains an entity, which is another collection #2, then when an entity of collection #2 changes, two entitychanged events are fired.
+        **/
+        entitychanged: (object: { collection: EntityCollection; entity: Entity; }) => any;
+
+        /**
+        *    Occurs when one of the following happens:
+        *
+        *    - An entity of the collection is removed.
+        *    - One of the entities of the collection (such as another entity collection) fires the entityremoved event.
+        *
+        *    For example, if collection #1 contains an entity, which is another collection #2, then when an entity of collection #2 is removed, two entityremoved events are fired.
+        **/
+        entityremoved: (object: { collection: EntityCollection; entity: Entity; }) => any;
     }
 
     export class Map {

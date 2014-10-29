@@ -40,3 +40,26 @@ var test_coordinates = () => {
 	coordinates.longitude = 1;
 	coordinates.speed = 1;
 }
+
+var test_entity_collection = () => {
+	var entity : Microsoft.Maps.TileLayer = new Microsoft.Maps.TileLayer({});
+	var entityCollection = new Microsoft.Maps.EntityCollection();
+	entityCollection.clear();
+	entityCollection.get(1);
+	entityCollection.getLength();
+	entityCollection.getVisible();
+	entityCollection.getZIndex();
+	entityCollection.indexOf(entity);
+	entityCollection.insert(entity, 1);
+	entityCollection.pop();
+	entityCollection.push(entity);
+	entityCollection.remove(entity);
+	entityCollection.removeAt(2);
+	entityCollection.setOptions({options: {bubble: true}});
+	entityCollection.toString();
+	
+	var object = {collection: entityCollection, entity: entity};
+	entityCollection.entityadded(object);
+	entityCollection.entitychanged(object);
+	entityCollection.entityremoved(object);
+}
