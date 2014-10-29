@@ -438,3 +438,9 @@ var test_position_circle_options = () => {
 		showOnMap: true
 	}
 }
+
+var test_position_error = () => {
+	var error = new Microsoft.Maps.PositionError();
+	error.errorCode = 1;
+	error.internalError = 'Stack trace here';
+}

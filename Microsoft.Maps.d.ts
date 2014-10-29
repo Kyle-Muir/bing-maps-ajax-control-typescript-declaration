@@ -1090,22 +1090,25 @@
         tiledownloadcomplete: () => any;
     }
 
+    /**
+    *    Represents the error when a user position request does not succeed.
+    **/
     export class PositionError {
-        /*
-            The error code.
-            Any one of the following error codes may be returned:
-            0 - An error occurred that is not covered by other error codes.
+      
+        /**
+        *    The error code.
+        *    Any one of the following error codes may be returned:
+        *    - 0 An error occurred that is not covered by other error codes.
+        *    - 1 The application does not have permission to use the GeoLocation API.
+        *    - 2 The position of the host device could not be determined.
+        *    - 3 The specified timeout was exceeded.
+        **/
+        errorCode: number;
 
-            1 - The application does not have permission to use the GeoLocation API.
-
-            2 - The position of the host device could not be determined.
-
-            3 - The specified timeout was exceeded.
-        */
-        code: number;
-
-        //The error message. This message is for the developer and is not intended to be displayed to the end user.
-        message: string;
+        /**
+        *    The error message. This message is for the developer and is not intended to be displayed to the end user.
+        **/
+        internalError: string;
     }
 
     /**
