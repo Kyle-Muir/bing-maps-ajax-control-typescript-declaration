@@ -387,3 +387,14 @@ var test_tile_source_options = () => {
 		width: 100
 	}
 }
+
+var test_tile_layer_options = () => {
+	var options : Microsoft.Maps.TileLayerOptions = {
+		animationDisplay: Microsoft.Maps.AnimationVisibility.auto,
+		downloadTimeout: 5000,
+		mercator: new Microsoft.Maps.TileSource({}),
+		opacity: 3,
+		visible: true,
+		zIndex: 3
+	}
+}

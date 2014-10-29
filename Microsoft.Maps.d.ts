@@ -1197,12 +1197,39 @@
         toString(): string;
     }
 
+    /**
+    *    Defines the options for a tile layer.
+    **/
     export interface TileLayerOptions {
+
+        /**
+        *    The tile layer’s visibility during animation. You can use this property to prevent overlays from displaying during animations, which can impact performance. The default value is auto.
+        **/
         animationDisplay?: AnimationVisibility;
+
+        /**
+        *    The number of milliseconds allowed for the tile layer image download. If the timeout occurs before the image is fully downloaded, the map control considers the download a failure. The default value is 10000.
+        **/
         downloadTimeout?: number;
+
+        /**
+        *    The tile source for the tile layer.
+        **/
         mercator?: TileSource;
+
+        /**
+        *    The opacity of the tile layer, defined by a number between 0 (not visible) and 1.
+        **/
         opacity?: number;
+
+        /**
+        *    A boolean indicating whether to show or hide the tile layer. The default value is true. A value of false indicates that the tile layer is hidden, although it is still an entity on the map.
+        **/
         visible?: boolean;
+
+        /**
+        *    The z-index of the tile layer, with respect to other items on the map.
+        **/
         zIndex?: number;
     }
 
