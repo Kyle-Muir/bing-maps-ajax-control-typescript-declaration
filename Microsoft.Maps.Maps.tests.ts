@@ -74,3 +74,13 @@ var test_entity_collection_options = () => {
 	var emptyOptions : Microsoft.Maps.EntityCollectionOptions = {
 	}
 }
+
+var test_geo_location_provider = () => {
+	var map = new Microsoft.Maps.Map(document.createElement('div'));
+	var provider = new Microsoft.Maps.GeoLocationProvider(map);
+	var location = new Microsoft.Maps.Location(1,1);
+	provider.addAccuracyCircle(location, 2, 2, {showOnMap: false});
+	provider.cancelCurrentRequest();
+	provider.getCurrentPosition({enableHighAccuracy: true});
+	provider.removeAccuracyCircle();
+}

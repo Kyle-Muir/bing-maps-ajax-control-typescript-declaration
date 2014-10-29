@@ -79,33 +79,36 @@
         speed: number;
     }
 
-    /*
-        Contains methods for obtaining and displaying the user’s current location.
-        Note: This functionality is only available on browsers that support the W3C GeoLocation API.
-    */
+    /**
+    *    Contains methods for obtaining and displaying the user’s current location.
+    *    Note: This functionality is only available on browsers that support the W3C GeoLocation API.
+    **/
     export class GeoLocationProvider {
+
+        /**
+        *    Initializes a new instance of the GeoLocationProvider class.
+        **/
         constructor (map: Map);
 
-        /*
-            Renders a geo location accuracy circle on the map. The accuracy circle is created with the center at the specified location, using the given radiusInMeters, and with the specified number of segments for the accuracy circle polygon. Additional options are also available to adjust the style of the polygon.
-        */
+        /**
+        *    Renders a geo location accuracy circle on the map. The accuracy circle is created with the center at the specified location, using the given radiusInMeters, and with the specified number of segments for the accuracy circle polygon. Additional options are also available to adjust the style of the polygon.
+        **/
         addAccuracyCircle(center: Location, radiusInMeters: number, segments: number, options: PositionCircleOptions): void;
 
-        /*
-            Cancels the processing of the current getCurrentPosition request. This method prevents the response from being processed.
-        */
+        /**
+        *    Cancels the processing of the current getCurrentPosition request. This method prevents the response from being processed.
+        **/
         cancelCurrentRequest(): void;
 
-        /*
-            Obtains the user’s current location and displays it on the map.
-            Important:
-                The accuracy of the user location obtained using this method varies widely depending on the desktop browser or mobile device of the requesting client. Desktop users may experience low user location accuracy (accuracy circles with large radiuses), while mobile user location accuracy may be much greater (a few meters).
-        */
+        /**
+        *    Obtains the user’s current location and displays it on the map.
+        *    Important: The accuracy of the user location obtained using this method varies widely depending on the desktop browser or mobile device of the requesting client. Desktop users may experience low user location accuracy (accuracy circles with large radiuses), while mobile user location accuracy may be much greater (a few meters).
+        **/
         getCurrentPosition(options: PositionOptions): void;
 
-        /*
-            Removes the current geo location accuracy circle.
-        */
+        /**
+        *    Removes the current geo location accuracy circle.
+        **/
         removeAccuracyCircle(): void;
     }
 
@@ -523,7 +526,7 @@
         *    The entity is not highlighted or selected.
         **/
         none,
-        
+
         /**
         *    The entity is selected on the map.
         **/
