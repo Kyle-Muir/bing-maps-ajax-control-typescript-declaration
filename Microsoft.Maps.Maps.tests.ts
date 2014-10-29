@@ -352,3 +352,13 @@ var test_mouse_event_args = () => {
 		}
 	};
 }
+
+var test_point = () => {
+	var point = new Microsoft.Maps.Point(1,1);
+	var x: number = point.x;
+	var y: number = point.y;
+	var areEqual: boolean = Microsoft.Maps.Point.areEqual(point, point);
+	var clone: Microsoft.Maps.Point = Microsoft.Maps.Point.clone(point);
+	var returnedClone: Microsoft.Maps.Point = point.clone();
+	var toString: string = point.toString();
+}

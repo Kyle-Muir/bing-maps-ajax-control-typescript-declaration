@@ -749,16 +749,44 @@
         static isValid(reference: PixelReference): boolean;
     }
 
+    /**
+    *    Represents a point on the map.
+    **/
     export class Point {
+
+        /**
+        *    Initializes a new instance of the Point class.
+        **/
         constructor (x: number, y: number);
 
+        /**
+        *    The x value of the coordinate.
+        **/
         x: number;
+
+        /**
+        *    The y-value of the coordinate.
+        **/
         y: number;
 
+        /**
+        *    Determines if the specified points are equal.
+        **/
         static areEqual(point1: Point, point2: Point): boolean;
+
+        /**
+        *    Returns a copy of the Point object.
+        **/
         static clone(point: Point): Point;
 
+        /**
+        *    Returns a copy of the Point object.
+        **/
         clone(): Point;
+
+        /**
+        *    Converts the Point object into a string.
+        **/
         toString(): string;
     }
 
