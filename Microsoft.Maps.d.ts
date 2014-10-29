@@ -217,63 +217,64 @@
         static road: string;
     }
 
-    /*
-        Represents a color.
-    */
+    /**
+    *    Represents a color.
+    **/
     export class Color {
-        /*
-            Initializes a new instance of the Color class. The a parameter represents opacity. The range of valid values for all parameters is 0 to 255.
-        */
+        
+        /**
+        *    Initializes a new instance of the Color class. The a parameter represents opacity. The range of valid values for all parameters is 0 to 255.
+        **/
         constructor (a: number, r: number, g: number, b: number);
 
-        /*
-            The opacity of the color. The range of valid values is 0 to 255.
-        */
+        /**
+        *    The opacity of the color. The range of valid values is 0 to 255.
+        **/
         a: number;
 
-        /*
-            The red value of the color. The range of valid values is 0 to 255.
-        */
+        /**
+        *    The red value of the color. The range of valid values is 0 to 255.
+        **/
         r: number;
 
-        /*
-            The green value of the color. The range of valid values is 0 to 255.
-        */
+        /**
+        *    The green value of the color. The range of valid values is 0 to 255.
+        **/
         g: number;
 
-        /*
-            The blue value of the color. The range of valid values is 0 to 255.
-        */
+        /**
+        *    The blue value of the color. The range of valid values is 0 to 255.
+        **/
         b: number;
 
-        /*
-            Creates a copy of the Color object.
-        */
+        /**
+        *    Creates a copy of the Color object.
+        **/
         static clone(color: Color): Color;
 
-        /*
-            Converts the specified hex string to a Color.
-        */
+        /**
+        *    Converts the specified hex string to a Color.
+        **/
         static fromHex(hex: string): Color;
 
-        /*
-            Returns a copy of the Color object.
-        */
+        /**
+        *    Returns a copy of the Color object.
+        **/
         clone(): Color;
 
-        /*
-            Returns the opacity of the Color as a value between 0 (a=0) and 1 (a=255).
-        */
+        /**
+        *    Returns the opacity of the Color as a value between 0 (a=0) and 1 (a=255).
+        **/
         getOpacity(): number;
 
-        /*
-            Converts the Color into a 6-digit hex string. Opacity is ignored. For example, a Color with values (255,0,0,0) is returned as hex string #000000.
-        */
+        /**
+        *    Converts the Color into a 6-digit hex string. Opacity is ignored. For example, a Color with values (255,0,0,0) is returned as hex string #000000.
+        **/
         toHex(): string;
 
-        /*
-            Converts the Color object to a string.
-        */
+        /**
+        *    Converts the Color object to a string.
+        **/
         toString(): string;
     }
 

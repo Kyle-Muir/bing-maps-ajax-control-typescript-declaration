@@ -19,3 +19,13 @@ var test_label_overlay = () => {
 var test_altitude_reference = () => {
 	Microsoft.Maps.AltitudeReference.isValid(Microsoft.Maps.AltitudeReference.ground);
 }
+
+var test_color = () => {
+	var fromHex = Microsoft.Maps.Color.fromHex('#000000');
+	var clone = Microsoft.Maps.Color.clone(fromHex);
+	var color = new Microsoft.Maps.Color(1, 1, 1, 1);
+	var clonedColor : Microsoft.Maps.Color = color.clone();
+	var result : number = color.getOpacity();
+	var hexValue : string = color.toHex();
+	var stringValue : string = color.toString();
+}
