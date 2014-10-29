@@ -1327,11 +1327,19 @@
         updateMapView?: boolean;
     }
 
-    //TODO: Change options interfaces so a concrete class and an interface exists
+    /**
+    *    Contains options for the addAccuracyCircle method of the GeoLocationProvider class.
+    **/
     export interface PositionCircleOptions {
-        //The polygon options for the geo location accuracy circle.
+        
+        /**
+        *    The polygon options for the geo location accuracy circle.
+        **/
         polygonOptions?: PolygonOptions;
-        //A booleanean indicating whether to display the geo location accuracy circle. The default value is true. If this property is set to false, a geo location accuracy circle is not drawn and any existing accuracy circles are removed.
+        
+        /**
+        *    A boolean indicating whether to display the geo location accuracy circle. The default value is true. If this property is set to false, a geo location accuracy circle is not drawn and any existing accuracy circles are removed.
+        **/
         showOnMap?: boolean;
     }
 

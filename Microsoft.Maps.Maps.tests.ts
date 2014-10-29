@@ -431,3 +431,10 @@ var test_tile_source = () => {
 	var width: number = tileSource.getWidth();
 	var toString: string = tileSource.toString();
 }
+
+var test_position_circle_options = () => {
+	var positionCircleOptions : Microsoft.Maps.PositionCircleOptions = {
+		polygonOptions: {fillColor: new Microsoft.Maps.Color(1,1,1,1)},
+		showOnMap: true
+	}
+}
