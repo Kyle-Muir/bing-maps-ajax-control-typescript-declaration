@@ -405,14 +405,52 @@
         drawShapesInSingleLayer?: boolean;
     }
 
-    export class MapTypeId {
-        static aerial: string;
-        static auto: string;
-        static birdseye: string;
-        static collinsBart: string;
-        static mercator: string;
-        static ordnanceSurvey: string;
-        static road: string;
+    /**
+    *    Contains identifiers for the imagery displayed on the map.
+    **/
+    export enum MapTypeId {
+
+        /**
+        *    The aerial map type is being used.
+        *    ShortCode: a
+        **/
+        aerial,
+
+        /**
+        *    The map is set to choose the best imagery for the current view.
+        *    ShortCode: auto
+        **/
+        auto,
+
+        /**
+        *    The bird’s eye map type is being used.
+        *    ShortCode: be
+        **/
+        birdseye,
+
+        /**
+        *    Collin’s Bart (mkt=en-gb) map type is being used.
+        *    ShortCode: cb
+        **/
+        collinsBart,
+
+        /**
+        *    The Mercator map type is being used. This setting removes the base map tiles.
+        *    ShortCode: m
+        **/
+        mercator,
+
+        /**
+        *    Ordnance Survey (mkt=en-gb) map type is being used.
+        *    ShortCode: os
+        **/
+        ordnanceSurvey,
+
+        /**
+        *   The road map type is being used. 
+        *    ShortCode: r
+        **/
+        road
     }
 
     /**
