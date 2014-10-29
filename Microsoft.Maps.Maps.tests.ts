@@ -271,3 +271,18 @@ var test_map = () => {
 	map.viewchangeend();
 	map.viewchangestart();
 }
+
+var test_map_mode_options = () => {
+	var options: Microsoft.Maps.MapModeOptions = {
+		shouldClipPolygons: true,
+		drawShapesInSingleLayer: true
+	};
+}
+
+var test_map_mode = () => {
+	var mapMode = new Microsoft.Maps.MapMode();
+	var drawShapesInSingleLayer: boolean = mapMode.getDrawShapesInSingleLayer();
+	var shouldClipPolygons: boolean = mapMode.getShouldClipPolygons();
+	mapMode.setOptions({shouldClipPolygons: true});
+	mapMode.setViewChangeEndDelay(1000);
+}

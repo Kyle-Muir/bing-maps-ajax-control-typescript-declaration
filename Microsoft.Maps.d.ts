@@ -353,10 +353,56 @@
         static isValid(reference: AltitudeReference): boolean;
     }
 
+    /**
+    *    Represents a map mode.
+    *    Mercator Map Mode Methods
+    *    The following methods are available for the MapTypeId values aerial, auto, birdseye, collinsBart, mercator, ordnanceSurvey, and road.
+    **/
     export class MapMode {
+
+        /**
+        *    Gets whether the mode should draw shapes (polygons, polylines, or pushpins) in a single layer, independent of the EntityCollection order.
+        **/
         getDrawShapesInSingleLayer(): boolean;
+
+        /**
+        *    Gets whether to clip polygons if they are too large for the map in the mode.
+        **/
+        getShouldClipPolygons(): boolean;
+
+        /**
+        *    @Deprecated Use setOptions.
+        *    Sets whether the mode should draw shapes (polygons, polylines, or pushpins) in a single layer, independent of the EntityCollection order. A shape is drawn by default in its own layer, but if one shape covers another shape, then the top-layered shape event is what is thrown. You can prevent this issue by calling setDrawShapesInSingleLayer(true).
+        **/
         setDrawShapesInSingleLayer(drawInSingleLayer: boolean): void;
+
+        /**
+        *    Sets options for the current map mode.
+        **/
+        setOptions(options: MapModeOptions): void;
+
+        /**
+        *    Sets the specified number of milliseconds after the last viewchange event before viewchangeend event is fired. This allows you to control how often the viewchangeend event is fired when the map is panned.
+        *    For example, to set a 1 second delay before the viewchangeend event fires, do the following: 
+        *    map.getMode().setViewChangeEndDelay(1000);
+        **/
         setViewChangeEndDelay(delay: number): void;
+    }
+
+    /**
+    *    Represents options to customize a map mode.
+    **/
+    export interface MapModeOptions {
+
+        /**
+        *    Sets whether the mode should clip polygons if they are too large for the map in this mode.
+        **/
+        shouldClipPolygons?: boolean;
+
+        /**
+        *    Sets whether the mode should draw shapes (polygons, polylines, or pushpins) in a single layer, independent of the EntityCollection order. A shape is drawn by default in its own layer, but if one shape covers another shape, then the top-layered shape event is what is thrown. You can prevent this issue by setting this parameter to true.
+        **/
+        drawShapesInSingleLayer?: boolean;
     }
 
     export class MapTypeId {
