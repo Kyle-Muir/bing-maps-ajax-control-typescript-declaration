@@ -969,26 +969,99 @@
         mouseleave: (eventArgs: MouseEventArgs) => any;
     }
 
+    /**
+    *    Represents a polygon on the map.
+    **/
     export class Polygon implements Entity {
+
+        /**
+        *    Initializes a new instance of the Polygon class.
+        **/
         constructor (locations: Location[], options?: PolygonOptions);
 
+        /**
+        *   Returns the color of the inside of the polygon.
+        **/
         getFillColor(): Color;
+
+        /**
+        *   Returns the locations that define the corners of the polygon.
+        **/
         getLocations(): Location[];
+
+        /**
+        *   Returns the color of the outline of the polygon.
+        **/
         getStrokeColor(): Color;
+
+        /**
+        *   Returns the string that represents the stroke/gap sequence used to draw the outline of the polygon.
+        **/
         getStrokeDashArray(): string;
+
+        /**
+        *   Returns the thickness of the outline of the polygon.
+        **/
         getStrokeThickness(): number;
+
+        /**
+        *   Returns whether the polygon is visible. A value of false indicates that the polygon is hidden, although it is still an entity on the map.
+        **/
         getVisible(): boolean;
+
+        /**
+        *   Sets the locations that define the corners of the polygon.
+        **/
         setLocations(locations: Location[]): void;
+
+        /**
+        *   Sets options for the polygon.
+        **/
         setOptions(options: PolylineOptions): void;
+
+        /**
+        *   Converts the Polygon object to a string.
+        **/
         toString(): string;
 
+        /**
+        *   Occurs when the mouse is used to click the polygon.
+        **/
         click: (eventArgs: MouseEventArgs) => any;
-        dbclick: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *   Occurs when the mouse is used to double click the polygon.
+        **/
+        dblclick: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *   Occurs when the location of the polygon or any of the polygon’s options change.
+        **/
         entitychanged: (entity: Entity) => any;
+
+        /**
+        *   Occurs when the left mouse button is pressed when the mouse is over the polygon.
+        **/
         mousedown: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *   Occurs when the mouse cursor moves out of the area covered by the polygon.
+        **/
         mouseout: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *   Occurs when the mouse is over the polygon.
+        **/
         mouseover: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *   Occurs when the left mouse button is lifted up when the mouse is over the polygon.
+        **/
         mouseup: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *   Occurs when the right mouse button is used to click the polygon.
+        **/
         rightclick: (eventArgs: MouseEventArgs) => any;
     }
 

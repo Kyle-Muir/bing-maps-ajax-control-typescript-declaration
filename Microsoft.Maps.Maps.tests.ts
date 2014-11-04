@@ -464,5 +464,37 @@ var test_pushpin_options = () => {
 		width: 32,
 		zIndex: 9001
 	}
+}
 
+var test_polygon = () => {
+	var positionCircleOptions : Microsoft.Maps.PositionCircleOptions = {
+		polygonOptions: {fillColor: new Microsoft.Maps.Color(1,1,1,1)},
+		showOnMap: true
+	};
+	var location = new Microsoft.Maps.Location(1,1);
+	var infoBox = new Microsoft.Maps.Infobox(location);
+
+	var polygon = new Microsoft.Maps.Polygon([location]);
+	var polygonWithOptions = new Microsoft.Maps.Polygon([location], positionCircleOptions);
+
+	var fillColor = polygon.getFillColor();
+	var locations = polygon.getLocations();
+	var strokeColor = polygon.getStrokeColor();
+	var strokeDashArray = polygon.getStrokeDashArray();
+	var strokeThickness = polygon.getStrokeThickness();
+	var visible = polygon.getVisible();
+	var polygonString = polygon.toString();
+
+	polygon.setLocations([location]);
+	polygon.setOptions(positionCircleOptions);
+
+	var mouseEventArgs: Microsoft.Maps.MouseEventArgs = { getX: () => { return 1; }, getY: () => { return 1; } };
+	polygon.click(mouseEventArgs);
+	polygon.dblclick(mouseEventArgs);
+	polygon.entitychanged(polygon);
+	polygon.mousedown(mouseEventArgs);
+	polygon.mouseout(mouseEventArgs);
+	polygon.mouseover(mouseEventArgs);
+	polygon.mouseup(mouseEventArgs);
+	polygon.rightclick(mouseEventArgs);
 }
