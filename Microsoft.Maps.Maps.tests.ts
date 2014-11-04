@@ -472,8 +472,6 @@ var test_polygon = () => {
 		showOnMap: true
 	};
 	var location = new Microsoft.Maps.Location(1,1);
-	var infoBox = new Microsoft.Maps.Infobox(location);
-
 	var polygon = new Microsoft.Maps.Polygon([location]);
 	var polygonWithOptions = new Microsoft.Maps.Polygon([location], positionCircleOptions);
 
@@ -497,4 +495,33 @@ var test_polygon = () => {
 	polygon.mouseover(mouseEventArgs);
 	polygon.mouseup(mouseEventArgs);
 	polygon.rightclick(mouseEventArgs);
+}
+
+var test_polyline = () => {
+	var polylineOptions : Microsoft.Maps.PolylineOptions = { }
+	var location = new Microsoft.Maps.Location(1,1);
+
+	var polyline = new Microsoft.Maps.Polyline([location]);
+	var polylineWithOptions = new Microsoft.Maps.Polyline([location], polylineOptions);
+	
+	var locations = polyline.getLocations();
+	var strokeColor = polyline.getStrokeColor();
+	var strokeDashArray = polyline.getStrokeDashArray();
+	var strokeThickness = polyline.getStrokeThickness();
+	var visible = polyline.getVisible();
+	var polylineString = polyline.toString();
+
+	polyline.setLocations([location]);
+	polyline.setOptions(polylineOptions);
+
+	var mouseEventArgs: Microsoft.Maps.MouseEventArgs = { getX: () => { return 1; }, getY: () => { return 1; } };
+
+	polyline.click(mouseEventArgs);
+	polyline.dblclick(mouseEventArgs);
+	polyline.entitychanged(polyline);
+	polyline.mousedown(mouseEventArgs);
+	polyline.mouseout(mouseEventArgs);
+	polyline.mouseover(mouseEventArgs);
+	polyline.mouseup(mouseEventArgs);
+	polyline.rightclick(mouseEventArgs);
 }

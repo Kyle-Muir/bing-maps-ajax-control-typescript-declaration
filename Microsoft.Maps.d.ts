@@ -1065,25 +1065,94 @@
         rightclick: (eventArgs: MouseEventArgs) => any;
     }
 
+    /**
+    *   Represents a polyline on the map.
+    **/
     export class Polyline implements Entity {
+        
+        /**
+        *   Initializes a new instance of the Polyline class.
+        **/
         constructor (locations: Location[], options?: PolylineOptions);
 
+        /**
+        *   Returns the locations that define the polyline.
+        **/
         getLocations(): Location[];
+
+        /**
+        *   Returns the color of the polyline.
+        **/
         getStrokeColor(): Color;
+
+        /**
+        *   Returns the string that represents the stroke/gap sequence used to draw the polyline.
+        **/
         getStrokeDashArray(): string;
+
+        /**
+        *   Returns the thickness of the polyline.
+        **/
         getStrokeThickness(): number;
+
+        /**
+        *   Returns whether the polyline is visible. A value of false indicates that the polyline is hidden, although it is still an entity on the map.
+        **/
         getVisible(): boolean;
+
+        /**
+        *   Sets the locations that define the polyline.
+        **/
         setLocations(locations: Location[]): void;
+
+        /**
+        *   Sets options for the polyline.
+        **/
         setOptions(options: PolylineOptions): void;
+
+        /**
+        *   Converts the Polyline object to a string.
+        **/
         toString(): string;
 
+        /**
+        *   Occurs when the mouse is used to click the polyline.
+        **/
         click: (eventArgs: MouseEventArgs) => any;
-        dbclick: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *   Occurs when the mouse is used to double click the polyline.
+        **/
+        dblclick: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *   Occurs when the location of the polyline or any of the polyline’s options change.
+        **/
         entitychanged: (entity: Entity) => any;
+
+        /**
+        *   Occurs when the left mouse button is pressed when the mouse is over the polyline.
+        **/
         mousedown: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *   Occurs when the mouse cursor moves out of the area covered by the polyline.
+        **/
         mouseout: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *   Occurs when the mouse is over the polyline.
+        **/
         mouseover: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *   Occurs when the left mouse button is lifted up when the mouse is over the polyline.
+        **/
         mouseup: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *   Occurs when the right mouse button is used to click the polyline.
+        **/
         rightclick: (eventArgs: MouseEventArgs) => any;
     }
 
