@@ -32,5 +32,5 @@ Todo
 	- [X] Microsoft.Maps.Search
 	- [X] Microsoft.Maps.Traffic
 	- [X] Microsoft.Maps.VenueMaps
-- [ ] Create\Update nuget package
+- [X] Create\Update nuget package
 - [ ] Create\Update npm package
