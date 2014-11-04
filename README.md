@@ -25,8 +25,8 @@ Install-Package BingMapsTypeScript
 Todo
 ====
 - [X] Update declarations so they at least work with latest version
-- [ ] Update declarations for latest version w\ full Visual Studio 2013 intellisense (In progress)
-	- [ ] Microsoft.Maps (In progress)
+- [X] Update declarations for latest version w\ full Visual Studio 2013 intellisense
+	- [X] Microsoft.Maps
 	- [X] Microsoft.Maps.AdvancedShapes
 	- [X] Microsoft.Maps.Directions
 	- [X] Microsoft.Maps.Search

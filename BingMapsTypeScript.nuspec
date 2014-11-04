@@ -5,7 +5,7 @@
         <version>1.0.2</version>
         <title>Bing Maps TypeScript Declarations</title>
         <authors>Roy Donaldson, Kyle Muir, Chris Pilcher</authors>
-        <owners>Roy Donaldson</owners>
+        <owners>Kyle Muir</owners>
         <licenseUrl>https://github.com/Kyle-Muir/bing-maps-ajax-control-typescript-declaration/wiki/License</licenseUrl>
         <projectUrl>https://github.com/Kyle-Muir/bing-maps-ajax-control-typescript-declaration/</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
