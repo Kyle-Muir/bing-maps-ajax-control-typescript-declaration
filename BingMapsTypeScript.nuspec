@@ -4,14 +4,14 @@
         <id>BingMapsTypeScript</id>
         <version>1.0.1</version>
         <title>Bing Maps TypeScript Declarations</title>
-        <authors>Roy Donaldson</authors>
+        <authors>Roy Donaldson, Kyle Muir, Chris Pilcher</authors>
         <owners>Roy Donaldson</owners>
-        <licenseUrl>http://bingmapsts.codeplex.com/license</licenseUrl>
-        <projectUrl>http://bingmapsts.codeplex.com/</projectUrl>
+        <licenseUrl>https://github.com/Kyle-Muir/bing-maps-ajax-control-typescript-declaration/wiki/License</licenseUrl>
+        <projectUrl>https://github.com/Kyle-Muir/bing-maps-ajax-control-typescript-declaration/</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Provides TypeScript declaration files for the Bing Maps v7.0 AJAX Control.</description>
         <summary>TypeScript declaration files for the Bing Maps v7.0 AJAX Control</summary>
-        <copyright>2012 Roy Donaldson</copyright>
+        <copyright>2012 Roy Donaldson, Kyle Muir, Chris Pilcher</copyright>
         <tags>bingmaps bing maps typescript intellisense javascript ajax</tags>
     </metadata>
     <files>
@@ -23,5 +23,6 @@
         <file src="BingTS.Solution\BingTS\Bing\Microsoft.Maps.Themes.BingTheme.d.ts" target="content\TypeScript\Bing\Microsoft.Maps.Themes.BingTheme.d.ts" />
         <file src="BingTS.Solution\BingTS\Bing\Microsoft.Maps.Traffic.d.ts" target="content\TypeScript\Bing\Microsoft.Maps.Traffic.d.ts" />
         <file src="BingTS.Solution\BingTS\Bing\Microsoft.Maps.VenueMaps.d.ts" target="content\TypeScript\Bing\Microsoft.Maps.VenueMaps.d.ts" />
+        <file src="BingTS.Solution\BingTS\Bing\Microsoft.Maps.Directions.d.ts" target="content\TypeScript\Bing\Microsoft.Maps.Directions.d.ts" />		
     </files>
 </package>
