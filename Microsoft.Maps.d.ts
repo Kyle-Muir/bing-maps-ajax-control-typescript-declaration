@@ -1156,32 +1156,134 @@
         rightclick: (eventArgs: MouseEventArgs) => any;
     }
 
+    /**
+    *   Defines a pushpin on the map.
+    **/
     export class Pushpin implements Entity {
+        
+        /**
+        *   Initializes a new instance of the Pushpin class.
+        **/
         constructor (location: Location, options?: PushpinOptions);
+
+        /**
+        *   Returns the point on the pushpin icon which is anchored to the pushpin location. An anchor of (0,0) is the top left corner of the icon.
+        **/
         getAnchor(): Point;
+
+        /**
+        *   Returns the pushpin icon.
+        **/
         getIcon(): string;
+
+        /**
+        *   Returns the height of the pushpin, which is the height of the pushpin icon.
+        **/
         getHeight(): number;
+
+        /**
+        *   Returns the location of the pushpin.
+        **/
         getLocation(): Location;
+
+        /**
+        *   Returns the text associated with the pushpin.
+        **/
         getText(): string;
+
+        /**
+        *   Returns the amount the text is shifted from the pushpin icon.
+        **/
         getTextOffset(): Point;
+
+        /**
+        *   Returns the type of the pushpin.
+        **/
         getTypeName(): string;
+
+        /**
+        *   Returns whether the pushpin is visible. A value of false indicates that the pushpin is hidden, although it is still an entity on the map.
+        **/
         getVisible(): boolean;
+
+        /**
+        *   Returns the width of the pushpin, which is the width of the pushpin icon.
+        **/
         getWidth(): number;
+
+        /**
+        *   Returns the z-index of the pushpin with respect to other items on the map.
+        **/
         getZIndex(): number;
+
+        /**
+        *   Sets the location of the pushpin.
+        **/
         setLocation(location: Location): void;
+
+        /**
+        *   Sets options for the pushpin.
+        **/
         setOptions(options: PushpinOptions): void;
+
+        /**
+        *   Converts the Pushpin object to a string.
+        **/
         toString(): string;
 
+        /**
+        *   Occurs when the mouse is used to click the pushpin.
+        **/
         click: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *   Occurs when the mouse is used to double click the pushpin.
+        **/
         dblclick: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *   Occurs when the pushpin is being dragged.
+        **/
         drag: (object: Pushpin) => any;
+
+        /**
+        *   Occurs when the pushpin stops being dragged.
+        **/
         dragend: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *   Occurs when the pushpin starts being dragged.
+        **/
         dragstart: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *   Occurs when the location of the pushpin or any of the pushpin’s options change.
+        **/
         entitychanged: (object: { entity: Entity; }) => any;
+
+        /**
+        *   Occurs when the left mouse button is pressed when the mouse is over the pushpin.
+        **/
         mousedown: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *   Occurs when the mouse cursor moves out of the area covered by the pushpin.
+        **/
         mouseout: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *   Occurs when the mouse is over the pushpin.
+        **/
         mouseover: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *   Occurs when the left mouse button is lifted up when the mouse is over the pushpin.
+        **/
         mouseup: (eventArgs: MouseEventArgs) => any;
+
+        /**
+        *   Occurs when the right mouse button is used to click the pushpin.
+        **/
         rightclick: (eventArgs: MouseEventArgs) => any;
     }
 

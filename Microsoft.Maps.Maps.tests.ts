@@ -515,7 +515,6 @@ var test_polyline = () => {
 	polyline.setOptions(polylineOptions);
 
 	var mouseEventArgs: Microsoft.Maps.MouseEventArgs = { getX: () => { return 1; }, getY: () => { return 1; } };
-
 	polyline.click(mouseEventArgs);
 	polyline.dblclick(mouseEventArgs);
 	polyline.entitychanged(polyline);
@@ -524,4 +523,40 @@ var test_polyline = () => {
 	polyline.mouseover(mouseEventArgs);
 	polyline.mouseup(mouseEventArgs);
 	polyline.rightclick(mouseEventArgs);
+}
+
+var test_pushpin = () => {
+	var pushpinOptions : Microsoft.Maps.PushpinOptions = { }
+	var location = new Microsoft.Maps.Location(1,1);
+
+	var pushpin = new Microsoft.Maps.Pushpin(location);
+	var pushpinWithOptions = new Microsoft.Maps.Pushpin(location, pushpinOptions);
+
+	var anchor = pushpin.getAnchor();
+	var icon = pushpin.getIcon();
+	var height = pushpin.getHeight();
+	var location = pushpin.getLocation();
+	var text = pushpin.getText();
+	var textOffset = pushpin.getTextOffset();
+	var typeName = pushpin.getTypeName();
+	var visible = pushpin.getVisible();
+	var width = pushpin.getWidth();
+	var zIndex = pushpin.getZIndex();
+	var pushpinString = pushpin.toString();
+
+	pushpin.setLocation(location);
+	pushpin.setOptions(pushpinOptions);
+
+	var mouseEventArgs : Microsoft.Maps.MouseEventArgs = { getX: () => { return 1; }, getY: () => { return 1; } };
+	pushpin.click(mouseEventArgs);
+	pushpin.dblclick(mouseEventArgs);
+	pushpin.drag(pushpin);
+	pushpin.dragend(mouseEventArgs);
+	pushpin.dragstart(mouseEventArgs);
+	pushpin.entitychanged({entity: pushpin});
+	pushpin.mousedown(mouseEventArgs);
+	pushpin.mouseout(mouseEventArgs);
+	pushpin.mouseover(mouseEventArgs);
+	pushpin.mouseup(mouseEventArgs);
+	pushpin.rightclick(mouseEventArgs);
 }
