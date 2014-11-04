@@ -20,8 +20,6 @@ A NuGet package is also available in the public NuGet repository.
 
 Install-Package BingMapsTypeScript
 
-###NOTE: The nuget package is currently out of date.
-
 Todo
 ====
 - [X] Update declarations so they at least work with latest version

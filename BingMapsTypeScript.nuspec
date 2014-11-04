@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>BingMapsTypeScript</id>
-        <version>1.0.3</version>
+        <version>1.0.4</version>
         <title>Bing Maps TypeScript Declarations</title>
         <authors>Roy Donaldson, Kyle Muir, Chris Pilcher</authors>
         <owners>Kyle Muir</owners>
@@ -15,14 +15,14 @@
         <tags>bingmaps bing maps typescript intellisense javascript ajax</tags>
     </metadata>
     <files>
-        <file src="Microsoft.Maps.AdvancedShapes.d.ts" target="Scripts\typings\bingmaps\Microsoft.Maps.AdvancedShapes.d.ts" />
-        <file src="Microsoft.Maps.All.d.ts" target="Scripts\typings\bingmaps\Microsoft.Maps.All.d.ts" />
-        <file src="Microsoft.Maps.d.ts" target="Scripts\typings\bingmaps\Microsoft.Maps.d.ts" />
-        <file src="Microsoft.Maps.Overlay.Style.d.ts" target="Scripts\typings\bingmaps\Microsoft.Maps.Overlay.Style.d.ts" />
-        <file src="Microsoft.Maps.Search.d.ts" target="Scripts\typings\bingmaps\Microsoft.Maps.Search.d.ts" />
-        <file src="Microsoft.Maps.Themes.BingTheme.d.ts" target="Scripts\typings\bingmaps\Microsoft.Maps.Themes.BingTheme.d.ts" />
-        <file src="Microsoft.Maps.Traffic.d.ts" target="Scripts\typings\bingmaps\Microsoft.Maps.Traffic.d.ts" />
-        <file src="Microsoft.Maps.VenueMaps.d.ts" target="Scripts\typings\bingmaps\Microsoft.Maps.VenueMaps.d.ts" />
-        <file src="Microsoft.Maps.Directions.d.ts" target="Scripts\typings\bingmaps\Microsoft.Maps.Directions.d.ts" />		
+        <file src="Microsoft.Maps.AdvancedShapes.d.ts" target="Content\Scripts\typings\bingmaps\Microsoft.Maps.AdvancedShapes.d.ts" />
+        <file src="Microsoft.Maps.All.d.ts" target="Content\Scripts\typings\bingmaps\Microsoft.Maps.All.d.ts" />
+        <file src="Microsoft.Maps.d.ts" target="Content\Scripts\typings\bingmaps\Microsoft.Maps.d.ts" />
+        <file src="Microsoft.Maps.Overlay.Style.d.ts" target="Content\Scripts\typings\bingmaps\Microsoft.Maps.Overlay.Style.d.ts" />
+        <file src="Microsoft.Maps.Search.d.ts" target="Content\Scripts\typings\bingmaps\Microsoft.Maps.Search.d.ts" />
+        <file src="Microsoft.Maps.Themes.BingTheme.d.ts" target="Content\Scripts\typings\bingmaps\Microsoft.Maps.Themes.BingTheme.d.ts" />
+        <file src="Microsoft.Maps.Traffic.d.ts" target="Content\Scripts\typings\bingmaps\Microsoft.Maps.Traffic.d.ts" />
+        <file src="Microsoft.Maps.VenueMaps.d.ts" target="Content\Scripts\typings\bingmaps\Microsoft.Maps.VenueMaps.d.ts" />
+        <file src="Microsoft.Maps.Directions.d.ts" target="Content\Scripts\typings\bingmaps\Microsoft.Maps.Directions.d.ts" />		
     </files>
 </package>
