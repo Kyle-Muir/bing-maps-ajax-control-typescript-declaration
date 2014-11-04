@@ -583,3 +583,15 @@ var test_polygon_options = () => {
 	var emptyOptions : Microsoft.Maps.PolygonOptions = {
 	}
 }
+
+var test_polyline_options = () => {
+	var options: Microsoft.Maps.PolylineOptions = {
+		strokeColor:  Microsoft.Maps.Color.fromHex('#000000'),
+		strokeDashArray: 'strokeDashArray',
+		strokeThickness: 3,
+		visible: true
+	}
+	
+	var emptyOptions : Microsoft.Maps.PolylineOptions = {
+	}
+}
