@@ -1434,10 +1434,19 @@
         standard
     }
 
+    /**
+    *    Represents the position of a user on a map.
+    **/
     export class Position {
-        //The position as a W3C Coordinates object.
+        
+        /**
+        *    The position as a W3C Coordinates object.
+        **/
         coords: Coordinates;
-        //The time when the position was determined, in the form of a DOMTimeStamp.
+
+        /**
+        *    The time when the position was determined, in the form of a DOMTimeStamp.
+        **/
         timestamp: string;
     }
 

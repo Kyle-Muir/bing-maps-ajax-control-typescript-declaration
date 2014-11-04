@@ -560,3 +560,9 @@ var test_pushpin = () => {
 	pushpin.mouseup(mouseEventArgs);
 	pushpin.rightclick(mouseEventArgs);
 }
+
+var test_position = () => {
+	var position = new Microsoft.Maps.Position();
+	position.coords = new Microsoft.Maps.Coordinates();
+	position.timestamp = "1301837259664648";
+}
