@@ -1665,18 +1665,43 @@
         visible?: boolean;
     }
 
+    /**
+    *    Represents the options for a polygon.
+    **/
     export interface PolygonOptions {
-        //The color of the inside of the polygon.
+        
+        /**
+        *    The color of the inside of the polygon.
+        **/
         fillColor?: Color;
-        //The info box associated with this polygon. If an info box is assigned and the Microsoft.Maps.Themes.BingTheme module is loaded, then the info box appears when the hover or click events of the polygon occur.
+
+        /**
+        *    The info box associated with this polygon. If an info box is assigned and the Microsoft.Maps.Themes.BingTheme module is loaded, 
+        *    then the info box appears when the hover or click events of the polygon occur.
+        **/
         infobox?: Infobox;
-        //The color of the outline of the polygon.
+
+        /**
+        *    The color of the outline of the polygon.
+        **/
         strokeColor?: Color;
-        //A string representing the stroke/gap sequence to use to draw the outline of the polygon. The string must be in the format S, G, S*, G*, where S represents the stroke length and G represents gap length. Stroke lengths and gap lengths can be separated by commas or spaces. For example, a stroke dash string of “1 4 2 1” would draw the polygon outline with a dash, four spaces, two dashes, one space, and then repeated.
+
+        /**
+        *    A string representing the stroke/gap sequence to use to draw the outline of the polygon. 
+        *    The string must be in the format S, G, S*, G*, where S represents the stroke length and G represents gap length. 
+        *    Stroke lengths and gap lengths can be separated by commas or spaces. For example, a stroke dash string of “1 4 2 1” 
+        *    would draw the polygon outline with a dash, four spaces, two dashes, one space, and then repeated.
+        **/
         strokeDashArray?: string;
-        //The thickness of the outline of the polygon.
+        
+        /**
+        *    The thickness of the outline of the polygon.
+        **/
         strokeThickness?: number;
-        //A booleanean indicating whether to show or hide the polygon. A value of false indicates that the polygon is hidden, although it is still an entity on the map.
+
+        /**
+        *    A boolean indicating whether to show or hide the polygon. A value of false indicates that the polygon is hidden, although it is still an entity on the map.
+        **/
         visible?: boolean;
     }
 

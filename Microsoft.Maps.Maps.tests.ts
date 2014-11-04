@@ -564,5 +564,22 @@ var test_pushpin = () => {
 var test_position = () => {
 	var position = new Microsoft.Maps.Position();
 	position.coords = new Microsoft.Maps.Coordinates();
-	position.timestamp = "1301837259664648";
+	position.timestamp = '1301837259664648';
+}
+
+var test_polygon_options = () => {
+	var location = new Microsoft.Maps.Location(1,1);
+	var infoBox = new Microsoft.Maps.Infobox(location);
+
+	var options : Microsoft.Maps.PolygonOptions = {
+		fillColor: Microsoft.Maps.Color.fromHex('#000000'),
+		infoBox: infoBox,
+		strokeColor: Microsoft.Maps.Color.fromHex('#000000'),
+		strokeDashArray: 'strokeDashArray',
+		strokeThickness: 5,
+		visible: true
+	}
+
+	var emptyOptions : Microsoft.Maps.PolygonOptions = {
+	}
 }
