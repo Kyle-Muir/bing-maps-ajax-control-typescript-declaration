@@ -566,7 +566,7 @@
         *    Converts the Color object to a string.
         **/
         toString(): string;
-    }
+    }  
 
     /**
     *    Represents options to customize the map that is displayed.
@@ -1613,28 +1613,54 @@
         zIndex?: number;
     }
 
+    /**
+    *    Contains options for the getCurrentPosition method of the GeoLocationProvider class.
+    **/
     export interface PositionOptions {
+
+        /**
+        *    A boolean indicating whether only a high accuracy result should be retrieved. The default value is false. 
+        *    Setting this property to true may result in a slower response time.
+        **/
         enableHighAccuracy?: boolean;
-        /*
-        The function to call when an error occurs during the user location request. The callback function must accept one argument.
-        The argument object contains two properties, internalError, a PositionError type, and errorCode, a number.
-        
-        Any one of the following errorCode values may be returned:
-        1 - The application origin does not have permission to use the GeoLocation API.
 
-        2 - The position of the user could not be determined because of a device failure.
-
-        3 - The time specified in timeout has been exceeded.
-
-        4 - A request is already in process.
-
-        5 - The user’s browser does not support geo location.
-        */
+        /**
+        *    The function to call when an error occurs during the user location request. The callback function must accept one argument. 
+        *    The argument object contains two properties, internalError, a PositionError type, and errorCode, a number.
+        *
+        *    Any one of the following errorCode values may be returned:
+        *       - 1 The application origin does not have permission to use the GeoLocation API.
+        *       - 2 The position of the user could not be determined because of a device failure.
+        *       - 3 The time specified in timeout has been exceeded.
+        *       - 4 A request is already in process.
+        *       - 5 The user’s browser does not support geo location.
+        **/
         errorCallback?: (internalError: PositionError, errorCode: number) => void;
+
+        /**
+        *    A number indicating the acceptable age, in milliseconds, of a cached geo location result to return. The default value is 0, which indicates a new (not cached) result will be retrieved.
+        **/
         maximumAge?: number;
+
+        /**
+        *    A boolean indicating whether to display the polygon on the map that shows the accuracy of the returned geo location. The default value is true.
+        **/
         showAccuracyCircle?: boolean;
+
+        /**
+        *    The function to call when the user’s location was successfully retrieved. The callback function must accept one argument. 
+        *    The argument object contains two properties, center, a Location type, and position, a Position type.
+        **/
         successCallback?: (center: Location, position: Position) => void;
+
+        /**
+        *    The length of time, in milliseconds, to allow for the geo location request to return. By default there is no timeout.
+        **/
         timeout?: number;
+
+        /**
+        *    A boolean indicating whether to update the map view with the best view of the user’s location (if the request is successful). The default value is true.
+        **/
         updateMapView?: boolean;
     }
 

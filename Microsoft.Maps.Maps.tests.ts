@@ -595,3 +595,20 @@ var test_polyline_options = () => {
 	var emptyOptions : Microsoft.Maps.PolylineOptions = {
 	}
 }
+
+var test_position_options = () => {
+	var errorCallback = (internalError: Microsoft.Maps.PositionError, errorCode: number) => { };
+	var successCallback = (center: Microsoft.Maps.Location, position: Microsoft.Maps.Position) => { };
+	var options: Microsoft.Maps.PositionOptions = {
+		enableHighAccuracy: true,
+		errorCallback: errorCallback,
+		maximumAge: 1000,
+		showAccuracyCircle: true,
+		successCallback: successCallback,
+		timeout: 2000,
+		updateMapView: true
+	}
+
+	var emptyOptions : Microsoft.Maps.PositionOptions = {
+	}
+}
