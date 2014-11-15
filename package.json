@@ -1,0 +1,23 @@
+{
+	"author": "Kyle Muir",
+	"contributors": ["Roy Donaldson", "Chris Pilcher"],
+	"name": "BingMapsTypeScript",
+	"description": "Bing Maps TypeScript Declarations",
+	"keywords": ["bingmaps", "bing", "maps", "typescript", "intellisense"],
+	"homepage": "https://github.com/Kyle-Muir/bing-maps-ajax-control-typescript-declaration/",
+	"bugs": "https://github.com/Kyle-Muir/bing-maps-ajax-control-typescript-declaration/issues",
+	"license": "MIT",
+	"version": "1.0.4",
+	"repository": {
+		"url": "https://github.com/Kyle-Muir/bing-maps-ajax-control-typescript-declaration/"
+	},
+	"files": ["Microsoft.Maps.AdvancedShapes.d.ts", 
+						"Microsoft.Maps.All.d.ts", 
+						"Microsoft.Maps.d.ts", 
+						"Microsoft.Maps.Overlay.Style.d.ts", 
+						"Microsoft.Maps.Search.d.ts", 
+						"Microsoft.Maps.Themes.BingTheme.d.ts", 
+						"Microsoft.Maps.Traffic.d.ts", 
+						"Microsoft.Maps.VenueMaps.d.ts", 
+						"Microsoft.Maps.Directions.d.ts"]
+}
