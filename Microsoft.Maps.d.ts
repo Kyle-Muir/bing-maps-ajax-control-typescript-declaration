@@ -4,38 +4,36 @@
         Global functions
     */
 
-    /*
-        Loads the specified registered module, making its functionality available. An optional function can be specified that is called when the module is loaded.
-        To register a module, use the registerModule method.
-
-        The following Bing Maps modules are available:
-
-        Microsoft.Maps.AdvancedShapes
-        Microsoft.Maps.Directions
-        Microsoft.Maps.Overlays.Style
-        Microsoft.Maps.Search
-        Microsoft.Maps.Themes.BingTheme
-        Microsoft.Maps.Traffic
-        Microsoft.Maps.VenueMaps
-    */
+    /**
+    *    Loads the specified registered module, making its functionality available. An optional function can be specified that is called when the module is loaded.
+    *    To register a module, use the registerModule method.
+    *    The following Bing Maps modules are available:
+    *    - Microsoft.Maps.AdvancedShapes 
+    *    - Microsoft.Maps.Directions 
+    *    - Microsoft.Maps.Overlays.Style 
+    *    - Microsoft.Maps.Search 
+    *    - Microsoft.Maps.Themes.BingTheme 
+    *    - Microsoft.Maps.Traffic 
+    *    - Microsoft.Maps.VenueMaps 
+    **/
     export function loadModule(moduleKey: string, options?: { callback: () => void; }): void;
-    /*
-        Signals that the specified module has been loaded and if specified, calls the callback function in loadModule. Call this method at the end of your module script.
-    */
+    
+    /**
+    *    Signals that the specified module has been loaded and if specified, calls the callback function in loadModule. Call this method at the end of your module script.
+    **/
     export function moduleLoaded(moduleKey: string): void;
 
-    /*
-        Registers a module with the map control. The name of the module is specified in moduleKey, the module script is defined in scriptUrl, and the options provides the location of a *.css file to load with the module.
-        Tip: To minimize possible conflicts with other custom modules, choose a unique module name (defined in moduleKey). For example, you can use your company name in the name of the module.
-        Once you have registered a module, you can make its functionality available by loading it using loadModule.
-    */
+    /**
+    *    Registers a module with the map control. The name of the module is specified in moduleKey, the module script is defined in scriptUrl, and the options provides the location of a *.css file to load with the module.
+    *    TIP: To minimize possible conflicts with other custom modules, choose a unique module name (defined in moduleKey). For example, you can use your company name in the name of the module.
+    *    Once you have registered a module, you can make its functionality available by loading it using loadModule.
+    **/
     export function registerModule(moduleKey: string, scriptUrl: string, options?: string[]): void;
 
-    /*
-        Tagging interface for items in an EntityCollection
-    */
+    /**
+    *    Tagging interface for items in an EntityCollection
+    **/
     export interface Entity {
-        //No members
     }
 
     /**
