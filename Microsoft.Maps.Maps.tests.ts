@@ -284,6 +284,9 @@ var test_map = () => {
 	map.viewchange();
 	map.viewchangeend();
 	map.viewchangestart();
+	map.addComponent('searchManager', new Microsoft.Maps.Search.SearchManager(map));
+	var searchManager = map.getComponent('searchManager');
+	var searchManagerCastToType: Microsoft.Maps.Search.SearchManager = map.getComponent('searchManager');
 }
 
 var test_map_mode_options = () => {
