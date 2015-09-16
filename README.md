@@ -31,7 +31,6 @@ Todo
 	- [X] Microsoft.Maps.Traffic
 	- [X] Microsoft.Maps.VenueMaps
 - [X] Create\Update nuget package
-- [ ] Create\Update npm package
 
 Releases
 ====
@@ -39,4 +38,4 @@ Releases
 * Update the BingMapsTypeScript.nuspec
 * Tag the release with the version when commiting. E.g. v1.0.5.
 * Navigate to releases and enter release information
-* Upload package to Nuget [https://www.nuget.org/account/Packages]
+* Upload package to [Nuget](https://www.nuget.org/account/Packages)
