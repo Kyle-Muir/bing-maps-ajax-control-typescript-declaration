@@ -1,10 +1,23 @@
-language: node_js
-node_js:
-  - "0.11"
+language: csharp
+
 install:
   - "npm install -g typescript"
+
 script:
   - "ls *.ts > ts-files.txt"
   - "tsc @ts-files.txt"
   - "rm ts-files.txt"
+
+ before_deploy:
+  - nuget pack BingMapsTypeScript.nuspec 
+  - export ReleaseFile=$(ls BingMapsTypeScript.*.nupkg)
+  - echo "Deploying $ReleaseFile to GitHub"
+
+ deploy:
+  provider: releases
+  api_key: "${GithubKey}"
+  file: "${ReleaseFile}"
+  skip_cleanup: true
+  on:
+    tags: true
   
