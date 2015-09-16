@@ -2,23 +2,23 @@ language: csharp
 sudo: false
 
 install:
-  - "npm install -g typescript"
+ - "npm install -g typescript"
 
 script:
-  - "ls *.ts > ts-files.txt"
-  - "tsc @ts-files.txt"
-  - "rm ts-files.txt"
+ - "ls *.ts > ts-files.txt"
+ - "tsc @ts-files.txt"
+ - "rm ts-files.txt"
 
- before_deploy:
-  - nuget pack BingMapsTypeScript.nuspec 
-  - export ReleaseFile=$(ls BingMapsTypeScript.*.nupkg)
-  - echo "Deploying $ReleaseFile to GitHub"
+before_deploy:
+ - nuget pack BingMapsTypeScript.nuspec 
+ - export ReleaseFile=$(ls BingMapsTypeScript.*.nupkg)
+ - echo "Deploying $ReleaseFile to GitHub"
 
- deploy:
-  provider: releases
-  api_key: "${GithubKey}"
-  file: "${ReleaseFile}"
-  skip_cleanup: true
-  on:
-    tags: true
+deploy:
+ provider: releases
+ api_key: "${GithubKey}"
+ file: "${ReleaseFile}"
+ skip_cleanup: true
+ on:
+  tags: true
   
