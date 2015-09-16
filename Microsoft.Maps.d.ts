@@ -2309,6 +2309,21 @@
         *    Occurs when the map view starts changing.
         **/
         viewchangestart: () => any;
+
+        /**
+        *    Used for adding a component to the map. Documentation missing from API however, the only example usage found is:
+        *    map.addComponent('searchManager', new Microsoft.Maps.Search.SearchManager(map));
+        **/
+        addComponent(componentName: string, component: any);
+
+        /**
+        *    Used for retrieving a component from the map. Documentation missing from API however, the only example usage found is:
+        *    var searchManager = map.getComponent('searchManager');
+        *    
+        *    This can be used typed as follows to enable intellisense: 
+        *    var searchManager: Microsoft.Maps.Search.SearchManager = map.getComponent('searchManager');
+        **/
+        getComponent(componentName: string): any;
     }
 
     /**

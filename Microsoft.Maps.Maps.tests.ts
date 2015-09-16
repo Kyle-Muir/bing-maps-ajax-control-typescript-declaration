@@ -55,7 +55,8 @@ var test_entity_collection = () => {
 	entityCollection.push(entity);
 	entityCollection.remove(entity);
 	entityCollection.removeAt(2);
-	entityCollection.setOptions({options: {bubble: true}});
+	var options: Microsoft.Maps.EntityCollectionOptions = {bubble: true}
+	entityCollection.setOptions(options);
 	entityCollection.toString();
 	
 	var object = {collection: entityCollection, entity: entity};
@@ -284,6 +285,9 @@ var test_map = () => {
 	map.viewchange();
 	map.viewchangeend();
 	map.viewchangestart();
+	map.addComponent('searchManager', new Microsoft.Maps.Search.SearchManager(map));
+	var searchManager = map.getComponent('searchManager');
+	var searchManagerCastToType: Microsoft.Maps.Search.SearchManager = map.getComponent('searchManager');
 }
 
 var test_map_mode_options = () => {
@@ -455,7 +459,7 @@ var test_pushpin_options = () => {
 		height: 255,
 		htmlContent: '<div></div>',
 		icon: 'icon.png',
-		infoBox: infoBox,
+		infobox: infoBox,
 		state: Microsoft.Maps.EntityState.selected,
 		text: 'text here',
 		textOffset: point,
@@ -573,7 +577,7 @@ var test_polygon_options = () => {
 
 	var options : Microsoft.Maps.PolygonOptions = {
 		fillColor: Microsoft.Maps.Color.fromHex('#000000'),
-		infoBox: infoBox,
+		infobox: infoBox,
 		strokeColor: Microsoft.Maps.Color.fromHex('#000000'),
 		strokeDashArray: 'strokeDashArray',
 		strokeThickness: 5,
