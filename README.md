@@ -3,7 +3,7 @@ Bing Maps TypeScript Declarations
 
 ### Status
 
-[![Build Status](https://travis-ci.org/Kyle-Muir/bing-maps-ajax-control-typescript-declaration.png)](https://travis-ci.org/Kyle-Muir/bing-maps-ajax-control-typescript-declaration) [![Nuget Package](http://img.shields.io/badge/nuget-v1.0.4-blue.svg)](https://www.nuget.org/packages/BingMapsTypeScript/1.0.4)
+[![Build Status](https://travis-ci.org/Kyle-Muir/bing-maps-ajax-control-typescript-declaration.png)](https://travis-ci.org/Kyle-Muir/bing-maps-ajax-control-typescript-declaration) [![Nuget Package](http://img.shields.io/badge/nuget-v1.0.5-blue.svg)](https://www.nuget.org/packages/BingMapsTypeScript/1.0.5)
 
 This project contains unofficial TypeScript declarations for the Bing Maps v7 AJAX Control. It is meant to bridge the gap between the release of TypeScript and the release of the official Bing Maps declaration files.
 
@@ -39,3 +39,4 @@ Releases
 * Tag the release with the version when commiting. E.g. v1.0.5.
 * Navigate to releases and enter release information
 * Upload package to [Nuget](https://www.nuget.org/account/Packages)
+* Update nuget link in readme 
