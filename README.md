@@ -1,3 +1,6 @@
+### Microsoft has now released official Typescript declaration files for Bing maps -> please visit: https://github.com/Microsoft/Bing-Maps-V8-TypeScript-Definitions
+### This repository will no longer be supported as there is now an official repository for the declaration files.
+
 Bing Maps TypeScript Declarations
 =================================
 
